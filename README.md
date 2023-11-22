@@ -1,7 +1,7 @@
 
 # HolyWaterBooks
 
-HolyWaterBooks test tasks from HolyWater IT company.
+HolyWaterBooks test task [HolyWater] IT company.
 
 # Getting Started
 
@@ -23,11 +23,25 @@ Install Homebrew:
 
 ### SwiftFormat
 
-SwiftFormat install [here](https://github.com/nicklockwood/SwiftFormat)
+SwiftFormat install
+```
+brew install swiftlint
+```
+or [here](https://github.com/nicklockwood/SwiftFormat)
 
 ### Swiftlint
 
-Swiftlint install [here](https://github.com/realm/SwiftLint)
+Swiftlint install 
+
+```
+brew install swiftformat
+```
+
+```
+brew upgrade swiftformat
+```
+
+or [here](https://github.com/realm/SwiftLint)
 
 To run Swiftlint use:
 
