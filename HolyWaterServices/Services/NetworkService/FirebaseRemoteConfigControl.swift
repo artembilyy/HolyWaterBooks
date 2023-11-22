@@ -17,6 +17,7 @@ public protocol FirebaseRemoteConfigWorkerContainer {
 
 private enum Key: String {
     case remoteConfigKey = "json_data"
+    case topBannerSlides = "top_banner_slides"
 
     var value: String {
         rawValue

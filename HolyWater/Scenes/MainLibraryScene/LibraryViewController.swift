@@ -10,6 +10,8 @@ import UIKit
 
 final class LibraryViewController: UIViewController {
 
+    let button = UIButton(type: .system)
+
     private var viewModel: LibraryViewModelInteractive!
 
     private let disposeBag = DisposeBag()
@@ -18,9 +20,25 @@ final class LibraryViewController: UIViewController {
         self.viewModel = viewModel
     }
 
+    private func createButton() {
+        button.setTitle("Next screen", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        let buttonWidth: CGFloat = 150
+        let buttonHeight: CGFloat = 50
+        button.frame = CGRect(x: view.center.x, y: view.center.y, width: buttonWidth, height: buttonHeight)
+        button.addAction(
+            .init(handler: { [unowned self] _ in
+                self.viewModel.inputs.selected()
+            }), for: .touchUpInside)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .purple
+
+        createButton()
+
+        view.addSubview(button)
 
         viewModel.inputs.fetch()
 
@@ -28,9 +46,9 @@ final class LibraryViewController: UIViewController {
             .outputs
             .books
             .skip(1)
-            .subscribe(onNext: { groupBooks in
+            .subscribe(onNext: { _ in
                 // Handle the updated books here
-                print("Updated books: \(groupBooks)")
+//                print("Updated books: \(groupBooks)")
             })
             .disposed(by: disposeBag)
     }
@@ -41,6 +59,6 @@ final class LibraryViewController: UIViewController {
             .inputs
             .sendCrashReport(
                 event: .memoryWarning,
-                source: self.description)
+                source: String(describing: self))
     }
 }

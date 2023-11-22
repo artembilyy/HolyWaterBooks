@@ -18,7 +18,7 @@ final class AppDependenciesAssembly {
         let firebaseRemoteConfigWorker: FirebaseRemoteConfigWorker
     }
 
-    static func assembleDependencies() -> DependenciesContainer {
+    func assembleDependencies() -> DependenciesContainer {
         .init(
             crashAnalyticReporter: CrashAnalytics(),
             firebaseRemoteConfigWorker: FirebaseRemoteConfigControl())

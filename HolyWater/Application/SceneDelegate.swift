@@ -23,7 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
 
-        homeFlow = HomeFlow(window: window)
+        homeFlow = HomeFlow(
+            window: window,
+            dependencies: AppDependenciesAssembly().assembleDependencies())
         homeFlow?.start()
 
         splashScreen(windowScene: windowScene)

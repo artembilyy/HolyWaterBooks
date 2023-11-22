@@ -6,16 +6,20 @@
 //
 
 import HolyWaterServices
+import RxCocoa
 import RxRelay
 import RxSwift
 
 protocol LibraryViewModelInputs {
     func fetch()
+    func selected()
     func sendCrashReport(event: CrashAnalytics.CrashEvent, source: String?)
 }
 
 protocol LibraryViewModelOutputs {
+    var topBannerBooks: BehaviorRelay<[Book]> { get }
     var books: BehaviorRelay<[String: [Book]]> { get }
+    var outOpenDetails: Driver<Book?> { get }
 }
 
 protocol LibraryViewModelInteractive {
@@ -35,7 +39,18 @@ final class LibraryViewModel: LibraryViewModelInterface {
 
     private var dependencies: Dependencies!
 
-    public var books: BehaviorRelay<GroupedBooks> = BehaviorRelay(value: [:])
+    private(set) var topBannerBooks: BehaviorRelay<[Book]> = BehaviorRelay(value: [])
+    private(set) var books: BehaviorRelay<GroupedBooks> = BehaviorRelay(value: [:])
+
+    private let subjectOpenDetails = PublishSubject<Book>()
+
+    var outOpenDetails: Driver<Book?> {
+        return subjectOpenDetails
+            .map { book in
+                return book
+            }
+            .asDriver(onErrorJustReturn: nil)
+    }
 
     var inputs: LibraryViewModelInputs {
         return self
@@ -44,8 +59,6 @@ final class LibraryViewModel: LibraryViewModelInterface {
     var outputs: LibraryViewModelOutputs {
         return self
     }
-
-    private let disposeBag = DisposeBag()
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
@@ -63,6 +76,11 @@ final class LibraryViewModel: LibraryViewModelInterface {
                     print(failure)
                 }
             }
+    }
+
+    func selected() {
+        guard let book = books.value["Fantasy"]?[0] else { return }
+        subjectOpenDetails.onNext(book)
     }
 
     func sendCrashReport(event: CrashAnalytics.CrashEvent, source: String?) {
