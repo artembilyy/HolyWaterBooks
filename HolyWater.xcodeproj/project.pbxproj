@@ -1,0 +1,1075 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDB786532B0CFCF300D1354D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */; };
+		EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7866C2B0D4C9000D1354D /* AppDependenciesAssembly.swift */; };
+		EDB786712B0D55F000D1354D /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786702B0D55F000D1354D /* LibraryViewModel.swift */; };
+		EDB786732B0D562B00D1354D /* LibraryViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786722B0D562B00D1354D /* LibraryViewModel+Dependencies.swift */; };
+		EDB786752B0D56A200D1354D /* LibraryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786742B0D56A200D1354D /* LibraryViewControllerFactory.swift */; };
+		EDB786782B0D592200D1354D /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786772B0D592200D1354D /* HomeFlow.swift */; };
+		EDB786832B0D6B2D00D1354D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786822B0D6B2D00D1354D /* RxSwift */; };
+		EDB786882B0D7D6000D1354D /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7952B0C074F00AEE26F /* UIView+Subviews.swift */; };
+		EDB786892B0D7D6300D1354D /* NSLayoutConstraints+Activated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7972B0C0A3900AEE26F /* NSLayoutConstraints+Activated.swift */; };
+		EDB7868A2B0D7D6600D1354D /* Bool+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7992B0C0A6200AEE26F /* Bool+State.swift */; };
+		EDB7868B2B0D7D6900D1354D /* Task+Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F79B2B0C0A7A00AEE26F /* Task+Sleep.swift */; };
+		EDB7868D2B0D7E0D00D1354D /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F79D2B0C17D700AEE26F /* ProgressBarView.swift */; };
+		EDB786972B0D7FD100D1354D /* HolyWaterServices.docc in Sources */ = {isa = PBXBuildFile; fileRef = EDB786962B0D7FD100D1354D /* HolyWaterServices.docc */; };
+		EDB786982B0D7FD100D1354D /* HolyWaterServices.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB786952B0D7FD100D1354D /* HolyWaterServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDB7869B2B0D7FD100D1354D /* HolyWaterServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB786932B0D7FD100D1354D /* HolyWaterServices.framework */; };
+		EDB7869C2B0D7FD100D1354D /* HolyWaterServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDB786932B0D7FD100D1354D /* HolyWaterServices.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EDB786A02B0D7FDD00D1354D /* FirebaseCrashAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786852B0D77C500D1354D /* FirebaseCrashAnalytics.swift */; };
+		EDB786A12B0D7FE600D1354D /* FirebaseRemoteConfigControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786672B0D41DD00D1354D /* FirebaseRemoteConfigControl.swift */; };
+		EDB786A22B0D7FEA00D1354D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786692B0D439900D1354D /* NetworkError.swift */; };
+		EDB786A52B0D807F00D1354D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786A42B0D807F00D1354D /* RxRelay */; };
+		EDB786A72B0D808500D1354D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786A62B0D808500D1354D /* RxCocoa */; };
+		EDB786B72B0D84E500D1354D /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786622B0D405200D1354D /* BookModel.swift */; };
+		EDB786BA2B0D87A400D1354D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786B92B0D87A400D1354D /* FirebaseAnalytics */; };
+		EDB786BC2B0D87A400D1354D /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786BB2B0D87A400D1354D /* FirebaseAnalyticsSwift */; };
+		EDB786BE2B0D87A400D1354D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786BD2B0D87A400D1354D /* FirebaseCrashlytics */; };
+		EDB786C02B0D87A400D1354D /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786BF2B0D87A400D1354D /* FirebaseRemoteConfig */; };
+		EDB786C22B0D87A400D1354D /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786C12B0D87A400D1354D /* FirebaseRemoteConfigSwift */; };
+		EDB786C42B0D87CB00D1354D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786C32B0D87CB00D1354D /* FirebaseAnalytics */; };
+		EDB786C62B0D87CB00D1354D /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786C52B0D87CB00D1354D /* FirebaseAnalyticsSwift */; };
+		EDB786C82B0D87CB00D1354D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786C72B0D87CB00D1354D /* FirebaseCrashlytics */; };
+		EDB786CA2B0D87CB00D1354D /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786C92B0D87CB00D1354D /* FirebaseRemoteConfig */; };
+		EDB786CC2B0D87CB00D1354D /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786CB2B0D87CB00D1354D /* FirebaseRemoteConfigSwift */; };
+		EDC4F7552B0BFA0800AEE26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7542B0BFA0800AEE26F /* AppDelegate.swift */; };
+		EDC4F7572B0BFA0800AEE26F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7562B0BFA0800AEE26F /* SceneDelegate.swift */; };
+		EDC4F7592B0BFA0800AEE26F /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7582B0BFA0800AEE26F /* LibraryViewController.swift */; };
+		EDC4F75E2B0BFA0A00AEE26F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC4F75D2B0BFA0A00AEE26F /* Assets.xcassets */; };
+		EDC4F7612B0BFA0A00AEE26F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC4F75F2B0BFA0A00AEE26F /* LaunchScreen.storyboard */; };
+		EDC4F76F2B0BFC7400AEE26F /* SplashAnimatior.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F76A2B0BFC7400AEE26F /* SplashAnimatior.swift */; };
+		EDC4F7702B0BFC7400AEE26F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F76B2B0BFC7400AEE26F /* SplashViewController.swift */; };
+		EDC4F7712B0BFC7400AEE26F /* SplashViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F76C2B0BFC7400AEE26F /* SplashViewController+Style.swift */; };
+		EDC4F7722B0BFC7400AEE26F /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F76D2B0BFC7400AEE26F /* SplashPresenter.swift */; };
+		EDC4F77C2B0BFFD400AEE26F /* HolyWaterUI.docc in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F77B2B0BFFD400AEE26F /* HolyWaterUI.docc */; };
+		EDC4F77D2B0BFFD400AEE26F /* HolyWaterUI.h in Headers */ = {isa = PBXBuildFile; fileRef = EDC4F77A2B0BFFD400AEE26F /* HolyWaterUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDC4F7802B0BFFD400AEE26F /* HolyWaterUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC4F7782B0BFFD400AEE26F /* HolyWaterUI.framework */; };
+		EDC4F7812B0BFFD400AEE26F /* HolyWaterUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDC4F7782B0BFFD400AEE26F /* HolyWaterUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EDC4F78A2B0C002E00AEE26F /* ColorConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7872B0C002E00AEE26F /* ColorConvertible.swift */; };
+		EDC4F78C2B0C002F00AEE26F /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7892B0C002E00AEE26F /* ThemeColor.swift */; };
+		EDC4F78F2B0C00D400AEE26F /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F78E2B0C00D400AEE26F /* UIColor+Hex.swift */; };
+		EDC4F7912B0C00E000AEE26F /* FontConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7902B0C00E000AEE26F /* FontConvertible.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDB786992B0D7FD100D1354D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDC4F7492B0BFA0800AEE26F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDB786922B0D7FD100D1354D;
+			remoteInfo = HolyWaterServices;
+		};
+		EDC4F77E2B0BFFD400AEE26F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDC4F7492B0BFA0800AEE26F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDC4F7772B0BFFD400AEE26F;
+			remoteInfo = HolyWaterUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EDC4F7852B0BFFD400AEE26F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EDB7869C2B0D7FD100D1354D /* HolyWaterServices.framework in Embed Frameworks */,
+				EDC4F7812B0BFFD400AEE26F /* HolyWaterUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EDB786622B0D405200D1354D /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		EDB786672B0D41DD00D1354D /* FirebaseRemoteConfigControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigControl.swift; sourceTree = "<group>"; };
+		EDB786692B0D439900D1354D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		EDB7866C2B0D4C9000D1354D /* AppDependenciesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependenciesAssembly.swift; sourceTree = "<group>"; };
+		EDB786702B0D55F000D1354D /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
+		EDB786722B0D562B00D1354D /* LibraryViewModel+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryViewModel+Dependencies.swift"; sourceTree = "<group>"; };
+		EDB786742B0D56A200D1354D /* LibraryViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewControllerFactory.swift; sourceTree = "<group>"; };
+		EDB786772B0D592200D1354D /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
+		EDB7867B2B0D69EF00D1354D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDB786852B0D77C500D1354D /* FirebaseCrashAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCrashAnalytics.swift; sourceTree = "<group>"; };
+		EDB786932B0D7FD100D1354D /* HolyWaterServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HolyWaterServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB786952B0D7FD100D1354D /* HolyWaterServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HolyWaterServices.h; sourceTree = "<group>"; };
+		EDB786962B0D7FD100D1354D /* HolyWaterServices.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = HolyWaterServices.docc; sourceTree = "<group>"; };
+		EDC4F7512B0BFA0800AEE26F /* HolyWater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolyWater.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDC4F7542B0BFA0800AEE26F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDC4F7562B0BFA0800AEE26F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EDC4F7582B0BFA0800AEE26F /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		EDC4F75D2B0BFA0A00AEE26F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDC4F7602B0BFA0A00AEE26F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDC4F76A2B0BFC7400AEE26F /* SplashAnimatior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashAnimatior.swift; sourceTree = "<group>"; };
+		EDC4F76B2B0BFC7400AEE26F /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		EDC4F76C2B0BFC7400AEE26F /* SplashViewController+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SplashViewController+Style.swift"; sourceTree = "<group>"; };
+		EDC4F76D2B0BFC7400AEE26F /* SplashPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		EDC4F7782B0BFFD400AEE26F /* HolyWaterUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HolyWaterUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDC4F77A2B0BFFD400AEE26F /* HolyWaterUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HolyWaterUI.h; sourceTree = "<group>"; };
+		EDC4F77B2B0BFFD400AEE26F /* HolyWaterUI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = HolyWaterUI.docc; sourceTree = "<group>"; };
+		EDC4F7872B0C002E00AEE26F /* ColorConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConvertible.swift; sourceTree = "<group>"; };
+		EDC4F7892B0C002E00AEE26F /* ThemeColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		EDC4F78E2B0C00D400AEE26F /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		EDC4F7902B0C00E000AEE26F /* FontConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontConvertible.swift; sourceTree = "<group>"; };
+		EDC4F7952B0C074F00AEE26F /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
+		EDC4F7972B0C0A3900AEE26F /* NSLayoutConstraints+Activated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraints+Activated.swift"; sourceTree = "<group>"; };
+		EDC4F7992B0C0A6200AEE26F /* Bool+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+State.swift"; sourceTree = "<group>"; };
+		EDC4F79B2B0C0A7A00AEE26F /* Task+Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Sleep.swift"; sourceTree = "<group>"; };
+		EDC4F79D2B0C17D700AEE26F /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDB786902B0D7FD100D1354D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB786C82B0D87CB00D1354D /* FirebaseCrashlytics in Frameworks */,
+				EDB786C62B0D87CB00D1354D /* FirebaseAnalyticsSwift in Frameworks */,
+				EDB786CC2B0D87CB00D1354D /* FirebaseRemoteConfigSwift in Frameworks */,
+				EDB786C42B0D87CB00D1354D /* FirebaseAnalytics in Frameworks */,
+				EDB786CA2B0D87CB00D1354D /* FirebaseRemoteConfig in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC4F74E2B0BFA0800AEE26F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB786C02B0D87A400D1354D /* FirebaseRemoteConfig in Frameworks */,
+				EDB786832B0D6B2D00D1354D /* RxSwift in Frameworks */,
+				EDC4F7802B0BFFD400AEE26F /* HolyWaterUI.framework in Frameworks */,
+				EDB786BA2B0D87A400D1354D /* FirebaseAnalytics in Frameworks */,
+				EDB786A72B0D808500D1354D /* RxCocoa in Frameworks */,
+				EDB786BC2B0D87A400D1354D /* FirebaseAnalyticsSwift in Frameworks */,
+				EDB786BE2B0D87A400D1354D /* FirebaseCrashlytics in Frameworks */,
+				EDB786C22B0D87A400D1354D /* FirebaseRemoteConfigSwift in Frameworks */,
+				EDB786A52B0D807F00D1354D /* RxRelay in Frameworks */,
+				EDB7869B2B0D7FD100D1354D /* HolyWaterServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC4F7752B0BFFD400AEE26F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDB7865F2B0D3D1D00D1354D /* MainLibraryScene */ = {
+			isa = PBXGroup;
+			children = (
+				EDB786742B0D56A200D1354D /* LibraryViewControllerFactory.swift */,
+				EDC4F7582B0BFA0800AEE26F /* LibraryViewController.swift */,
+				EDB786702B0D55F000D1354D /* LibraryViewModel.swift */,
+				EDB786722B0D562B00D1354D /* LibraryViewModel+Dependencies.swift */,
+			);
+			path = MainLibraryScene;
+			sourceTree = "<group>";
+		};
+		EDB786602B0D402100D1354D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EDB786872B0D77CE00D1354D /* CrashAnalyticsService */,
+				EDB786642B0D408700D1354D /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EDB786612B0D404000D1354D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDB786622B0D405200D1354D /* BookModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EDB786642B0D408700D1354D /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				EDB786612B0D404000D1354D /* Model */,
+				EDB786672B0D41DD00D1354D /* FirebaseRemoteConfigControl.swift */,
+				EDB786692B0D439900D1354D /* NetworkError.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		EDB786652B0D40A700D1354D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EDC4F7542B0BFA0800AEE26F /* AppDelegate.swift */,
+				EDC4F7562B0BFA0800AEE26F /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		EDB786662B0D40BB00D1354D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EDB7866B2B0D4C7000D1354D /* DependenciesAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				EDB7866C2B0D4C9000D1354D /* AppDependenciesAssembly.swift */,
+			);
+			path = DependenciesAssembly;
+			sourceTree = "<group>";
+		};
+		EDB786762B0D591200D1354D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EDB786772B0D592200D1354D /* HomeFlow.swift */,
+				EDB7865F2B0D3D1D00D1354D /* MainLibraryScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EDB786872B0D77CE00D1354D /* CrashAnalyticsService */ = {
+			isa = PBXGroup;
+			children = (
+				EDB786852B0D77C500D1354D /* FirebaseCrashAnalytics.swift */,
+			);
+			path = CrashAnalyticsService;
+			sourceTree = "<group>";
+		};
+		EDB7868C2B0D7DD400D1354D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDC4F79D2B0C17D700AEE26F /* ProgressBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EDB786942B0D7FD100D1354D /* HolyWaterServices */ = {
+			isa = PBXGroup;
+			children = (
+				EDB786602B0D402100D1354D /* Services */,
+				EDB786952B0D7FD100D1354D /* HolyWaterServices.h */,
+				EDB786962B0D7FD100D1354D /* HolyWaterServices.docc */,
+			);
+			path = HolyWaterServices;
+			sourceTree = "<group>";
+		};
+		EDB786A32B0D807F00D1354D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDC4F7482B0BFA0800AEE26F = {
+			isa = PBXGroup;
+			children = (
+				EDC4F7532B0BFA0800AEE26F /* HolyWater */,
+				EDC4F7792B0BFFD400AEE26F /* HolyWaterUI */,
+				EDB786942B0D7FD100D1354D /* HolyWaterServices */,
+				EDC4F7522B0BFA0800AEE26F /* Products */,
+				EDB786A32B0D807F00D1354D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EDC4F7522B0BFA0800AEE26F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDC4F7512B0BFA0800AEE26F /* HolyWater.app */,
+				EDC4F7782B0BFFD400AEE26F /* HolyWaterUI.framework */,
+				EDB786932B0D7FD100D1354D /* HolyWaterServices.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDC4F7532B0BFA0800AEE26F /* HolyWater */ = {
+			isa = PBXGroup;
+			children = (
+				EDB786652B0D40A700D1354D /* Application */,
+				EDB7866B2B0D4C7000D1354D /* DependenciesAssembly */,
+				EDB786762B0D591200D1354D /* Scenes */,
+				EDC4F7682B0BFC7400AEE26F /* SplashView */,
+				EDB786662B0D40BB00D1354D /* Resources */,
+				EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */,
+				EDC4F75D2B0BFA0A00AEE26F /* Assets.xcassets */,
+				EDB7867B2B0D69EF00D1354D /* Info.plist */,
+			);
+			path = HolyWater;
+			sourceTree = "<group>";
+		};
+		EDC4F7682B0BFC7400AEE26F /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				EDC4F75F2B0BFA0A00AEE26F /* LaunchScreen.storyboard */,
+				EDC4F76B2B0BFC7400AEE26F /* SplashViewController.swift */,
+				EDC4F76C2B0BFC7400AEE26F /* SplashViewController+Style.swift */,
+				EDC4F76A2B0BFC7400AEE26F /* SplashAnimatior.swift */,
+				EDC4F76D2B0BFC7400AEE26F /* SplashPresenter.swift */,
+			);
+			path = SplashView;
+			sourceTree = "<group>";
+		};
+		EDC4F7792B0BFFD400AEE26F /* HolyWaterUI */ = {
+			isa = PBXGroup;
+			children = (
+				EDB7868C2B0D7DD400D1354D /* Views */,
+				EDC4F7922B0C038800AEE26F /* Extension */,
+				EDC4F78D2B0C00B100AEE26F /* HolyWaterFonts */,
+				EDC4F7862B0C002E00AEE26F /* ThemeColor */,
+				EDC4F77A2B0BFFD400AEE26F /* HolyWaterUI.h */,
+				EDC4F77B2B0BFFD400AEE26F /* HolyWaterUI.docc */,
+			);
+			path = HolyWaterUI;
+			sourceTree = "<group>";
+		};
+		EDC4F7862B0C002E00AEE26F /* ThemeColor */ = {
+			isa = PBXGroup;
+			children = (
+				EDC4F7872B0C002E00AEE26F /* ColorConvertible.swift */,
+				EDC4F78E2B0C00D400AEE26F /* UIColor+Hex.swift */,
+				EDC4F7892B0C002E00AEE26F /* ThemeColor.swift */,
+			);
+			path = ThemeColor;
+			sourceTree = "<group>";
+		};
+		EDC4F78D2B0C00B100AEE26F /* HolyWaterFonts */ = {
+			isa = PBXGroup;
+			children = (
+				EDC4F7902B0C00E000AEE26F /* FontConvertible.swift */,
+			);
+			path = HolyWaterFonts;
+			sourceTree = "<group>";
+		};
+		EDC4F7922B0C038800AEE26F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EDC4F7952B0C074F00AEE26F /* UIView+Subviews.swift */,
+				EDC4F7972B0C0A3900AEE26F /* NSLayoutConstraints+Activated.swift */,
+				EDC4F7992B0C0A6200AEE26F /* Bool+State.swift */,
+				EDC4F79B2B0C0A7A00AEE26F /* Task+Sleep.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EDB7868E2B0D7FD100D1354D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB786982B0D7FD100D1354D /* HolyWaterServices.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC4F7732B0BFFD400AEE26F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC4F77D2B0BFFD400AEE26F /* HolyWaterUI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EDB786922B0D7FD100D1354D /* HolyWaterServices */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB7869D2B0D7FD200D1354D /* Build configuration list for PBXNativeTarget "HolyWaterServices" */;
+			buildPhases = (
+				EDB7868E2B0D7FD100D1354D /* Headers */,
+				EDB7868F2B0D7FD100D1354D /* Sources */,
+				EDB786902B0D7FD100D1354D /* Frameworks */,
+				EDB786912B0D7FD100D1354D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HolyWaterServices;
+			packageProductDependencies = (
+				EDB786C32B0D87CB00D1354D /* FirebaseAnalytics */,
+				EDB786C52B0D87CB00D1354D /* FirebaseAnalyticsSwift */,
+				EDB786C72B0D87CB00D1354D /* FirebaseCrashlytics */,
+				EDB786C92B0D87CB00D1354D /* FirebaseRemoteConfig */,
+				EDB786CB2B0D87CB00D1354D /* FirebaseRemoteConfigSwift */,
+			);
+			productName = HolyWaterServices;
+			productReference = EDB786932B0D7FD100D1354D /* HolyWaterServices.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EDC4F7502B0BFA0800AEE26F /* HolyWater */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDC4F7652B0BFA0A00AEE26F /* Build configuration list for PBXNativeTarget "HolyWater" */;
+			buildPhases = (
+				EDC4F74D2B0BFA0800AEE26F /* Sources */,
+				EDC4F74E2B0BFA0800AEE26F /* Frameworks */,
+				EDC4F74F2B0BFA0800AEE26F /* Resources */,
+				EDC4F7852B0BFFD400AEE26F /* Embed Frameworks */,
+				EDB786842B0D71BF00D1354D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDC4F77F2B0BFFD400AEE26F /* PBXTargetDependency */,
+				EDB7869A2B0D7FD100D1354D /* PBXTargetDependency */,
+			);
+			name = HolyWater;
+			packageProductDependencies = (
+				EDB786822B0D6B2D00D1354D /* RxSwift */,
+				EDB786A42B0D807F00D1354D /* RxRelay */,
+				EDB786A62B0D808500D1354D /* RxCocoa */,
+				EDB786B92B0D87A400D1354D /* FirebaseAnalytics */,
+				EDB786BB2B0D87A400D1354D /* FirebaseAnalyticsSwift */,
+				EDB786BD2B0D87A400D1354D /* FirebaseCrashlytics */,
+				EDB786BF2B0D87A400D1354D /* FirebaseRemoteConfig */,
+				EDB786C12B0D87A400D1354D /* FirebaseRemoteConfigSwift */,
+			);
+			productName = HolyWater;
+			productReference = EDC4F7512B0BFA0800AEE26F /* HolyWater.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDC4F7772B0BFFD400AEE26F /* HolyWaterUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDC4F7822B0BFFD400AEE26F /* Build configuration list for PBXNativeTarget "HolyWaterUI" */;
+			buildPhases = (
+				EDC4F7732B0BFFD400AEE26F /* Headers */,
+				EDC4F7742B0BFFD400AEE26F /* Sources */,
+				EDC4F7752B0BFFD400AEE26F /* Frameworks */,
+				EDC4F7762B0BFFD400AEE26F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HolyWaterUI;
+			productName = HolyWaterUI;
+			productReference = EDC4F7782B0BFFD400AEE26F /* HolyWaterUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDC4F7492B0BFA0800AEE26F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					EDB786922B0D7FD100D1354D = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					EDC4F7502B0BFA0800AEE26F = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					EDC4F7772B0BFFD400AEE26F = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = EDC4F74C2B0BFA0800AEE26F /* Build configuration list for PBXProject "HolyWater" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDC4F7482B0BFA0800AEE26F;
+			packageReferences = (
+				EDB7867D2B0D6B2D00D1354D /* XCRemoteSwiftPackageReference "RxSwift" */,
+				EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = EDC4F7522B0BFA0800AEE26F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDC4F7502B0BFA0800AEE26F /* HolyWater */,
+				EDC4F7772B0BFFD400AEE26F /* HolyWaterUI */,
+				EDB786922B0D7FD100D1354D /* HolyWaterServices */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDB786912B0D7FD100D1354D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC4F74F2B0BFA0800AEE26F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC4F7612B0BFA0A00AEE26F /* LaunchScreen.storyboard in Resources */,
+				EDC4F75E2B0BFA0A00AEE26F /* Assets.xcassets in Resources */,
+				EDB786532B0CFCF300D1354D /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC4F7762B0BFFD400AEE26F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EDB786842B0D71BF00D1354D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDB7868F2B0D7FD100D1354D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB786B72B0D84E500D1354D /* BookModel.swift in Sources */,
+				EDB786972B0D7FD100D1354D /* HolyWaterServices.docc in Sources */,
+				EDB786A22B0D7FEA00D1354D /* NetworkError.swift in Sources */,
+				EDB786A12B0D7FE600D1354D /* FirebaseRemoteConfigControl.swift in Sources */,
+				EDB786A02B0D7FDD00D1354D /* FirebaseCrashAnalytics.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC4F74D2B0BFA0800AEE26F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC4F7592B0BFA0800AEE26F /* LibraryViewController.swift in Sources */,
+				EDC4F7712B0BFC7400AEE26F /* SplashViewController+Style.swift in Sources */,
+				EDC4F7552B0BFA0800AEE26F /* AppDelegate.swift in Sources */,
+				EDC4F7722B0BFC7400AEE26F /* SplashPresenter.swift in Sources */,
+				EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */,
+				EDC4F76F2B0BFC7400AEE26F /* SplashAnimatior.swift in Sources */,
+				EDC4F7702B0BFC7400AEE26F /* SplashViewController.swift in Sources */,
+				EDC4F7572B0BFA0800AEE26F /* SceneDelegate.swift in Sources */,
+				EDB786732B0D562B00D1354D /* LibraryViewModel+Dependencies.swift in Sources */,
+				EDB786782B0D592200D1354D /* HomeFlow.swift in Sources */,
+				EDB786752B0D56A200D1354D /* LibraryViewControllerFactory.swift in Sources */,
+				EDB786712B0D55F000D1354D /* LibraryViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC4F7742B0BFFD400AEE26F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC4F78C2B0C002F00AEE26F /* ThemeColor.swift in Sources */,
+				EDC4F78F2B0C00D400AEE26F /* UIColor+Hex.swift in Sources */,
+				EDB786882B0D7D6000D1354D /* UIView+Subviews.swift in Sources */,
+				EDB7868A2B0D7D6600D1354D /* Bool+State.swift in Sources */,
+				EDB786892B0D7D6300D1354D /* NSLayoutConstraints+Activated.swift in Sources */,
+				EDB7868B2B0D7D6900D1354D /* Task+Sleep.swift in Sources */,
+				EDC4F77C2B0BFFD400AEE26F /* HolyWaterUI.docc in Sources */,
+				EDC4F7912B0C00E000AEE26F /* FontConvertible.swift in Sources */,
+				EDC4F78A2B0C002E00AEE26F /* ColorConvertible.swift in Sources */,
+				EDB7868D2B0D7E0D00D1354D /* ProgressBarView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDB7869A2B0D7FD100D1354D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDB786922B0D7FD100D1354D /* HolyWaterServices */;
+			targetProxy = EDB786992B0D7FD100D1354D /* PBXContainerItemProxy */;
+		};
+		EDC4F77F2B0BFFD400AEE26F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDC4F7772B0BFFD400AEE26F /* HolyWaterUI */;
+			targetProxy = EDC4F77E2B0BFFD400AEE26F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDC4F75F2B0BFA0A00AEE26F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDC4F7602B0BFA0A00AEE26F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDB7869E2B0D7FD200D1354D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HDPNMRTNJ6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ArtemBilyii.HolyWaterServices;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EDB7869F2B0D7FD200D1354D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HDPNMRTNJ6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ArtemBilyii.HolyWaterServices;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EDC4F7632B0BFA0A00AEE26F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDC4F7642B0BFA0A00AEE26F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDC4F7662B0BFA0A00AEE26F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = HDPNMRTNJ6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HolyWater/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.books.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDC4F7672B0BFA0A00AEE26F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HDPNMRTNJ6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HolyWater/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.books.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EDC4F7832B0BFFD400AEE26F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HDPNMRTNJ6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ArtemBilyii.HolyWaterUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EDC4F7842B0BFFD400AEE26F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HDPNMRTNJ6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ArtemBilyii.HolyWaterUI;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDB7869D2B0D7FD200D1354D /* Build configuration list for PBXNativeTarget "HolyWaterServices" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB7869E2B0D7FD200D1354D /* Debug */,
+				EDB7869F2B0D7FD200D1354D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDC4F74C2B0BFA0800AEE26F /* Build configuration list for PBXProject "HolyWater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDC4F7632B0BFA0A00AEE26F /* Debug */,
+				EDC4F7642B0BFA0A00AEE26F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDC4F7652B0BFA0A00AEE26F /* Build configuration list for PBXNativeTarget "HolyWater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDC4F7662B0BFA0A00AEE26F /* Debug */,
+				EDC4F7672B0BFA0A00AEE26F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDC4F7822B0BFFD400AEE26F /* Build configuration list for PBXNativeTarget "HolyWaterUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDC4F7832B0BFFD400AEE26F /* Debug */,
+				EDC4F7842B0BFFD400AEE26F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDB7867D2B0D6B2D00D1354D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDB786822B0D6B2D00D1354D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB7867D2B0D6B2D00D1354D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		EDB786A42B0D807F00D1354D /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB7867D2B0D6B2D00D1354D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		EDB786A62B0D808500D1354D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB7867D2B0D6B2D00D1354D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		EDB786B92B0D87A400D1354D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		EDB786BB2B0D87A400D1354D /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		EDB786BD2B0D87A400D1354D /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		EDB786BF2B0D87A400D1354D /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		EDB786C12B0D87A400D1354D /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+		EDB786C32B0D87CB00D1354D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		EDB786C52B0D87CB00D1354D /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		EDB786C72B0D87CB00D1354D /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		EDB786C92B0D87CB00D1354D /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		EDB786CB2B0D87CB00D1354D /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = EDC4F7492B0BFA0800AEE26F /* Project object */;
+}

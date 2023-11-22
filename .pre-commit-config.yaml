@@ -1,0 +1,35 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: check-json
+        name: 1. JSON Formatting check
+        description: Ensure only valid json is commited.
+    -   id: check-merge-conflict
+        name: 2. Merge conflicts check
+        description: Ensure that commit do not contains any conflicts.
+    -   id: detect-private-key
+        name: 3. Private keys detection check
+        description: Ensure there is no private keys in commit.
+    -   id: end-of-file-fixer
+        name: 4. End of file check
+        description: Ensures that a file is either empty, or ends with one newline.
+    -   id: no-commit-to-branch
+        name: 5. No master/develop commit check
+        description: Ensures commit is not on master/master_tvos or develop, we want to use feature branches.
+        args: [--branch, master, --branch, master_tvos, --branch, develop]
+    -   id: trailing-whitespace
+        name: 6. Trailing whitespaces trimm check
+        description: Ensure that all trailing whitespaces are trimmed.
+-   repo: local
+    hooks:
+    -   id: swiftformat
+        name: Running Swiftformat
+        language: system
+        entry: swiftformat
+        files: .swift$
+    -   id: swiftlint
+        name: Running Swiftlint
+        language: system
+        entry: swiftlint lint --quiet
+        files: .swift$
