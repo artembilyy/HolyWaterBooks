@@ -24,14 +24,6 @@ Install Homebrew:
 ### SwiftFormat
 
 SwiftFormat install
-```
-brew install swiftlint
-```
-or [here](https://github.com/nicklockwood/SwiftFormat)
-
-### Swiftlint
-
-Swiftlint install 
 
 ```
 brew install swiftformat
@@ -39,6 +31,16 @@ brew install swiftformat
 
 ```
 brew upgrade swiftformat
+```
+
+or [here](https://github.com/nicklockwood/SwiftFormat)
+
+### Swiftlint
+
+Swiftlint install 
+
+```
+brew install swiftlint
 ```
 
 or [here](https://github.com/realm/SwiftLint)
