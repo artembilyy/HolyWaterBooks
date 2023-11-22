@@ -15,8 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private var homeFlow: HomeFlow?
     private var splashPresenter: SplashPresenterDescription? = SplashPresenter()
 
+    // swiftlint:disable line_length
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
+        // swiftlint:enable line_length
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: windowScene)

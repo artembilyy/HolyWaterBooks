@@ -36,13 +36,16 @@ public final class FirebaseRemoteConfigControl: FirebaseRemoteConfigWorker {
 
     public func fetchData(completion: @escaping (Result<Books, Error>) -> Void) {
         remoteConfig.fetch { [weak self] status, error in
+            guard let self else { return }
             if status == .success {
                 do {
                     if let error {
                         throw NetworkError.activatedError(description: error.localizedDescription)
                     }
 
-                    guard let jsonValue = self?.remoteConfig.configValue(forKey: Key.remoteConfigKey.value).jsonValue else {
+                    guard let jsonValue = self.remoteConfig
+                        .configValue(
+                            forKey: Key.remoteConfigKey.value).jsonValue else {
                         throw NetworkError.jsonNil
                     }
 

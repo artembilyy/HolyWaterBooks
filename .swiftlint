@@ -1,9 +1,5 @@
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - Matched-iOS/FirebaseTests
-  - Matched-iOS/MatchedUITests
-  - Matched-iOS/Firebase
-  - Matched-iOS/NetworkingTests
-  - Matched-iOS/.git
+  - HolyWaterBooks/.git
 disabled_rules: # rule identifiers to exclude from running
   - anyobject_protocol
   - array_init
