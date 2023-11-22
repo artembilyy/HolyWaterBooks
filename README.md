@@ -18,7 +18,7 @@ First you need to install the latest Xcode version, you can find it [here](https
 Install Homebrew:
 
 ```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ### SwiftFormat
