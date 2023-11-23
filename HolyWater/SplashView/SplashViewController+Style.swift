@@ -11,19 +11,19 @@ import UIKit
 extension SplashViewController {
 
     struct Style {
-        let backgroundImage: UIImage
-        let heartsImage: UIImage
-        let titleImage: UIImage
-        let subtitleImage: UIImage
+        let backgroundImage: UIImage?
+        let heartsImage: UIImage?
+        let titleImage: UIImage?
+        let subtitleImage: UIImage?
         let titleImageViewTopPadding: CGFloat
         let subtitleImageViewTopPadding: CGFloat
 
         static func defaultStyle() -> Self {
             .init(
-                backgroundImage: .init(named: "back") ?? .init(),
-                heartsImage: .init(named: "hearts") ?? .init(),
-                titleImage: .init(named: "title") ?? .init(),
-                subtitleImage: .init(named: "subtitle") ?? .init(),
+                backgroundImage: .init(named: "back"),
+                heartsImage: .init(named: "hearts"),
+                titleImage: .init(named: "title"),
+                subtitleImage: .init(named: "subtitle"),
                 titleImageViewTopPadding: 221,
                 subtitleImageViewTopPadding: 12)
         }

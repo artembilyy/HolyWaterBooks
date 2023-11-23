@@ -17,9 +17,12 @@ protocol LibraryViewModelInputs {
 }
 
 protocol LibraryViewModelOutputs {
-    var topBannerBooks: BehaviorRelay<[Book]> { get }
-    var books: BehaviorRelay<[String: [Book]]> { get }
-    var outOpenDetails: Driver<Book?> { get }
+    var topBannerBooks: [BookResponse.TopBannerSlideBook] { get }
+    var books: [String: [BookResponse.Book]] { get }
+    var youWillLikeSection: [Int] { get }
+
+    var outOpenDetails: Driver<BookResponse.Book?> { get }
+    var reloadData: Driver<Void> { get }
 }
 
 protocol LibraryViewModelInteractive {
@@ -35,21 +38,28 @@ typealias LibraryViewModelInterface =
 final class LibraryViewModel: LibraryViewModelInterface {
 
     typealias BookGenre = String
-    typealias GroupedBooks = [BookGenre: [Book]]
+    typealias GroupedBooks = [BookGenre: [BookResponse.Book]]
 
     private var dependencies: Dependencies!
 
-    private(set) var topBannerBooks: BehaviorRelay<[Book]> = BehaviorRelay(value: [])
-    private(set) var books: BehaviorRelay<GroupedBooks> = BehaviorRelay(value: [:])
+    private(set) var topBannerBooks: [BookResponse.TopBannerSlideBook] = []
+    private(set) var books: GroupedBooks = [:]
+    private(set) var youWillLikeSection: [Int] = []
 
-    private let subjectOpenDetails = PublishSubject<Book>()
+    private let subjectOpenDetails = PublishSubject<BookResponse.Book>()
+    private let dataFetched = PublishSubject<Void>()
 
-    var outOpenDetails: Driver<Book?> {
-        return subjectOpenDetails
+    var outOpenDetails: Driver<BookResponse.Book?> {
+        subjectOpenDetails
             .map { book in
                 return book
             }
             .asDriver(onErrorJustReturn: nil)
+    }
+
+    var reloadData: Driver<Void> {
+        dataFetched
+            .asDriver(onErrorJustReturn: ())
     }
 
     var inputs: LibraryViewModelInputs {
@@ -71,7 +81,20 @@ final class LibraryViewModel: LibraryViewModelInterface {
                 guard let self else { return }
                 switch result {
                 case .success(let result):
-                    self.books.accept(Dictionary(grouping: result.books) { $0.genre })
+
+                    if let topBannerSlides = result.topBannerSlides {
+                        self.topBannerBooks = topBannerSlides
+                    }
+
+                    if let books = result.books {
+                        self.books = Dictionary(grouping: books) { $0.genre ?? "" }
+                    }
+
+                    if let youWillLikeSection = result.youWillLikeSection {
+                        self.youWillLikeSection = youWillLikeSection
+                    }
+
+                    dataFetched.onNext(())
                 case .failure(let failure):
                     print(failure)
                 }
@@ -79,7 +102,7 @@ final class LibraryViewModel: LibraryViewModelInterface {
     }
 
     func selected() {
-        guard let book = books.value["Fantasy"]?[0] else { return }
+        guard let book = books["Fantasy"]?[0] else { return }
         subjectOpenDetails.onNext(book)
     }
 

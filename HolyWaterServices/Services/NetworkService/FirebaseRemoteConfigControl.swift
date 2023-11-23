@@ -8,7 +8,7 @@
 import FirebaseRemoteConfig
 
 public protocol FirebaseRemoteConfigWorker {
-    func fetchData(completion: @escaping (Result<Books, Error>) -> Void)
+    func fetchData(completion: @escaping (Result<BookResponse, Error>) -> Void)
 }
 
 public protocol FirebaseRemoteConfigWorkerContainer {
@@ -17,7 +17,6 @@ public protocol FirebaseRemoteConfigWorkerContainer {
 
 private enum Key: String {
     case remoteConfigKey = "json_data"
-    case topBannerSlides = "top_banner_slides"
 
     var value: String {
         rawValue
@@ -35,7 +34,7 @@ public final class FirebaseRemoteConfigControl: FirebaseRemoteConfigWorker {
 
     public init() {}
 
-    public func fetchData(completion: @escaping (Result<Books, Error>) -> Void) {
+    public func fetchData(completion: @escaping (Result<BookResponse, Error>) -> Void) {
         remoteConfig.fetch { [weak self] status, error in
             guard let self else { return }
             if status == .success {
@@ -59,7 +58,7 @@ public final class FirebaseRemoteConfigControl: FirebaseRemoteConfigWorker {
                     }
 
                     let data = try JSONSerialization.data(withJSONObject: dictionary)
-                    let decodedData = try JSONDecoder().decode(Books.self, from: data)
+                    let decodedData = try JSONDecoder().decode(BookResponse.self, from: data)
 
                     completion(.success(decodedData))
                 } catch {

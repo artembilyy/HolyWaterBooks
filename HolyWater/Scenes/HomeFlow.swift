@@ -26,24 +26,23 @@ final class HomeFlow {
     }
 
     private func startDefaultHomeFlow() {
-
-        let viewModel: LibraryViewModelInteractive = LibraryViewModel(dependencies: dependencies)
-
-        let libraryViewController = MainLibraryFactory.instantiate(viewModel: viewModel)
+        let viewModel: LibraryViewModelInteractive = LibraryViewModel(
+            dependencies: dependencies)
+        let libraryViewController = MainLibraryFactory.instantiate(
+            viewModel: viewModel)
 
         viewModel
             .outputs
             .outOpenDetails
             .drive(onNext: { _ in
-                let vc = UIViewController()
-                vc.view.backgroundColor = .blue
-                libraryViewController.navigationController?.pushViewController(vc, animated: true)
+                let viewController = DetailsScreenFactory.instantiate(viewModel: DetailsViewModel())
+                libraryViewController.navigationController?.pushViewController(viewController, animated: true)
             })
             .disposed(by: disposeBag)
 
         let navigationController = UINavigationController(rootViewController: libraryViewController)
 
-        self.window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
 }

@@ -56,6 +56,42 @@
 		EDC4F78C2B0C002F00AEE26F /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7892B0C002E00AEE26F /* ThemeColor.swift */; };
 		EDC4F78F2B0C00D400AEE26F /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F78E2B0C00D400AEE26F /* UIColor+Hex.swift */; };
 		EDC4F7912B0C00E000AEE26F /* FontConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7902B0C00E000AEE26F /* FontConvertible.swift */; };
+		EDF95C8A2B0E4F5900C652E2 /* LibraryVierwController+CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95C892B0E4F5900C652E2 /* LibraryVierwController+CompositionalLayout.swift */; };
+		EDF95C8C2B0E553300C652E2 /* LibraryViewController+DiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95C8B2B0E553300C652E2 /* LibraryViewController+DiffableDataSource.swift */; };
+		EDF95C972B0E564700C652E2 /* BottomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95C962B0E564700C652E2 /* BottomCollectionViewCell.swift */; };
+		EDF95CA02B0E63A400C652E2 /* TopBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95C9F2B0E63A400C652E2 /* TopBannerCell.swift */; };
+		EDF95CA62B0E733700C652E2 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CA12B0E64EB00C652E2 /* ImageCacheManager.swift */; };
+		EDF95CA72B0E733A00C652E2 /* ImageLoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CA32B0E651000C652E2 /* ImageLoadingManager.swift */; };
+		EDF95CA92B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CA82B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift */; };
+		EDF95CAC2B0EA73F00C652E2 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CAB2B0EA73F00C652E2 /* DetailsViewController.swift */; };
+		EDF95CAE2B0EA74900C652E2 /* DetailsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CAD2B0EA74900C652E2 /* DetailsViewControllerFactory.swift */; };
+		EDF95CB02B0EA75500C652E2 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CAF2B0EA75500C652E2 /* DetailsViewModel.swift */; };
+		EDF95CB32B0EA87300C652E2 /* SnapLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CB22B0EA87300C652E2 /* SnapLayout.swift */; };
+		EDF95CB52B0EAA9F00C652E2 /* SnapLayout+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CB42B0EAA9F00C652E2 /* SnapLayout+Style.swift */; };
+		EDF95CB72B0EABFF00C652E2 /* SnapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CB62B0EABFF00C652E2 /* SnapCollectionViewCell.swift */; };
+		EDF95CBB2B0EADF200C652E2 /* SnapCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CBA2B0EADF200C652E2 /* SnapCollectionView.swift */; };
+		EDF95CBC2B0EADF700C652E2 /* IdentifiableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CB82B0EAD8A00C652E2 /* IdentifiableCell.swift */; };
+		EDF95CBE2B0EB01500C652E2 /* SnapCollectionView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CBD2B0EB01500C652E2 /* SnapCollectionView+Style.swift */; };
+		EDF95CC02B0EB3D500C652E2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CBF2B0EB3D500C652E2 /* HeaderView.swift */; };
+		EDF95CC22B0EB4B400C652E2 /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CC12B0EB4B400C652E2 /* HeaderViewModel.swift */; };
+		EDF95CC42B0EB4F600C652E2 /* HeaderViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CC32B0EB4F600C652E2 /* HeaderViewModelBuilder.swift */; };
+		EDF95CC82B0EB65C00C652E2 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CC72B0EB65C00C652E2 /* PrimaryButton.swift */; };
+		EDF95CCB2B0EB79400C652E2 /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CCA2B0EB79400C652E2 /* HeaderSectionView.swift */; };
+		EDF95CCD2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CCC2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift */; };
+		EDF95CCF2B0EB7F100C652E2 /* HeaderSectionSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CCE2B0EB7F100C652E2 /* HeaderSectionSubview.swift */; };
+		EDF95CD12B0EBA1100C652E2 /* HeaderSectionViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CD02B0EBA1100C652E2 /* HeaderSectionViewModelBuilder.swift */; };
+		EDF95CD32B0EBA3500C652E2 /* HeaderSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CD22B0EBA3500C652E2 /* HeaderSectionViewModel.swift */; };
+		EDF95CD62B0EBAF000C652E2 /* SummarySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CD52B0EBAF000C652E2 /* SummarySectionView.swift */; };
+		EDF95CD82B0EBDAF00C652E2 /* SummarySectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CD72B0EBDAF00C652E2 /* SummarySectionViewModel.swift */; };
+		EDF95CDA2B0EBDC900C652E2 /* SummarySectionViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CD92B0EBDC900C652E2 /* SummarySectionViewModelBuilder.swift */; };
+		EDF95CDD2B0EBF5C00C652E2 /* YouWillAlsoLikeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CDC2B0EBF5C00C652E2 /* YouWillAlsoLikeSectionView.swift */; };
+		EDF95CDF2B0EBF8900C652E2 /* YouWillAlsoLikeSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CDE2B0EBF8900C652E2 /* YouWillAlsoLikeSectionViewModel.swift */; };
+		EDF95CE12B0EBFDE00C652E2 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CE02B0EBFDE00C652E2 /* BookCell.swift */; };
+		EDF95CE32B0EC0F700C652E2 /* YouwWillAlsoLikeSectionViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CE22B0EC0F700C652E2 /* YouwWillAlsoLikeSectionViewModelBuilder.swift */; };
+		EDF95CE62B0EC16800C652E2 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CE52B0EC16800C652E2 /* SeparatorView.swift */; };
+		EDF95CE82B0EC1B900C652E2 /* MainStackViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CE72B0EC1B900C652E2 /* MainStackViewModelBuilder.swift */; };
+		EDF95CEA2B0EC1E500C652E2 /* MainStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CE92B0EC1E500C652E2 /* MainStackViewModel.swift */; };
+		EDF95CEC2B0EC23400C652E2 /* MainStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CEB2B0EC23400C652E2 /* MainStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +163,42 @@
 		EDC4F7992B0C0A6200AEE26F /* Bool+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+State.swift"; sourceTree = "<group>"; };
 		EDC4F79B2B0C0A7A00AEE26F /* Task+Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Sleep.swift"; sourceTree = "<group>"; };
 		EDC4F79D2B0C17D700AEE26F /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		EDF95C892B0E4F5900C652E2 /* LibraryVierwController+CompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryVierwController+CompositionalLayout.swift"; sourceTree = "<group>"; };
+		EDF95C8B2B0E553300C652E2 /* LibraryViewController+DiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryViewController+DiffableDataSource.swift"; sourceTree = "<group>"; };
+		EDF95C962B0E564700C652E2 /* BottomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomCollectionViewCell.swift; sourceTree = "<group>"; };
+		EDF95C9F2B0E63A400C652E2 /* TopBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCell.swift; sourceTree = "<group>"; };
+		EDF95CA12B0E64EB00C652E2 /* ImageCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		EDF95CA32B0E651000C652E2 /* ImageLoadingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoadingManager.swift; sourceTree = "<group>"; };
+		EDF95CA82B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+StatusBarHeight.swift"; sourceTree = "<group>"; };
+		EDF95CAB2B0EA73F00C652E2 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		EDF95CAD2B0EA74900C652E2 /* DetailsViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerFactory.swift; sourceTree = "<group>"; };
+		EDF95CAF2B0EA75500C652E2 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		EDF95CB22B0EA87300C652E2 /* SnapLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapLayout.swift; sourceTree = "<group>"; };
+		EDF95CB42B0EAA9F00C652E2 /* SnapLayout+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SnapLayout+Style.swift"; sourceTree = "<group>"; };
+		EDF95CB62B0EABFF00C652E2 /* SnapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionViewCell.swift; sourceTree = "<group>"; };
+		EDF95CB82B0EAD8A00C652E2 /* IdentifiableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableCell.swift; sourceTree = "<group>"; };
+		EDF95CBA2B0EADF200C652E2 /* SnapCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionView.swift; sourceTree = "<group>"; };
+		EDF95CBD2B0EB01500C652E2 /* SnapCollectionView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SnapCollectionView+Style.swift"; sourceTree = "<group>"; };
+		EDF95CBF2B0EB3D500C652E2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		EDF95CC12B0EB4B400C652E2 /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
+		EDF95CC32B0EB4F600C652E2 /* HeaderViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModelBuilder.swift; sourceTree = "<group>"; };
+		EDF95CC72B0EB65C00C652E2 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		EDF95CCA2B0EB79400C652E2 /* HeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
+		EDF95CCC2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeaderSectionSubview+Style.swift"; sourceTree = "<group>"; };
+		EDF95CCE2B0EB7F100C652E2 /* HeaderSectionSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionSubview.swift; sourceTree = "<group>"; };
+		EDF95CD02B0EBA1100C652E2 /* HeaderSectionViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionViewModelBuilder.swift; sourceTree = "<group>"; };
+		EDF95CD22B0EBA3500C652E2 /* HeaderSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionViewModel.swift; sourceTree = "<group>"; };
+		EDF95CD52B0EBAF000C652E2 /* SummarySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySectionView.swift; sourceTree = "<group>"; };
+		EDF95CD72B0EBDAF00C652E2 /* SummarySectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySectionViewModel.swift; sourceTree = "<group>"; };
+		EDF95CD92B0EBDC900C652E2 /* SummarySectionViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySectionViewModelBuilder.swift; sourceTree = "<group>"; };
+		EDF95CDC2B0EBF5C00C652E2 /* YouWillAlsoLikeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWillAlsoLikeSectionView.swift; sourceTree = "<group>"; };
+		EDF95CDE2B0EBF8900C652E2 /* YouWillAlsoLikeSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWillAlsoLikeSectionViewModel.swift; sourceTree = "<group>"; };
+		EDF95CE02B0EBFDE00C652E2 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		EDF95CE22B0EC0F700C652E2 /* YouwWillAlsoLikeSectionViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouwWillAlsoLikeSectionViewModelBuilder.swift; sourceTree = "<group>"; };
+		EDF95CE52B0EC16800C652E2 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		EDF95CE72B0EC1B900C652E2 /* MainStackViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStackViewModelBuilder.swift; sourceTree = "<group>"; };
+		EDF95CE92B0EC1E500C652E2 /* MainStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStackViewModel.swift; sourceTree = "<group>"; };
+		EDF95CEB2B0EC23400C652E2 /* MainStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,10 +244,14 @@
 		EDB7865F2B0D3D1D00D1354D /* MainLibraryScene */ = {
 			isa = PBXGroup;
 			children = (
+				EDF95C962B0E564700C652E2 /* BottomCollectionViewCell.swift */,
 				EDB786742B0D56A200D1354D /* LibraryViewControllerFactory.swift */,
 				EDC4F7582B0BFA0800AEE26F /* LibraryViewController.swift */,
 				EDB786702B0D55F000D1354D /* LibraryViewModel.swift */,
 				EDB786722B0D562B00D1354D /* LibraryViewModel+Dependencies.swift */,
+				EDF95C892B0E4F5900C652E2 /* LibraryVierwController+CompositionalLayout.swift */,
+				EDF95C8B2B0E553300C652E2 /* LibraryViewController+DiffableDataSource.swift */,
+				EDF95C9F2B0E63A400C652E2 /* TopBannerCell.swift */,
 			);
 			path = MainLibraryScene;
 			sourceTree = "<group>";
@@ -183,6 +259,7 @@
 		EDB786602B0D402100D1354D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EDF95CA52B0E732A00C652E2 /* ImageService */,
 				EDB786872B0D77CE00D1354D /* CrashAnalyticsService */,
 				EDB786642B0D408700D1354D /* NetworkService */,
 			);
@@ -235,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				EDB786772B0D592200D1354D /* HomeFlow.swift */,
+				EDF95CAA2B0EA70B00C652E2 /* DetailsScene */,
 				EDB7865F2B0D3D1D00D1354D /* MainLibraryScene */,
 			);
 			path = Scenes;
@@ -277,8 +355,8 @@
 			isa = PBXGroup;
 			children = (
 				EDC4F7532B0BFA0800AEE26F /* HolyWater */,
-				EDC4F7792B0BFFD400AEE26F /* HolyWaterUI */,
 				EDB786942B0D7FD100D1354D /* HolyWaterServices */,
+				EDC4F7792B0BFFD400AEE26F /* HolyWaterUI */,
 				EDC4F7522B0BFA0800AEE26F /* Products */,
 				EDB786A32B0D807F00D1354D /* Frameworks */,
 			);
@@ -359,8 +437,118 @@
 				EDC4F7972B0C0A3900AEE26F /* NSLayoutConstraints+Activated.swift */,
 				EDC4F7992B0C0A6200AEE26F /* Bool+State.swift */,
 				EDC4F79B2B0C0A7A00AEE26F /* Task+Sleep.swift */,
+				EDF95CA82B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift */,
+				EDF95CB82B0EAD8A00C652E2 /* IdentifiableCell.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		EDF95CA52B0E732A00C652E2 /* ImageService */ = {
+			isa = PBXGroup;
+			children = (
+				EDF95CA12B0E64EB00C652E2 /* ImageCacheManager.swift */,
+				EDF95CA32B0E651000C652E2 /* ImageLoadingManager.swift */,
+			);
+			path = ImageService;
+			sourceTree = "<group>";
+		};
+		EDF95CAA2B0EA70B00C652E2 /* DetailsScene */ = {
+			isa = PBXGroup;
+			children = (
+				EDF95CC92B0EB78400C652E2 /* HeaderSection */,
+				EDF95CC52B0EB5DA00C652E2 /* HeaderView */,
+				EDF95CE42B0EC14D00C652E2 /* MainStackView */,
+				EDF95CC62B0EB63C00C652E2 /* PrimaryButton */,
+				EDF95CED2B0ECDAC00C652E2 /* Separator */,
+				EDF95CB12B0EA85100C652E2 /* SnapCollectionView */,
+				EDF95CD42B0EBAE100C652E2 /* SummarySection */,
+				EDF95CDB2B0EBEB900C652E2 /* YouWillAlsoLikeSection */,
+				EDF95CAB2B0EA73F00C652E2 /* DetailsViewController.swift */,
+				EDF95CAD2B0EA74900C652E2 /* DetailsViewControllerFactory.swift */,
+				EDF95CAF2B0EA75500C652E2 /* DetailsViewModel.swift */,
+			);
+			path = DetailsScene;
+			sourceTree = "<group>";
+		};
+		EDF95CB12B0EA85100C652E2 /* SnapCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF95CB22B0EA87300C652E2 /* SnapLayout.swift */,
+				EDF95CB42B0EAA9F00C652E2 /* SnapLayout+Style.swift */,
+				EDF95CB62B0EABFF00C652E2 /* SnapCollectionViewCell.swift */,
+				EDF95CBA2B0EADF200C652E2 /* SnapCollectionView.swift */,
+				EDF95CBD2B0EB01500C652E2 /* SnapCollectionView+Style.swift */,
+			);
+			path = SnapCollectionView;
+			sourceTree = "<group>";
+		};
+		EDF95CC52B0EB5DA00C652E2 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF95CBF2B0EB3D500C652E2 /* HeaderView.swift */,
+				EDF95CC12B0EB4B400C652E2 /* HeaderViewModel.swift */,
+				EDF95CC32B0EB4F600C652E2 /* HeaderViewModelBuilder.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		EDF95CC62B0EB63C00C652E2 /* PrimaryButton */ = {
+			isa = PBXGroup;
+			children = (
+				EDF95CC72B0EB65C00C652E2 /* PrimaryButton.swift */,
+			);
+			path = PrimaryButton;
+			sourceTree = "<group>";
+		};
+		EDF95CC92B0EB78400C652E2 /* HeaderSection */ = {
+			isa = PBXGroup;
+			children = (
+				EDF95CCA2B0EB79400C652E2 /* HeaderSectionView.swift */,
+				EDF95CCE2B0EB7F100C652E2 /* HeaderSectionSubview.swift */,
+				EDF95CCC2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift */,
+				EDF95CD02B0EBA1100C652E2 /* HeaderSectionViewModelBuilder.swift */,
+				EDF95CD22B0EBA3500C652E2 /* HeaderSectionViewModel.swift */,
+			);
+			path = HeaderSection;
+			sourceTree = "<group>";
+		};
+		EDF95CD42B0EBAE100C652E2 /* SummarySection */ = {
+			isa = PBXGroup;
+			children = (
+				EDF95CD52B0EBAF000C652E2 /* SummarySectionView.swift */,
+				EDF95CD72B0EBDAF00C652E2 /* SummarySectionViewModel.swift */,
+				EDF95CD92B0EBDC900C652E2 /* SummarySectionViewModelBuilder.swift */,
+			);
+			path = SummarySection;
+			sourceTree = "<group>";
+		};
+		EDF95CDB2B0EBEB900C652E2 /* YouWillAlsoLikeSection */ = {
+			isa = PBXGroup;
+			children = (
+				EDF95CDC2B0EBF5C00C652E2 /* YouWillAlsoLikeSectionView.swift */,
+				EDF95CDE2B0EBF8900C652E2 /* YouWillAlsoLikeSectionViewModel.swift */,
+				EDF95CE02B0EBFDE00C652E2 /* BookCell.swift */,
+				EDF95CE22B0EC0F700C652E2 /* YouwWillAlsoLikeSectionViewModelBuilder.swift */,
+			);
+			path = YouWillAlsoLikeSection;
+			sourceTree = "<group>";
+		};
+		EDF95CE42B0EC14D00C652E2 /* MainStackView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF95CEB2B0EC23400C652E2 /* MainStackView.swift */,
+				EDF95CE92B0EC1E500C652E2 /* MainStackViewModel.swift */,
+				EDF95CE72B0EC1B900C652E2 /* MainStackViewModelBuilder.swift */,
+			);
+			path = MainStackView;
+			sourceTree = "<group>";
+		};
+		EDF95CED2B0ECDAC00C652E2 /* Separator */ = {
+			isa = PBXGroup;
+			children = (
+				EDF95CE52B0EC16800C652E2 /* SeparatorView.swift */,
+			);
+			path = Separator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,6 +751,8 @@
 			files = (
 				EDB786B72B0D84E500D1354D /* BookModel.swift in Sources */,
 				EDB786972B0D7FD100D1354D /* HolyWaterServices.docc in Sources */,
+				EDF95CA72B0E733A00C652E2 /* ImageLoadingManager.swift in Sources */,
+				EDF95CA62B0E733700C652E2 /* ImageCacheManager.swift in Sources */,
 				EDB786A22B0D7FEA00D1354D /* NetworkError.swift in Sources */,
 				EDB786A12B0D7FE600D1354D /* FirebaseRemoteConfigControl.swift in Sources */,
 				EDB786A02B0D7FDD00D1354D /* FirebaseCrashAnalytics.swift in Sources */,
@@ -573,18 +763,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF95CC42B0EB4F600C652E2 /* HeaderViewModelBuilder.swift in Sources */,
+				EDF95CAE2B0EA74900C652E2 /* DetailsViewControllerFactory.swift in Sources */,
 				EDC4F7592B0BFA0800AEE26F /* LibraryViewController.swift in Sources */,
+				EDF95CB32B0EA87300C652E2 /* SnapLayout.swift in Sources */,
+				EDF95CE82B0EC1B900C652E2 /* MainStackViewModelBuilder.swift in Sources */,
+				EDF95CD62B0EBAF000C652E2 /* SummarySectionView.swift in Sources */,
 				EDC4F7712B0BFC7400AEE26F /* SplashViewController+Style.swift in Sources */,
 				EDC4F7552B0BFA0800AEE26F /* AppDelegate.swift in Sources */,
 				EDC4F7722B0BFC7400AEE26F /* SplashPresenter.swift in Sources */,
+				EDF95CD12B0EBA1100C652E2 /* HeaderSectionViewModelBuilder.swift in Sources */,
+				EDF95C8C2B0E553300C652E2 /* LibraryViewController+DiffableDataSource.swift in Sources */,
+				EDF95CEA2B0EC1E500C652E2 /* MainStackViewModel.swift in Sources */,
+				EDF95CCB2B0EB79400C652E2 /* HeaderSectionView.swift in Sources */,
+				EDF95C8A2B0E4F5900C652E2 /* LibraryVierwController+CompositionalLayout.swift in Sources */,
+				EDF95CB02B0EA75500C652E2 /* DetailsViewModel.swift in Sources */,
+				EDF95C972B0E564700C652E2 /* BottomCollectionViewCell.swift in Sources */,
+				EDF95CE62B0EC16800C652E2 /* SeparatorView.swift in Sources */,
+				EDF95CCD2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift in Sources */,
 				EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */,
+				EDF95CE32B0EC0F700C652E2 /* YouwWillAlsoLikeSectionViewModelBuilder.swift in Sources */,
+				EDF95CDF2B0EBF8900C652E2 /* YouWillAlsoLikeSectionViewModel.swift in Sources */,
+				EDF95CA02B0E63A400C652E2 /* TopBannerCell.swift in Sources */,
+				EDF95CBB2B0EADF200C652E2 /* SnapCollectionView.swift in Sources */,
+				EDF95CD82B0EBDAF00C652E2 /* SummarySectionViewModel.swift in Sources */,
 				EDC4F76F2B0BFC7400AEE26F /* SplashAnimatior.swift in Sources */,
+				EDF95CBE2B0EB01500C652E2 /* SnapCollectionView+Style.swift in Sources */,
 				EDC4F7702B0BFC7400AEE26F /* SplashViewController.swift in Sources */,
+				EDF95CAC2B0EA73F00C652E2 /* DetailsViewController.swift in Sources */,
+				EDF95CC82B0EB65C00C652E2 /* PrimaryButton.swift in Sources */,
 				EDC4F7572B0BFA0800AEE26F /* SceneDelegate.swift in Sources */,
+				EDF95CDA2B0EBDC900C652E2 /* SummarySectionViewModelBuilder.swift in Sources */,
 				EDB786732B0D562B00D1354D /* LibraryViewModel+Dependencies.swift in Sources */,
+				EDF95CD32B0EBA3500C652E2 /* HeaderSectionViewModel.swift in Sources */,
 				EDB786782B0D592200D1354D /* HomeFlow.swift in Sources */,
+				EDF95CE12B0EBFDE00C652E2 /* BookCell.swift in Sources */,
+				EDF95CB72B0EABFF00C652E2 /* SnapCollectionViewCell.swift in Sources */,
 				EDB786752B0D56A200D1354D /* LibraryViewControllerFactory.swift in Sources */,
 				EDB786712B0D55F000D1354D /* LibraryViewModel.swift in Sources */,
+				EDF95CDD2B0EBF5C00C652E2 /* YouWillAlsoLikeSectionView.swift in Sources */,
+				EDF95CC22B0EB4B400C652E2 /* HeaderViewModel.swift in Sources */,
+				EDF95CEC2B0EC23400C652E2 /* MainStackView.swift in Sources */,
+				EDF95CB52B0EAA9F00C652E2 /* SnapLayout+Style.swift in Sources */,
+				EDF95CCF2B0EB7F100C652E2 /* HeaderSectionSubview.swift in Sources */,
+				EDF95CC02B0EB3D500C652E2 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,8 +815,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC4F78C2B0C002F00AEE26F /* ThemeColor.swift in Sources */,
+				EDF95CBC2B0EADF700C652E2 /* IdentifiableCell.swift in Sources */,
 				EDC4F78F2B0C00D400AEE26F /* UIColor+Hex.swift in Sources */,
 				EDB786882B0D7D6000D1354D /* UIView+Subviews.swift in Sources */,
+				EDF95CA92B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift in Sources */,
 				EDB7868A2B0D7D6600D1354D /* Bool+State.swift in Sources */,
 				EDB786892B0D7D6300D1354D /* NSLayoutConstraints+Activated.swift in Sources */,
 				EDB7868B2B0D7D6900D1354D /* Task+Sleep.swift in Sources */,

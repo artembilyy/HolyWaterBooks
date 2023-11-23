@@ -12,13 +12,32 @@ final class LibraryViewController: UIViewController {
 
     let button = UIButton(type: .system)
 
-    private var viewModel: LibraryViewModelInteractive!
+    enum MainSection: Int, CaseIterable {
+        case topBooks
+        case books
+    }
+
+    // swiftlint:disable implicitly_unwrapped_optional
+    unowned var dataSource: DataSource!
+    var viewModel: LibraryViewModelInteractive!
+    // swiftlint:enable implicitly_unwrapped_optional
 
     private let disposeBag = DisposeBag()
 
     func inject(viewModel: LibraryViewModelInteractive) {
         self.viewModel = viewModel
     }
+
+    lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(
+            frame: view.bounds, collectionViewLayout: createLayout())
+        collectionView.backgroundColor = .black
+        collectionView.register(
+            TopBannerCell.self,
+            forCellWithReuseIdentifier: TopBannerCell.identrifed)
+        collectionView.dataSource = dataSource
+        return collectionView
+    }()
 
     private func createButton() {
         button.setTitle("Next screen", for: .normal)
@@ -36,6 +55,10 @@ final class LibraryViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .purple
 
+        setupDataSource()
+
+        view.addSubview(collectionView)
+
         createButton()
 
         view.addSubview(button)
@@ -44,11 +67,10 @@ final class LibraryViewController: UIViewController {
 
         viewModel
             .outputs
-            .books
-            .skip(1)
-            .subscribe(onNext: { _ in
-                // Handle the updated books here
-//                print("Updated books: \(groupBooks)")
+            .reloadData
+            .drive(onNext: { [weak self] _ in
+                guard let self else { return }
+                self.applySnapshot()
             })
             .disposed(by: disposeBag)
     }
