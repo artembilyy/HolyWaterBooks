@@ -7,11 +7,15 @@
 
 import UIKit
 
-public protocol ImageLoadingManagerProtocol {
+public protocol ImageLoadingWorker {
     func getImage(from source: String) async throws -> UIImage
 }
 
-public final class ImageLoadingManager: ImageLoadingManagerProtocol {
+public protocol ImageLoadingWorkerContrainer {
+    var imageLoadingManagerWorker: ImageLoadingWorker { get }
+}
+
+public final class ImageManagerService: ImageLoadingWorker {
     /// Prevent reusable
     private var image: UIImage?
     private var imageUrlString: String = ""

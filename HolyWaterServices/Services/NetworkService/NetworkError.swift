@@ -12,17 +12,12 @@ public enum NetworkError: Error {
     case failedConvert
     case invalidJSONStucture
     case jsonDecodingFailure(description: String)
-
-    case requestFailed(description: String)
-    case invalidData
-    case responseUnsuccessful(description: String)
-    case noInternetConnection
-    case unexpectedStatusCode
+    case statusNotSuccess
     case invalidURL
     case noImage
     case unknown
     /// description
-    var description: String {
+    public var description: String {
         switch self {
         case .activationFailed:
             return "Activation failed"
@@ -32,19 +27,8 @@ public enum NetworkError: Error {
             return "JSON nil"
         case .invalidJSONStucture:
             return "Invalid JSON structure"
-
-        case .requestFailed(let description):
-            return "Request failed: \(description)"
-        case .invalidData:
-            return "Invalid Data"
-        case .responseUnsuccessful(let description):
-            return "Response unsuccessful: \(description)"
-        case .jsonDecodingFailure(let description):
-            return "Json deconing failure desription: \(description)"
-        case .noInternetConnection:
-            return "No internet connection"
-        case .unexpectedStatusCode:
-            return "Unexpected status code"
+        case .statusNotSuccess:
+            return "Remote config status not success"
         case .invalidURL:
             return "Invalid URL"
         case .noImage:

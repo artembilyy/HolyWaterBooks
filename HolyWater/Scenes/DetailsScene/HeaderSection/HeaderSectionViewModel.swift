@@ -16,6 +16,7 @@ final class HeaderSectionViewModel {
         likesCount: String,
         quotesCount: String,
         genre: String) {
+
         values.append(readersCount)
         values.append(likesCount)
         values.append(quotesCount)

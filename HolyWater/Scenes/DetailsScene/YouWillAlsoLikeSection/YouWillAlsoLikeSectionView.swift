@@ -32,21 +32,12 @@ final class YouWillAlsoLikeSectionView: UIView {
         collectionView.contentInsetAdjustmentBehavior = .always
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
         collectionView.register(
             BookCell.self,
             forCellWithReuseIdentifier: BookCell.identifier)
         return collectionView
     }()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        collectionView.dataSource = self
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     override func layoutSubviews() {
         super.layoutSubviews()

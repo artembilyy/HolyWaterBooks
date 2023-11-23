@@ -26,6 +26,7 @@ final class HeaderView: UIView {
         guard let viewModel else { return }
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
+
         label.text = viewModel.title
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)

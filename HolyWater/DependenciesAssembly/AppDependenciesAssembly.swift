@@ -11,16 +11,19 @@ final class AppDependenciesAssembly {
 
     typealias AppDependencies =
         CrashAnalyticReporterContainer &
-        FirebaseRemoteConfigWorkerContainer
+        FirebaseRemoteConfigWorkerContainer &
+        ImageLoadingWorkerContrainer
 
     struct DependenciesContainer: AppDependencies {
         let crashAnalyticReporter: CrashAnalyticReporter
         let firebaseRemoteConfigWorker: FirebaseRemoteConfigWorker
+        let imageLoadingManagerWorker: ImageLoadingWorker
     }
 
     func assembleDependencies() -> DependenciesContainer {
         .init(
             crashAnalyticReporter: CrashAnalytics(),
-            firebaseRemoteConfigWorker: FirebaseRemoteConfigControl())
+            firebaseRemoteConfigWorker: FirebaseRemoteConfigService(),
+            imageLoadingManagerWorker: ImageManagerService())
     }
 }

@@ -1,15 +1,13 @@
 //
 //  BottomCollectionViewCell.swift
-//  CarouselCollectionView
+//  HolyWater
 //
-//  Created by Artem Tkachenko on 22.11.2023.
+//  Created by Артем Билый on 23.11.2023.
 //
 
-import UIKit
+import HolyWaterUI
 
-class BottomCollectionViewCell: UICollectionViewCell {
-
-    static let identrifed = "Cell"
+final class BottomCollectionViewCell: UICollectionViewCell, IdentifiableCell {
 
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -55,10 +53,14 @@ class BottomCollectionViewCell: UICollectionViewCell {
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            stackView.topAnchor.constraint(
+                equalTo: topAnchor),
+            stackView.leadingAnchor.constraint(
+                equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(
+                equalTo: trailingAnchor),
+            stackView.bottomAnchor.constraint(
+                equalTo: bottomAnchor)
         ])
     }
 }

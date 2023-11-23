@@ -43,9 +43,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         Task {
             try await Task.sleep(seconds: delay + 0.3)
-            await MainActor.run { [weak self] in
-                self?.splashPresenter?.dismiss { [weak self] in
-                    self?.splashPresenter = nil
+            await MainActor.run { [unowned self] in
+                self.splashPresenter?.dismiss { [unowned self] in
+                    self.splashPresenter = nil
                 }
             }
         }

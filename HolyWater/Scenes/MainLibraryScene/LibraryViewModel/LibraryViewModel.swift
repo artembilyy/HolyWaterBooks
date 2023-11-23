@@ -9,28 +9,16 @@ import HolyWaterServices
 import RxCocoa
 import RxRelay
 import RxSwift
-
-protocol LibraryViewModelInputs {
-    func fetch()
-    func selected()
-    func sendCrashReport(event: CrashAnalytics.CrashEvent, source: String?)
-}
-
-protocol LibraryViewModelOutputs {
-    var topBannerBooks: [BookResponse.TopBannerSlideBook] { get }
-    var books: [String: [BookResponse.Book]] { get }
-    var youWillLikeSection: [Int] { get }
-
-    var outOpenDetails: Driver<BookResponse.Book?> { get }
-    var reloadData: Driver<Void> { get }
-}
+import UIKit
 
 protocol LibraryViewModelInteractive {
     var inputs: LibraryViewModelInputs { get }
     var outputs: LibraryViewModelOutputs { get }
+    var configurator: LibraryViewModelConfigurator { get }
 }
 
 typealias LibraryViewModelInterface =
+    LibraryViewModelConfigurator &
     LibraryViewModelInputs &
     LibraryViewModelInteractive &
     LibraryViewModelOutputs
@@ -40,14 +28,16 @@ final class LibraryViewModel: LibraryViewModelInterface {
     typealias BookGenre = String
     typealias GroupedBooks = [BookGenre: [BookResponse.Book]]
 
-    private var dependencies: Dependencies!
+    var dependencies: Dependencies!
 
-    private(set) var topBannerBooks: [BookResponse.TopBannerSlideBook] = []
+    var topBannerBooks: [BookResponse.TopBannerSlideBook] = []
+
     private(set) var books: GroupedBooks = [:]
     private(set) var youWillLikeSection: [Int] = []
 
     private let subjectOpenDetails = PublishSubject<BookResponse.Book>()
-    private let dataFetched = PublishSubject<Void>()
+    private let subjectDataFetched = PublishSubject<Void>()
+    private let subjectErrorCatched = PublishSubject<NetworkError>()
 
     var outOpenDetails: Driver<BookResponse.Book?> {
         subjectOpenDetails
@@ -58,7 +48,17 @@ final class LibraryViewModel: LibraryViewModelInterface {
     }
 
     var reloadData: Driver<Void> {
-        dataFetched
+        subjectDataFetched
+            .asDriver(onErrorJustReturn: ())
+    }
+
+    var outputError: Driver<NetworkError> {
+        subjectErrorCatched
+            .asDriver(onErrorDriveWith: .never())
+    }
+
+    var animeScroll: Driver<Void> {
+        subjectDataFetched
             .asDriver(onErrorJustReturn: ())
     }
 
@@ -67,6 +67,10 @@ final class LibraryViewModel: LibraryViewModelInterface {
     }
 
     var outputs: LibraryViewModelOutputs {
+        return self
+    }
+
+    var configurator: LibraryViewModelConfigurator {
         return self
     }
 
@@ -94,9 +98,9 @@ final class LibraryViewModel: LibraryViewModelInterface {
                         self.youWillLikeSection = youWillLikeSection
                     }
 
-                    dataFetched.onNext(())
+                    subjectDataFetched.onNext(())
                 case .failure(let failure):
-                    print(failure)
+                    subjectErrorCatched.onNext(failure)
                 }
             }
     }
@@ -104,12 +108,5 @@ final class LibraryViewModel: LibraryViewModelInterface {
     func selected() {
         guard let book = books["Fantasy"]?[0] else { return }
         subjectOpenDetails.onNext(book)
-    }
-
-    func sendCrashReport(event: CrashAnalytics.CrashEvent, source: String?) {
-        dependencies
-            .crashAnalyticReporter
-            .sendCrashReport(
-                crash: event, from: source)
     }
 }

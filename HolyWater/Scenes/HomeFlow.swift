@@ -35,7 +35,9 @@ final class HomeFlow {
             .outputs
             .outOpenDetails
             .drive(onNext: { _ in
-                let viewController = DetailsScreenFactory.instantiate(viewModel: DetailsViewModel())
+                let viewController = DetailsScreenFactory.instantiate(
+                    viewModel: DetailsViewModel()
+                )
                 libraryViewController.navigationController?.pushViewController(viewController, animated: true)
             })
             .disposed(by: disposeBag)
