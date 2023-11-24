@@ -29,7 +29,8 @@ final class HomeFlow {
         let viewModel: LibraryViewModelInteractive = LibraryViewModel(
             dependencies: dependencies)
         let libraryViewController = MainLibraryFactory.instantiate(
-            viewModel: viewModel)
+            viewModel: viewModel,
+            dependencies: dependencies)
 
         viewModel
             .outputs

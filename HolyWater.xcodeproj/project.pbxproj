@@ -98,8 +98,10 @@
 		EDF95D112B0FD82600C652E2 /* LibraryViewModel+Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D102B0FD82600C652E2 /* LibraryViewModel+Configurator.swift */; };
 		EDF95D132B0FD8A700C652E2 /* LibraryViewModel+Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D122B0FD8A700C652E2 /* LibraryViewModel+Analytics.swift */; };
 		EDF95D162B0FE2DC00C652E2 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D152B0FE2DC00C652E2 /* LoadingIndicator.swift */; };
-		EDF95D1F2B0FEE9A00C652E2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D1E2B0FEE9A00C652E2 /* TableViewCell.swift */; };
-		EDF95D212B0FFFF700C652E2 /* TableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D202B0FFFF700C652E2 /* TableViewCellViewModel.swift */; };
+		EDF95D1F2B0FEE9A00C652E2 /* TopBooksCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D1E2B0FEE9A00C652E2 /* TopBooksCollectionTableViewCell.swift */; };
+		EDF95D232B108BC500C652E2 /* BooksCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D222B108BC500C652E2 /* BooksCollectionTableViewCell.swift */; };
+		EDF95D252B108D0500C652E2 /* BooksCollectionTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D242B108D0500C652E2 /* BooksCollectionTableViewCellViewModel.swift */; };
+		EDF95D272B1097D900C652E2 /* LibraryViewControllerDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D262B1097D900C652E2 /* LibraryViewControllerDependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,8 +215,10 @@
 		EDF95D102B0FD82600C652E2 /* LibraryViewModel+Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryViewModel+Configurator.swift"; sourceTree = "<group>"; };
 		EDF95D122B0FD8A700C652E2 /* LibraryViewModel+Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryViewModel+Analytics.swift"; sourceTree = "<group>"; };
 		EDF95D152B0FE2DC00C652E2 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
-		EDF95D1E2B0FEE9A00C652E2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		EDF95D202B0FFFF700C652E2 /* TableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModel.swift; sourceTree = "<group>"; };
+		EDF95D1E2B0FEE9A00C652E2 /* TopBooksCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBooksCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		EDF95D222B108BC500C652E2 /* BooksCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		EDF95D242B108D0500C652E2 /* BooksCollectionTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		EDF95D262B1097D900C652E2 /* LibraryViewControllerDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewControllerDependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,7 +267,6 @@
 				EDF95D192B0FE6D700C652E2 /* CollectionViewTableViewCell */,
 				EDF95D182B0FE52A00C652E2 /* LibraryViewController */,
 				EDF95D172B0FE50B00C652E2 /* LibraryViewModel */,
-				EDF95D092B0FD24E00C652E2 /* TopBanner */,
 				EDF95C962B0E564700C652E2 /* BottomCollectionViewCell.swift */,
 			);
 			path = MainLibraryScene;
@@ -610,6 +613,7 @@
 				EDC4F7582B0BFA0800AEE26F /* LibraryViewController.swift */,
 				EDB786722B0D562B00D1354D /* LibraryViewModel+Dependencies.swift */,
 				EDB786742B0D56A200D1354D /* LibraryViewControllerFactory.swift */,
+				EDF95D262B1097D900C652E2 /* LibraryViewControllerDependencies.swift */,
 			);
 			path = LibraryViewController;
 			sourceTree = "<group>";
@@ -617,8 +621,10 @@
 		EDF95D192B0FE6D700C652E2 /* CollectionViewTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				EDF95D1E2B0FEE9A00C652E2 /* TableViewCell.swift */,
-				EDF95D202B0FFFF700C652E2 /* TableViewCellViewModel.swift */,
+				EDF95D092B0FD24E00C652E2 /* TopBanner */,
+				EDF95D1E2B0FEE9A00C652E2 /* TopBooksCollectionTableViewCell.swift */,
+				EDF95D222B108BC500C652E2 /* BooksCollectionTableViewCell.swift */,
+				EDF95D242B108D0500C652E2 /* BooksCollectionTableViewCellViewModel.swift */,
 			);
 			path = CollectionViewTableViewCell;
 			sourceTree = "<group>";
@@ -844,6 +850,7 @@
 				EDF95D0D2B0FD6A300C652E2 /* LibraryViewModelInputs+Inputs.swift in Sources */,
 				EDF95CD62B0EBAF000C652E2 /* SummarySectionView.swift in Sources */,
 				EDC4F7712B0BFC7400AEE26F /* SplashViewController+Style.swift in Sources */,
+				EDF95D232B108BC500C652E2 /* BooksCollectionTableViewCell.swift in Sources */,
 				EDC4F7552B0BFA0800AEE26F /* AppDelegate.swift in Sources */,
 				EDF95D0F2B0FD6C900C652E2 /* LibraryViewModel+Outputs.swift in Sources */,
 				EDC4F7722B0BFC7400AEE26F /* SplashPresenter.swift in Sources */,
@@ -854,6 +861,7 @@
 				EDF95CB02B0EA75500C652E2 /* DetailsViewModel.swift in Sources */,
 				EDF95C972B0E564700C652E2 /* BottomCollectionViewCell.swift in Sources */,
 				EDF95CE62B0EC16800C652E2 /* SeparatorView.swift in Sources */,
+				EDF95D252B108D0500C652E2 /* BooksCollectionTableViewCellViewModel.swift in Sources */,
 				EDF95CCD2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift in Sources */,
 				EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */,
 				EDF95CE32B0EC0F700C652E2 /* YouwWillAlsoLikeSectionViewModelBuilder.swift in Sources */,
@@ -868,10 +876,10 @@
 				EDF95CC82B0EB65C00C652E2 /* PrimaryButton.swift in Sources */,
 				EDF95D132B0FD8A700C652E2 /* LibraryViewModel+Analytics.swift in Sources */,
 				EDC4F7572B0BFA0800AEE26F /* SceneDelegate.swift in Sources */,
-				EDF95D212B0FFFF700C652E2 /* TableViewCellViewModel.swift in Sources */,
 				EDF95CDA2B0EBDC900C652E2 /* SummarySectionViewModelBuilder.swift in Sources */,
 				EDF95D082B0FD24900C652E2 /* TopBannerCellViewModel.swift in Sources */,
 				EDB786732B0D562B00D1354D /* LibraryViewModel+Dependencies.swift in Sources */,
+				EDF95D272B1097D900C652E2 /* LibraryViewControllerDependencies.swift in Sources */,
 				EDF95CD32B0EBA3500C652E2 /* HeaderSectionViewModel.swift in Sources */,
 				EDB786782B0D592200D1354D /* HomeFlow.swift in Sources */,
 				EDF95CE12B0EBFDE00C652E2 /* BookCell.swift in Sources */,
@@ -883,7 +891,7 @@
 				EDF95CC22B0EB4B400C652E2 /* HeaderViewModel.swift in Sources */,
 				EDF95CEC2B0EC23400C652E2 /* MainStackView.swift in Sources */,
 				EDF95CB52B0EAA9F00C652E2 /* SnapLayout+Style.swift in Sources */,
-				EDF95D1F2B0FEE9A00C652E2 /* TableViewCell.swift in Sources */,
+				EDF95D1F2B0FEE9A00C652E2 /* TopBooksCollectionTableViewCell.swift in Sources */,
 				EDF95CCF2B0EB7F100C652E2 /* HeaderSectionSubview.swift in Sources */,
 				EDF95CC02B0EB3D500C652E2 /* HeaderView.swift in Sources */,
 			);

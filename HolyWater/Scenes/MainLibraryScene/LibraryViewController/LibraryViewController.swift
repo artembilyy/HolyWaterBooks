@@ -6,63 +6,72 @@
 //
 
 import HolyWaterServices
+import HolyWaterUI
 import RxSwift
-import UIKit
 
 extension LibraryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-        let section = MainSection(rawValue: indexPath.section)
-
-        switch section {
-        case .topBooks:
+        if indexPath.section != 0 {
+            return 200
+        } else {
             let width = tableView.frame.width - 32
             return width * 0.47
-        case .books:
-            return 0
-        default:
-            return 0
         }
     }
 }
 
 extension LibraryViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        let section = MainSection(rawValue: section)
-        switch section {
-        case .topBooks:
-            return viewModel.outputs.topBannerBooks.count
-        case .books:
-            return 1
-        default:
-            return 1
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard
+            let topBookCell = tableView.dequeueReusableCell(withIdentifier: TopBooksCollectionTableViewCell.identifier) as? TopBooksCollectionTableViewCell,
+            let bookCell = tableView.dequeueReusableCell(withIdentifier: BooksCollectionTableViewCell.identifier) as? BooksCollectionTableViewCell
+        else {
+            return UITableViewCell()
         }
+
+        if indexPath.section == 0 {
+            topBookCell.viewModel = .init(
+                topBooks: viewModel.outputs.topBannerBooks,
+                dependencies: dependencies)
+            return topBookCell
+        } else {
+            return bookCell
+        }
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        1 + viewModel.outputs.books.keys.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let section = MainSection(rawValue: indexPath.section)
-        switch section {
-        case .topBooks:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier) as? CollectionViewTableViewCell else { return UITableViewCell() }
-
-            let topBannerCellViewModel = viewModel
-                .configurator
-                .configureTopBannerCellViewModel(
-                    items: viewModel.outputs.topBannerBooks)
-            cell.viewModel = TableViewCellViewModel(topBannerCellViewModel: topBannerCellViewModel)
-            return cell
-        case .books:
-            return UITableViewCell()
-        default:
-            return UITableViewCell()
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return nil
+        } else {
+            let sortedKeys = viewModel.outputs.books.keys.sorted(by: <)
+            return sortedKeys[section - 1]
         }
     }
+
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//
+//        if section == 2 {
+//            let viewModel = HeaderViewModelBuilder()
+//                .set(title: "Test")
+//                .set(textColor: ThemeColor.black.asUIColor())
+//                .build()
+//
+//            let view = tableView.dequeueReusableHeaderFooterView(
+//                withIdentifier: HeaderView.identifier) as! HeaderView
+//            view.viewModel = viewModel
+//
+//            return view
+//        }
+//        else { return nil }
+//    }
 }
 
 final class LibraryViewController: UIViewController, AlertDisplayable {
@@ -70,24 +79,32 @@ final class LibraryViewController: UIViewController, AlertDisplayable {
     let button = UIButton(type: .system)
 
     enum MainSection: Int, CaseIterable {
-        case topBooks
         case books
     }
 
     // swiftlint:disable implicitly_unwrapped_optional
-    var viewModel: LibraryViewModelInteractive!
+    private var viewModel: LibraryViewModelInteractive!
+    private var dependencies: Dependencies!
     // swiftlint:enable implicitly_unwrapped_optional
 
     private let disposeBag = DisposeBag()
 
-    func inject(viewModel: LibraryViewModelInteractive) {
+    func inject(
+        viewModel: LibraryViewModelInteractive,
+        dependencies: Dependencies) {
         self.viewModel = viewModel
+        self.dependencies = dependencies
     }
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.frame = view.bounds
-        tableView.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
+
+        tableView.register(
+            TopBooksCollectionTableViewCell.self,
+            forCellReuseIdentifier: TopBooksCollectionTableViewCell.identifier)
+        tableView.register(BooksCollectionTableViewCell.self, forCellReuseIdentifier: BooksCollectionTableViewCell.identifier)
+        tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: HeaderView.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         return tableView

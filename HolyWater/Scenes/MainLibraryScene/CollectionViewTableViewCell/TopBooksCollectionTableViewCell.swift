@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  TopBooksCollectionTableViewCell.swift
 //  HolyWater
 //
 //  Created by Артем Билый on 23.11.2023.
@@ -7,7 +7,7 @@
 
 import HolyWaterUI
 
-final class CollectionViewTableViewCell: UITableViewCell, IdentifiableCell {
+final class TopBooksCollectionTableViewCell: UITableViewCell, IdentifiableCell {
 
     private let collectionViewLayout = UICollectionViewFlowLayout()
 
@@ -17,11 +17,15 @@ final class CollectionViewTableViewCell: UITableViewCell, IdentifiableCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
 
-    var viewModel: TableViewCellViewModel!
+    var viewModel: TopBannerCellViewModel!
 
     override func layoutSubviews() {
         super.layoutSubviews()
         setupUI()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.collectionView.reloadData()
+        }
     }
 
     @available(*, unavailable)
@@ -32,7 +36,7 @@ final class CollectionViewTableViewCell: UITableViewCell, IdentifiableCell {
 
 // MARK: - UI Setup
 
-extension CollectionViewTableViewCell {
+extension TopBooksCollectionTableViewCell {
 
     private func setupUI() {
         collectionViewLayout.scrollDirection = .horizontal
@@ -49,28 +53,25 @@ extension CollectionViewTableViewCell {
         addSubview(collectionView)
 
         collectionView.frame = bounds
+
     }
 }
 
-extension CollectionViewTableViewCell: UICollectionViewDataSource {
+extension TopBooksCollectionTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.topBannerCellViewModel.topBooks.count
-    }
-
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
+        viewModel.topBooks.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopBannerCell.identifier, for: indexPath) as? TopBannerCell else { return UICollectionViewCell() }
-        cell.viewModel = viewModel.topBannerCellViewModel
+        cell.viewModel = viewModel
         cell.configure(indexPath: indexPath)
         return cell
     }
 }
 
-extension CollectionViewTableViewCell: UICollectionViewDelegateFlowLayout {
+extension TopBooksCollectionTableViewCell: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width - 32

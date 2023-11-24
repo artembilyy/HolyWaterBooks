@@ -5,9 +5,9 @@
 //  Created by Артем Билый on 22.11.2023.
 //
 
-import UIKit
+import HolyWaterUI
 
-final class HeaderView: UIView {
+final class HeaderView: UITableViewHeaderFooterView, IdentifiableCell {
 
     var viewModel: HeaderViewModel? {
         didSet {

@@ -8,11 +8,11 @@
 enum MainLibraryFactory {
 
     static func instantiate(
-        viewModel: LibraryViewModelInteractive
-    ) -> LibraryViewController {
+        viewModel: LibraryViewModelInteractive,
+        dependencies: LibraryViewController.Dependencies) -> LibraryViewController {
 
         let viewController = LibraryViewController()
-        viewController.inject(viewModel: viewModel)
+        viewController.inject(viewModel: viewModel, dependencies: dependencies)
         return viewController
     }
 }
