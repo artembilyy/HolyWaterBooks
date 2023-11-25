@@ -22,7 +22,9 @@ public final class LoadingIndicator: UIView {
         indicatorView.frame = view.bounds
         indicatorView.color = ThemeColor.raspberryPink.asUIColor()
         view.addSubview(indicatorView)
+    }
 
+    public func startAnimating() {
         indicatorView.startAnimating()
     }
 

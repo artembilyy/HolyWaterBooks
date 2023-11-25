@@ -10,15 +10,11 @@ import HolyWaterUI
 final class PrimaryButton: UIButton {
 
     private struct Style {
-        let buttonHeight: CGFloat
-        let buttonWidth: CGFloat
         let titleLabelFontSize: CGFloat
         let titleLabelText: String
 
         static func defaultStyle() -> Self {
             .init(
-                buttonHeight: 278,
-                buttonWidth: 48,
                 titleLabelFontSize: 16,
                 titleLabelText: "Read Now")
         }
@@ -39,7 +35,6 @@ final class PrimaryButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = bounds.height / 2
-        setupConstraints()
     }
 
     private func configureUI() {
@@ -51,16 +46,5 @@ final class PrimaryButton: UIButton {
             ofSize: style.titleLabelFontSize,
             weight: .heavy)
         titleLabel?.textColor = .white
-    }
-}
-
-extension PrimaryButton {
-    private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            widthAnchor.constraint(
-                equalToConstant: style.buttonWidth),
-            heightAnchor.constraint(
-                equalToConstant: style.buttonHeight)
-        ])
     }
 }

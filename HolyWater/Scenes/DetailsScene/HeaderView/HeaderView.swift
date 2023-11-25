@@ -7,7 +7,7 @@
 
 import HolyWaterUI
 
-final class HeaderView: UITableViewHeaderFooterView, IdentifiableCell {
+final class HeaderView: UIView {
 
     var viewModel: HeaderViewModel? {
         didSet {

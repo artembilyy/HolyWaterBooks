@@ -30,8 +30,14 @@ final class LibraryViewModel: LibraryViewModelInterface {
 
     var dependencies: Dependencies!
 
-    var topBannerBooks: [BookResponse.TopBannerSlideBook] = []
-
+    private(set) var topBannerBooks: [BookResponse.TopBannerSlideBook] = [] {
+        didSet {
+            if topBannerBooks.count > 1, let firstBook = topBannerBooks.first, let lastBook = topBannerBooks.last {
+                topBannerBooks.append(firstBook)
+                topBannerBooks.insert(lastBook, at: 0)
+            }
+        }
+    }
     private(set) var books: GroupedBooks = [:]
     private(set) var youWillLikeSection: [Int] = []
 

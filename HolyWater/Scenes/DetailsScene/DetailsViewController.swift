@@ -28,7 +28,7 @@ final class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupNavigationBar()
+        configureNavigationItem()
     }
 
     override func viewWillLayoutSubviews() {
@@ -54,14 +54,32 @@ final class DetailsViewController: UIViewController {
         scrollView.delegate = self
     }
 
-    private func setupNavigationBar() {
-        let leftBarButtonItem = UIBarButtonItem(
-            customView: UIImageView(image: UIImage(named: "bi_arrow-down"))
-        )
-        navigationItem.leftBarButtonItem = leftBarButtonItem
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar()
+    }
+
+    private func configureNavigationBar() {
+        // TODO: back changes when willdissapear
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.barTintColor = UIColor.clear
+        navigationController?.navigationBar.tintColor = .white
+    }
+
+    private func configureNavigationItem() {
+        let backImage: UIImage? = .init(named: "bi_arrow-down")
+        let backButton: UIBarButtonItem = .init(
+            image: backImage,
+            style: .plain,
+            target: self,
+            action: #selector(backButtonTapped))
+        self.navigationItem.leftBarButtonItem = backButton
+
+    }
+
+    @objc private func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

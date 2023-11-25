@@ -33,7 +33,7 @@ public final class ImageManagerService: ImageLoadingWorker {
 
         let request = URLRequest(url: url)
 
-        if let cachedImage = cache[source] {
+        if let cachedImage = cache[imageUrlString] {
             self.image = cachedImage
             return cachedImage
         }

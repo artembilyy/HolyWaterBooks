@@ -9,14 +9,7 @@ import HolyWaterServices
 
 final class TopBannerCellViewModel {
 
-    private(set) var topBooks: [BookResponse.TopBannerSlideBook] {
-        didSet {
-            if topBooks.count > 1, let lastBook = topBooks.last {
-                topBooks.insert(lastBook, at: 0)
-                topBooks.append(topBooks[1])
-            }
-        }
-    }
+    private(set) var topBooks: [BookResponse.TopBannerSlideBook]
 
     private(set) var dependencies: Dependencies
 

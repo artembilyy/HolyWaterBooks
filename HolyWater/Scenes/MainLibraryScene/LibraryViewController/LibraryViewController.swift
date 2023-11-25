@@ -11,11 +11,14 @@ import RxSwift
 
 extension LibraryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section != 0 {
-            return 200
-        } else {
+
+        let section = MainSection(rawValue: indexPath.section)
+
+        if case .topBooks = section {
             let width = tableView.frame.width - 32
-            return width * 0.47
+            return width * 0.47 + 40
+        } else {
+            return 200
         }
     }
 }
@@ -29,7 +32,9 @@ extension LibraryViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        if indexPath.section == 0 {
+        let section = MainSection(rawValue: indexPath.section)
+
+        if case .topBooks = section {
             topBookCell.viewModel = .init(
                 topBooks: viewModel.outputs.topBannerBooks,
                 dependencies: dependencies)
@@ -47,14 +52,14 @@ extension LibraryViewController: UITableViewDataSource {
         1 + viewModel.outputs.books.keys.count
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return nil
-        } else {
-            let sortedKeys = viewModel.outputs.books.keys.sorted(by: <)
-            return sortedKeys[section - 1]
-        }
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        if section == 0 {
+//            return nil
+//        } else {
+//            let sortedKeys = viewModel.outputs.books.keys.sorted(by: <)
+//            return sortedKeys[section - 1]
+//        }
+//    }
 
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //
@@ -76,9 +81,8 @@ extension LibraryViewController: UITableViewDataSource {
 
 final class LibraryViewController: UIViewController, AlertDisplayable {
 
-    let button = UIButton(type: .system)
-
     enum MainSection: Int, CaseIterable {
+        case topBooks
         case books
     }
 
@@ -104,28 +108,14 @@ final class LibraryViewController: UIViewController, AlertDisplayable {
             TopBooksCollectionTableViewCell.self,
             forCellReuseIdentifier: TopBooksCollectionTableViewCell.identifier)
         tableView.register(BooksCollectionTableViewCell.self, forCellReuseIdentifier: BooksCollectionTableViewCell.identifier)
-        tableView.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: HeaderView.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
     }()
 
-    private func createButton() {
-        button.setTitle("Next screen", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        let buttonWidth: CGFloat = 150
-        let buttonHeight: CGFloat = 50
-        button.frame = CGRect(x: view.center.x, y: view.center.y, width: buttonWidth, height: buttonHeight)
-        button.addAction(
-            .init(handler: { [unowned self] _ in
-                self.viewModel.inputs.selected()
-            }), for: .touchUpInside)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        createButton()
 
         viewModel.inputs.fetch()
 
@@ -144,7 +134,6 @@ final class LibraryViewController: UIViewController, AlertDisplayable {
     private func setupUI() {
         view.backgroundColor = .purple
         view.addSubview(tableView)
-        view.addSubview(button)
     }
 
     private func bindViewModel() {

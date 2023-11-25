@@ -8,11 +8,17 @@
 import HolyWaterServices
 import HolyWaterUI
 
+protocol InfiniteAutoScrollViewCellDelegate: AnyObject {
+    func invalidateTimer()
+}
+
 final class TopBannerCell: UICollectionViewCell, IdentifiableCell {
 
     private let mainImageContainer: UIImageView = .init()
-    private let loadingIndicator: LoadingIndicator = .init()
+    private var loadingIndicator: LoadingIndicator? = .init()
     var viewModel: TopBannerCellViewModel!
+
+    weak var delegate: InfiniteAutoScrollViewCellDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +30,13 @@ final class TopBannerCell: UICollectionViewCell, IdentifiableCell {
         mainImageContainer.contentMode = .scaleAspectFill
 
         addSubview(mainImageContainer)
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        panGesture.delegate = self
+        self.addGestureRecognizer(panGesture)
+    }
+
+    @objc private func handlePan(_ pan: UIPanGestureRecognizer) {
+        delegate?.invalidateTimer()
     }
 
     @available(*, unavailable)
@@ -34,25 +47,32 @@ final class TopBannerCell: UICollectionViewCell, IdentifiableCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         mainImageContainer.image = nil
+        loadingIndicator = nil
     }
 
-    func configure(indexPath: IndexPath) {
-        loadingIndicator.install(on: mainImageContainer, with: .large)
-        guard let url = viewModel.topBooks[indexPath.item].cover else { return }
+    func configure(indexPathItem: Int) {
+        loadingIndicator?.install(on: mainImageContainer, with: .large)
+        guard let url = viewModel.topBooks[indexPathItem].cover else { return }
         Task {
-            /// added for throttling effect
-            try await Task.sleep(seconds: 0.5)
+            loadingIndicator?.startAnimating()
             do {
                 let image = try await viewModel
                     .dependencies
                     .imageLoadingManagerWorker
                     .getImage(from: url)
                 mainImageContainer.image = image
-                loadingIndicator.stopAnimating()
+                loadingIndicator?.stopAnimating()
             } catch {
                 mainImageContainer.image = UIImage(systemName: "trash")
-                loadingIndicator.stopAnimating()
+                loadingIndicator?.stopAnimating()
             }
         }
+    }
+}
+
+extension TopBannerCell: UIGestureRecognizerDelegate {
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
