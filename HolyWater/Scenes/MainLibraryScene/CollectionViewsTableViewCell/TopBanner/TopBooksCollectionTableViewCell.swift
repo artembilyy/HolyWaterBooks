@@ -5,45 +5,48 @@
 //  Created by Артем Билый on 23.11.2023.
 //
 
+import HolyWaterServices
 import HolyWaterUI
-
-protocol InfiniteAutoScrollViewDelegate: AnyObject {
-    func didTapItem()
-}
+import RxSwift
 
 extension TopBooksCollectionTableViewCell {
 
     func configAutoScroll() {
+        guard let viewModel else { return }
         resetAutoScrollTimer()
-        if viewModel.topBooks.count > 1 {
+        if viewModel.topBooks.isEmpty.not {
             setupAutoScrollTimer()
         }
     }
 
     func resetAutoScrollTimer() {
-        if autoScrollTimer != nil {
+        if autoScrollTimer.isNil.not {
             autoScrollTimer.invalidate()
             autoScrollTimer = nil
         }
     }
 
     func setupAutoScrollTimer() {
-        autoScrollTimer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(autoScrollAction(timer:)), userInfo: nil, repeats: true)
+        autoScrollTimer = Timer.scheduledTimer(
+            timeInterval: 2,
+            target: self,
+            selector: #selector(autoScrollAction),
+            userInfo: nil, repeats: true)
         RunLoop.main.add(autoScrollTimer, forMode: RunLoop.Mode.common)
     }
 
-    @objc func autoScrollAction(timer: Timer) {
-//        if self.window != nil {
+    @objc private func autoScrollAction() {
+        guard let viewModel else { return }
         currentAutoScrollIndex += 1
         if currentAutoScrollIndex >= viewModel.topBooks.count {
             currentAutoScrollIndex = currentAutoScrollIndex % viewModel.topBooks.count
-            print(currentAutoScrollIndex)
         }
-        collectionView.scrollToItem(at: IndexPath(item: currentAutoScrollIndex, section: 0), at: .left, animated: true)
-//        }
+        let indexPath: IndexPath = .init(item: currentAutoScrollIndex, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }
 
     func addPageControl() {
+        guard let viewModel else { return }
         pageControl = UIPageControl(frame: CGRect(
             x: frame.width / 2,
             y: frame.height / 2,
@@ -54,13 +57,8 @@ extension TopBooksCollectionTableViewCell {
         pageControl.pageIndicatorTintColor = .black
         pageControl.isUserInteractionEnabled = false
         pageControl.allowsContinuousInteraction = false
-//        pageControl.addTarget(self, action: #selector(changePage(_:)), for: .valueChanged)
         addSubview(pageControl)
     }
-
-//    @objc func changePage(_ sender: UIPageControl) {
-//        collectionView.scrollToItem(at: IndexPath(item: sender.currentPage + 1, section: 0), at: .left, animated: true)
-//    }
 }
 
 final class TopBooksCollectionTableViewCell: UITableViewCell, IdentifiableCell, UICollectionViewDelegate {
@@ -73,13 +71,13 @@ final class TopBooksCollectionTableViewCell: UITableViewCell, IdentifiableCell, 
         frame: .zero,
         collectionViewLayout: createCompositionalLayout())
 
-    weak var delegate: InfiniteAutoScrollViewDelegate?
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
 
-    var viewModel: TopBannerCellViewModel!
+    var viewModel: TopBannerCellViewModel?
+
+    private let disposeBag = DisposeBag()
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -114,23 +112,28 @@ extension TopBooksCollectionTableViewCell {
 
         collectionView.frame = bounds
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.collectionView.reloadData()
-            self.collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .left, animated: false)
-            self.configAutoScroll()
-
-            //            self.collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .left, animated: false)
-//            self.addPageControl()
-//            self.configAutoScroll()
-        }
-
+        bindings()
     }
+
+    private func bindings() {
+        viewModel?
+            .outReloadData
+            .drive(onNext: { [weak self] _ in
+                guard let self else { return }
+                self.collectionView.reloadData()
+                let indexPath: IndexPath = .init(item: self.currentAutoScrollIndex, section: 0)
+                self.collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
+                self.configAutoScroll()
+            })
+            .disposed(by: disposeBag)
+    }
+
 }
 
 extension TopBooksCollectionTableViewCell: InfiniteAutoScrollViewCellDelegate {
 
     func invalidateTimer() {
-        if autoScrollTimer != nil {
+        if autoScrollTimer.isNil.not {
             autoScrollTimer?.invalidate()
             autoScrollTimer = nil
         }
@@ -140,7 +143,7 @@ extension TopBooksCollectionTableViewCell: InfiniteAutoScrollViewCellDelegate {
 extension TopBooksCollectionTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.topBooks.count
+        viewModel?.topBooks.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -149,9 +152,5 @@ extension TopBooksCollectionTableViewCell: UICollectionViewDataSource {
         cell.delegate = self
         cell.configure(indexPathItem: indexPath.item)
         return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didTapItem()
     }
 }

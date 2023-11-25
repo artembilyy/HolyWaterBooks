@@ -13,7 +13,7 @@ protocol LibraryViewModelOutputs {
     var books: [String: [BookResponse.Book]] { get }
     var youWillLikeSection: [Int] { get }
 
-    var outOpenDetails: Driver<BookResponse.Book?> { get }
+    var outOpenDetails: Driver<BookResponse.TopBannerSlideBook?> { get }
     var reloadData: Driver<Void> { get }
     var outputError: Driver<NetworkError> { get }
 }

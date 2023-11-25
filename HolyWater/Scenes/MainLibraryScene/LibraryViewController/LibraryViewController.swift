@@ -35,9 +35,11 @@ extension LibraryViewController: UITableViewDataSource {
         let section = MainSection(rawValue: indexPath.section)
 
         if case .topBooks = section {
-            topBookCell.viewModel = .init(
-                topBooks: viewModel.outputs.topBannerBooks,
-                dependencies: dependencies)
+            if viewModel.outputs.topBannerBooks.isEmpty.not {
+                topBookCell.viewModel = .init(
+                    topBooks: viewModel.outputs.topBannerBooks,
+                    dependencies: dependencies)
+            }
             return topBookCell
         } else {
             return bookCell
@@ -51,32 +53,6 @@ extension LibraryViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         1 + viewModel.outputs.books.keys.count
     }
-
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        if section == 0 {
-//            return nil
-//        } else {
-//            let sortedKeys = viewModel.outputs.books.keys.sorted(by: <)
-//            return sortedKeys[section - 1]
-//        }
-//    }
-
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//        if section == 2 {
-//            let viewModel = HeaderViewModelBuilder()
-//                .set(title: "Test")
-//                .set(textColor: ThemeColor.black.asUIColor())
-//                .build()
-//
-//            let view = tableView.dequeueReusableHeaderFooterView(
-//                withIdentifier: HeaderView.identifier) as! HeaderView
-//            view.viewModel = viewModel
-//
-//            return view
-//        }
-//        else { return nil }
-//    }
 }
 
 final class LibraryViewController: UIViewController, AlertDisplayable {

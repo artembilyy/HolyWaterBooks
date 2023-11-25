@@ -35,7 +35,8 @@ final class HomeFlow {
         viewModel
             .outputs
             .outOpenDetails
-            .drive(onNext: { _ in
+            .drive(onNext: { book in
+                print(book)
                 let viewController = DetailsScreenFactory.instantiate(
                     viewModel: DetailsViewModel()
                 )

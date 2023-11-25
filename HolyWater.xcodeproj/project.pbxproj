@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDA485682B11763400533B10 /* TopBooksCollectionTableViewCell+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485672B11763400533B10 /* TopBooksCollectionTableViewCell+Layout.swift */; };
+		EDA485682B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485672B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift */; };
+		EDA4856C2B124F0F00533B10 /* Optional+isNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4856B2B124F0F00533B10 /* Optional+isNil.swift */; };
 		EDB786532B0CFCF300D1354D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */; };
 		EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7866C2B0D4C9000D1354D /* AppDependenciesAssembly.swift */; };
 		EDB786712B0D55F000D1354D /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786702B0D55F000D1354D /* LibraryViewModel.swift */; };
@@ -138,7 +139,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EDA485672B11763400533B10 /* TopBooksCollectionTableViewCell+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopBooksCollectionTableViewCell+Layout.swift"; sourceTree = "<group>"; };
+		EDA485672B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopBooksCollectionTableViewCell+LAutoScrollLayout.swift"; sourceTree = "<group>"; };
+		EDA4856B2B124F0F00533B10 /* Optional+isNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isNil.swift"; sourceTree = "<group>"; };
 		EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDB786622B0D405200D1354D /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		EDB786672B0D41DD00D1354D /* FirebaseRemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigService.swift; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				EDC4F79B2B0C0A7A00AEE26F /* Task+Sleep.swift */,
 				EDF95CA82B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift */,
 				EDF95CB82B0EAD8A00C652E2 /* IdentifiableCell.swift */,
+				EDA4856B2B124F0F00533B10 /* Optional+isNil.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -592,7 +595,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF95D1E2B0FEE9A00C652E2 /* TopBooksCollectionTableViewCell.swift */,
-				EDA485672B11763400533B10 /* TopBooksCollectionTableViewCell+Layout.swift */,
+				EDA485672B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift */,
 				EDF95D0A2B0FD4F400C652E2 /* TopBannerCellViewModel+Dependencies.swift */,
 				EDF95C9F2B0E63A400C652E2 /* TopBannerCell.swift */,
 				EDF95D072B0FD24900C652E2 /* TopBannerCellViewModel.swift */,
@@ -869,7 +872,7 @@
 				EDF95CEA2B0EC1E500C652E2 /* MainStackViewModel.swift in Sources */,
 				EDF95CCB2B0EB79400C652E2 /* HeaderSectionView.swift in Sources */,
 				EDF95D0B2B0FD4F400C652E2 /* TopBannerCellViewModel+Dependencies.swift in Sources */,
-				EDA485682B11763400533B10 /* TopBooksCollectionTableViewCell+Layout.swift in Sources */,
+				EDA485682B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift in Sources */,
 				EDF95CB02B0EA75500C652E2 /* DetailsViewModel.swift in Sources */,
 				EDF95C972B0E564700C652E2 /* BottomCollectionViewCell.swift in Sources */,
 				EDF95CE62B0EC16800C652E2 /* SeparatorView.swift in Sources */,
@@ -926,6 +929,7 @@
 				EDC4F7912B0C00E000AEE26F /* FontConvertible.swift in Sources */,
 				EDC4F78A2B0C002E00AEE26F /* ColorConvertible.swift in Sources */,
 				EDB7868D2B0D7E0D00D1354D /* ProgressBarView.swift in Sources */,
+				EDA4856C2B124F0F00533B10 /* Optional+isNil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

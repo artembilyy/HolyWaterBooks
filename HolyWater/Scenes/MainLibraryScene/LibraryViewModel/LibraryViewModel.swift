@@ -41,11 +41,11 @@ final class LibraryViewModel: LibraryViewModelInterface {
     private(set) var books: GroupedBooks = [:]
     private(set) var youWillLikeSection: [Int] = []
 
-    private let subjectOpenDetails = PublishSubject<BookResponse.Book>()
+    private let subjectOpenDetails = PublishSubject<BookResponse.TopBannerSlideBook>()
     private let subjectDataFetched = PublishSubject<Void>()
     private let subjectErrorCatched = PublishSubject<NetworkError>()
 
-    var outOpenDetails: Driver<BookResponse.Book?> {
+    var outOpenDetails: Driver<BookResponse.TopBannerSlideBook?> {
         subjectOpenDetails
             .map { book in
                 return book
@@ -94,6 +94,7 @@ final class LibraryViewModel: LibraryViewModelInterface {
 
                     if let topBannerSlides = result.topBannerSlides {
                         self.topBannerBooks = topBannerSlides
+                        dump(topBannerSlides)
                     }
 
                     if let books = result.books {
@@ -111,8 +112,7 @@ final class LibraryViewModel: LibraryViewModelInterface {
             }
     }
 
-    func selected() {
-        guard let book = books["Fantasy"]?[0] else { return }
-        subjectOpenDetails.onNext(book)
+    func selected(item: BookResponse.TopBannerSlideBook) {
+        subjectOpenDetails.onNext(item)
     }
 }

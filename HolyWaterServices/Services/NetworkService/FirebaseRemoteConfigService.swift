@@ -27,7 +27,7 @@ public final class FirebaseRemoteConfigService: FirebaseRemoteConfigWorker {
 
     private let remoteConfig: RemoteConfig = {
         let settings = RemoteConfigSettings()
-        settings.minimumFetchInterval = 0
+        settings.minimumFetchInterval = 3600
         $0.configSettings = settings
         return $0
     }(RemoteConfig.remoteConfig())
@@ -44,17 +44,18 @@ public final class FirebaseRemoteConfigService: FirebaseRemoteConfigWorker {
             }
 
             self.remoteConfig.activate { _, _ in
-                guard
-                    let jsonString = self.remoteConfig["json_data"].stringValue,
-                    let jsonData = jsonString.data(using: .utf8)
-                else {
-                    completion(.failure(NetworkError.jsonNil))
-                    return
-                }
+//                guard
+                let data = self.remoteConfig["json_data"].dataValue
+//                else {
+//                    completion(.failure(NetworkError.jsonNil))
+//                    return
+//                }
 
                 do {
-                    let data = try JSONDecoder().decode(BookResponse.self, from: jsonData)
-                    completion(.success(data))
+                    let decodedData = try JSONDecoder().decode(BookResponse.self, from: data)
+
+                    dump(decodedData)
+                    completion(.success(decodedData))
                 } catch {
                     print("Error decoding JSON: \(error)")
                     completion(
