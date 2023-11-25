@@ -12,6 +12,9 @@ final class BookCell: UICollectionViewCell, IdentifiableCell {
 
     private let label: UILabel = .init()
     private let imageView: UIImageView = .init()
+    private var loadingIndicator: LoadingIndicator? = .init()
+
+    var viewModel: BookCellViewModel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +31,25 @@ final class BookCell: UICollectionViewCell, IdentifiableCell {
         setupConstraints()
     }
 
-    func configureCell(with book: BookResponse.Book) {
+    func configureCell(indexPath: IndexPath) {
+        let book = viewModel.books[indexPath.item]
+        loadingIndicator?.install(on: imageView, with: .large)
+        guard let url = book.coverURL?.absoluteString else { return }
+        Task {
+            loadingIndicator?.startAnimating()
+            do {
+                let image = try await viewModel
+                    .dependencies
+                    .imageLoadingManagerWorker
+                    .getImage(from: url)
+                imageView.image = image
+                loadingIndicator?.stopAnimating()
+            } catch {
+                imageView.image = UIImage(systemName: "trash")
+                loadingIndicator?.stopAnimating()
+            }
+        }
+
         label.text = book.name
     }
 

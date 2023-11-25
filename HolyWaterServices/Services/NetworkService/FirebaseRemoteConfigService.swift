@@ -54,7 +54,6 @@ public final class FirebaseRemoteConfigService: FirebaseRemoteConfigWorker {
                 do {
                     let decodedData = try JSONDecoder().decode(BookResponse.self, from: data)
 
-                    dump(decodedData)
                     completion(.success(decodedData))
                 } catch {
                     print("Error decoding JSON: \(error)")

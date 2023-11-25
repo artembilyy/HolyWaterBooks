@@ -25,25 +25,31 @@ extension LibraryViewController: UITableViewDelegate {
 
 extension LibraryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let topBookCell = tableView.dequeueReusableCell(withIdentifier: TopBooksCollectionTableViewCell.identifier) as? TopBooksCollectionTableViewCell,
-            let bookCell = tableView.dequeueReusableCell(withIdentifier: BooksCollectionTableViewCell.identifier) as? BooksCollectionTableViewCell
+        guard let topBookCell = tableView.dequeueReusableCell(withIdentifier: TopBooksCollectionTableViewCell.identifier) as? TopBooksCollectionTableViewCell,
+              let bookCell = tableView.dequeueReusableCell(withIdentifier: BooksCollectionTableViewCell.identifier) as? BooksCollectionTableViewCell
         else {
             return UITableViewCell()
         }
 
-        let section = MainSection(rawValue: indexPath.section)
-
-        if case .topBooks = section {
-            if viewModel.outputs.topBannerBooks.isEmpty.not {
-                topBookCell.viewModel = .init(
-                    topBooks: viewModel.outputs.topBannerBooks,
-                    dependencies: dependencies)
+        if indexPath.section == 0 {
+            if !viewModel.outputs.topBannerBooks.isEmpty {
+                topBookCell.viewModel = .init(topBooks: viewModel.outputs.topBannerBooks, dependencies: dependencies)
+                return topBookCell
             }
-            return topBookCell
         } else {
-            return bookCell
+            let sectionIndex = indexPath.section - 1
+            if sectionIndex < viewModel.outputs.books.keys.count {
+                let sortedGenre = Array(viewModel.outputs.books.keys.sorted())[sectionIndex]
+                let genreString = String(sortedGenre)
+
+                if let booksForGenre = viewModel.outputs.books[genreString] {
+                    bookCell.viewModel = .init(books: booksForGenre, dependencies: dependencies)
+                    bookCell.delegate = self
+                    return bookCell
+                }
+            }
         }
+        return UITableViewCell()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +61,11 @@ extension LibraryViewController: UITableViewDataSource {
     }
 }
 
-final class LibraryViewController: UIViewController, AlertDisplayable {
+final class LibraryViewController: UIViewController, AlertDisplayable, BookCellDelegate {
+
+    func bookSelected(_ item: BookResponse.Book) {
+        viewModel.inputs.selected(item: item)
+    }
 
     enum MainSection: Int, CaseIterable {
         case topBooks
@@ -83,7 +93,9 @@ final class LibraryViewController: UIViewController, AlertDisplayable {
         tableView.register(
             TopBooksCollectionTableViewCell.self,
             forCellReuseIdentifier: TopBooksCollectionTableViewCell.identifier)
-        tableView.register(BooksCollectionTableViewCell.self, forCellReuseIdentifier: BooksCollectionTableViewCell.identifier)
+        tableView.register(
+            BooksCollectionTableViewCell.self,
+            forCellReuseIdentifier: BooksCollectionTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         return tableView

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		EDA485682B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485672B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift */; };
 		EDA4856C2B124F0F00533B10 /* Optional+isNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4856B2B124F0F00533B10 /* Optional+isNil.swift */; };
+		EDA4856E2B128DE300533B10 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4856D2B128DE300533B10 /* BookCellViewModel.swift */; };
+		EDA485702B128EAB00533B10 /* BookCellViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4856F2B128EAB00533B10 /* BookCellViewModel+Dependencies.swift */; };
 		EDB786532B0CFCF300D1354D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */; };
 		EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7866C2B0D4C9000D1354D /* AppDependenciesAssembly.swift */; };
 		EDB786712B0D55F000D1354D /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786702B0D55F000D1354D /* LibraryViewModel.swift */; };
@@ -141,6 +143,8 @@
 /* Begin PBXFileReference section */
 		EDA485672B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopBooksCollectionTableViewCell+LAutoScrollLayout.swift"; sourceTree = "<group>"; };
 		EDA4856B2B124F0F00533B10 /* Optional+isNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isNil.swift"; sourceTree = "<group>"; };
+		EDA4856D2B128DE300533B10 /* BookCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModel.swift; sourceTree = "<group>"; };
+		EDA4856F2B128EAB00533B10 /* BookCellViewModel+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookCellViewModel+Dependencies.swift"; sourceTree = "<group>"; };
 		EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDB786622B0D405200D1354D /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		EDB786672B0D41DD00D1354D /* FirebaseRemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigService.swift; sourceTree = "<group>"; };
@@ -561,6 +565,8 @@
 				EDF95CDE2B0EBF8900C652E2 /* YouWillAlsoLikeSectionViewModel.swift */,
 				EDF95CE02B0EBFDE00C652E2 /* BookCell.swift */,
 				EDF95CE22B0EC0F700C652E2 /* YouwWillAlsoLikeSectionViewModelBuilder.swift */,
+				EDA4856D2B128DE300533B10 /* BookCellViewModel.swift */,
+				EDA4856F2B128EAB00533B10 /* BookCellViewModel+Dependencies.swift */,
 			);
 			path = YouWillAlsoLikeSection;
 			sourceTree = "<group>";
@@ -891,9 +897,11 @@
 				EDF95CC82B0EB65C00C652E2 /* PrimaryButton.swift in Sources */,
 				EDF95D132B0FD8A700C652E2 /* LibraryViewModel+Analytics.swift in Sources */,
 				EDC4F7572B0BFA0800AEE26F /* SceneDelegate.swift in Sources */,
+				EDA4856E2B128DE300533B10 /* BookCellViewModel.swift in Sources */,
 				EDF95CDA2B0EBDC900C652E2 /* SummarySectionViewModelBuilder.swift in Sources */,
 				EDF95D082B0FD24900C652E2 /* TopBannerCellViewModel.swift in Sources */,
 				EDB786732B0D562B00D1354D /* LibraryViewModel+Dependencies.swift in Sources */,
+				EDA485702B128EAB00533B10 /* BookCellViewModel+Dependencies.swift in Sources */,
 				EDF95D272B1097D900C652E2 /* LibraryViewController+Dependencies.swift in Sources */,
 				EDF95CD32B0EBA3500C652E2 /* HeaderSectionViewModel.swift in Sources */,
 				EDB786782B0D592200D1354D /* HomeFlow.swift in Sources */,

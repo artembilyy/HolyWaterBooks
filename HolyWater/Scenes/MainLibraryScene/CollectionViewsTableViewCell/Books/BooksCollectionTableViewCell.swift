@@ -5,7 +5,12 @@
 //  Created by Артем Билый on 24.11.2023.
 //
 
+import HolyWaterServices
 import HolyWaterUI
+
+protocol BookCellDelegate: AnyObject {
+    func bookSelected(_ item: BookResponse.Book)
+}
 
 final class BooksCollectionTableViewCell: UITableViewCell, IdentifiableCell {
 
@@ -37,7 +42,9 @@ final class BooksCollectionTableViewCell: UITableViewCell, IdentifiableCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
 
-//    var viewModel: TableViewCellViewModel!
+    var viewModel: BookCellViewModel!
+
+    weak var delegate: BookCellDelegate?
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -56,9 +63,7 @@ extension BooksCollectionTableViewCell {
 
     private func setupUI() {
         collectionView.dataSource = self
-
         addSubview(collectionView)
-
         collectionView.frame = bounds
     }
 }
@@ -66,14 +71,26 @@ extension BooksCollectionTableViewCell {
 extension BooksCollectionTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        DetailsViewModel.data.count
+        viewModel.books.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCell.identifier, for: indexPath) as? BookCell else { return UICollectionViewCell() }
-        let data = DetailsViewModel.data[indexPath.item]
-        cell.configureCell(with: data)
+
+        let book = viewModel.books[indexPath.item]
+        cell.viewModel = viewModel
+        cell.configureCell(indexPath: indexPath)
+
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let selectedGenre = Array(viewModel.books.keys)[indexPath.section]
+//        let selectedBook = viewModel.books[selectedGenre]?[indexPath.row]
+//
+//        if let book = selectedBook {
+//            delegate?.bookSelected(book)
+//        }
     }
 }
 

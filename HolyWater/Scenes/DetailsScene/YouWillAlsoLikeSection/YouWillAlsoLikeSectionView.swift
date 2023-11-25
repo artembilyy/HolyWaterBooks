@@ -73,7 +73,7 @@ extension YouWillAlsoLikeSectionView: UICollectionViewDataSource {
         else {
             return UICollectionViewCell()
         }
-        cell.configureCell(with: viewModel.books[indexPath.row])
+        cell.configureCell(indexPath: indexPath)
         return cell
     }
 }
