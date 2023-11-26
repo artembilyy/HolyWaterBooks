@@ -8,6 +8,7 @@
 public enum ThemeColor: UInt, ColorConvertible {
 
     case black = 0x111111
+    case chaosBlack = 0x101010
     case white = 0xFFFFFF
     case silver = 0xC4C4C4
     case lightGray = 0xD9D5D6

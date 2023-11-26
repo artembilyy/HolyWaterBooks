@@ -7,15 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDA485682B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485672B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift */; };
 		EDA4856C2B124F0F00533B10 /* Optional+isNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4856B2B124F0F00533B10 /* Optional+isNil.swift */; };
 		EDA4856E2B128DE300533B10 /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4856D2B128DE300533B10 /* BookCellViewModel.swift */; };
 		EDA485702B128EAB00533B10 /* BookCellViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4856F2B128EAB00533B10 /* BookCellViewModel+Dependencies.swift */; };
+		EDA485772B129E3100533B10 /* TopBannerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485732B129E3100533B10 /* TopBannerCollectionView.swift */; };
+		EDA485782B129E3100533B10 /* TopBannerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485742B129E3100533B10 /* TopBannerCellViewModel.swift */; };
+		EDA485792B129E3100533B10 /* TopBannerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485752B129E3100533B10 /* TopBannerCollectionCell.swift */; };
+		EDA4857A2B129E3100533B10 /* TopBannerCellViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485762B129E3100533B10 /* TopBannerCellViewModel+Dependencies.swift */; };
+		EDA485822B129E7B00533B10 /* LibraryViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4857D2B129E7B00533B10 /* LibraryViewController+Layout.swift */; };
+		EDA485832B129E7B00533B10 /* LibraryViewController+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4857E2B129E7B00533B10 /* LibraryViewController+Dependencies.swift */; };
+		EDA485842B129E7B00533B10 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4857F2B129E7B00533B10 /* LibraryViewController.swift */; };
+		EDA485852B129E7B00533B10 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485802B129E7B00533B10 /* CollectionViewHeader.swift */; };
+		EDA485862B129E7B00533B10 /* LibraryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485812B129E7B00533B10 /* LibraryViewControllerFactory.swift */; };
+		EDA4858E2B129EC900533B10 /* LibraryViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485882B129EC900533B10 /* LibraryViewModel+Dependencies.swift */; };
+		EDA4858F2B129EC900533B10 /* LibraryViewModel+Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485892B129EC900533B10 /* LibraryViewModel+Analytics.swift */; };
+		EDA485902B129EC900533B10 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4858A2B129EC900533B10 /* LibraryViewModel.swift */; };
+		EDA485912B129EC900533B10 /* LibraryViewModel+Outputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4858B2B129EC900533B10 /* LibraryViewModel+Outputs.swift */; };
+		EDA485922B129EC900533B10 /* LibraryViewModelInputs+Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4858C2B129EC900533B10 /* LibraryViewModelInputs+Inputs.swift */; };
+		EDA485942B129EFC00533B10 /* UIColor+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485932B129EFC00533B10 /* UIColor+image.swift */; };
+		EDA485962B12AC6A00533B10 /* TopBooksCollectionTableViewCell+AutoScrollLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485952B12AC6A00533B10 /* TopBooksCollectionTableViewCell+AutoScrollLayout.swift */; };
+		EDA485982B12D07400533B10 /* SnapCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485972B12D07400533B10 /* SnapCollectionViewModel.swift */; };
+		EDA4859A2B12D0E600533B10 /* SnapCollectionViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485992B12D0E600533B10 /* SnapCollectionViewModelBuilder.swift */; };
+		EDA4859C2B12D5D000533B10 /* SnapCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4859B2B12D5D000533B10 /* SnapCollectionViewCellViewModel.swift */; };
 		EDB786532B0CFCF300D1354D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */; };
 		EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7866C2B0D4C9000D1354D /* AppDependenciesAssembly.swift */; };
-		EDB786712B0D55F000D1354D /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786702B0D55F000D1354D /* LibraryViewModel.swift */; };
-		EDB786732B0D562B00D1354D /* LibraryViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786722B0D562B00D1354D /* LibraryViewModel+Dependencies.swift */; };
-		EDB786752B0D56A200D1354D /* LibraryViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786742B0D56A200D1354D /* LibraryViewControllerFactory.swift */; };
 		EDB786782B0D592200D1354D /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786772B0D592200D1354D /* HomeFlow.swift */; };
 		EDB786832B0D6B2D00D1354D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786822B0D6B2D00D1354D /* RxSwift */; };
 		EDB786882B0D7D6000D1354D /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7952B0C074F00AEE26F /* UIView+Subviews.swift */; };
@@ -45,7 +60,6 @@
 		EDB786CC2B0D87CB00D1354D /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786CB2B0D87CB00D1354D /* FirebaseRemoteConfigSwift */; };
 		EDC4F7552B0BFA0800AEE26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7542B0BFA0800AEE26F /* AppDelegate.swift */; };
 		EDC4F7572B0BFA0800AEE26F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7562B0BFA0800AEE26F /* SceneDelegate.swift */; };
-		EDC4F7592B0BFA0800AEE26F /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7582B0BFA0800AEE26F /* LibraryViewController.swift */; };
 		EDC4F75E2B0BFA0A00AEE26F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC4F75D2B0BFA0A00AEE26F /* Assets.xcassets */; };
 		EDC4F7612B0BFA0A00AEE26F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC4F75F2B0BFA0A00AEE26F /* LaunchScreen.storyboard */; };
 		EDC4F76F2B0BFC7400AEE26F /* SplashAnimatior.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F76A2B0BFC7400AEE26F /* SplashAnimatior.swift */; };
@@ -60,8 +74,6 @@
 		EDC4F78C2B0C002F00AEE26F /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7892B0C002E00AEE26F /* ThemeColor.swift */; };
 		EDC4F78F2B0C00D400AEE26F /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F78E2B0C00D400AEE26F /* UIColor+Hex.swift */; };
 		EDC4F7912B0C00E000AEE26F /* FontConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7902B0C00E000AEE26F /* FontConvertible.swift */; };
-		EDF95C972B0E564700C652E2 /* BottomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95C962B0E564700C652E2 /* BottomCollectionViewCell.swift */; };
-		EDF95CA02B0E63A400C652E2 /* TopBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95C9F2B0E63A400C652E2 /* TopBannerCell.swift */; };
 		EDF95CA62B0E733700C652E2 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CA12B0E64EB00C652E2 /* ImageCacheManager.swift */; };
 		EDF95CA72B0E733A00C652E2 /* ImageLoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CA32B0E651000C652E2 /* ImageLoadingManager.swift */; };
 		EDF95CA92B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CA82B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift */; };
@@ -95,17 +107,7 @@
 		EDF95CEA2B0EC1E500C652E2 /* MainStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CE92B0EC1E500C652E2 /* MainStackViewModel.swift */; };
 		EDF95CEC2B0EC23400C652E2 /* MainStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CEB2B0EC23400C652E2 /* MainStackView.swift */; };
 		EDF95D042B0F470000C652E2 /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D012B0F3DDF00C652E2 /* AlertDisplayable.swift */; };
-		EDF95D082B0FD24900C652E2 /* TopBannerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D072B0FD24900C652E2 /* TopBannerCellViewModel.swift */; };
-		EDF95D0B2B0FD4F400C652E2 /* TopBannerCellViewModel+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D0A2B0FD4F400C652E2 /* TopBannerCellViewModel+Dependencies.swift */; };
-		EDF95D0D2B0FD6A300C652E2 /* LibraryViewModelInputs+Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D0C2B0FD6A300C652E2 /* LibraryViewModelInputs+Inputs.swift */; };
-		EDF95D0F2B0FD6C900C652E2 /* LibraryViewModel+Outputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D0E2B0FD6C900C652E2 /* LibraryViewModel+Outputs.swift */; };
-		EDF95D112B0FD82600C652E2 /* LibraryViewModel+Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D102B0FD82600C652E2 /* LibraryViewModel+Configurator.swift */; };
-		EDF95D132B0FD8A700C652E2 /* LibraryViewModel+Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D122B0FD8A700C652E2 /* LibraryViewModel+Analytics.swift */; };
 		EDF95D162B0FE2DC00C652E2 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D152B0FE2DC00C652E2 /* LoadingIndicator.swift */; };
-		EDF95D1F2B0FEE9A00C652E2 /* TopBooksCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D1E2B0FEE9A00C652E2 /* TopBooksCollectionTableViewCell.swift */; };
-		EDF95D232B108BC500C652E2 /* BooksCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D222B108BC500C652E2 /* BooksCollectionTableViewCell.swift */; };
-		EDF95D252B108D0500C652E2 /* BooksCollectionTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D242B108D0500C652E2 /* BooksCollectionTableViewCellViewModel.swift */; };
-		EDF95D272B1097D900C652E2 /* LibraryViewController+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D262B1097D900C652E2 /* LibraryViewController+Dependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,18 +143,33 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EDA485672B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopBooksCollectionTableViewCell+LAutoScrollLayout.swift"; sourceTree = "<group>"; };
 		EDA4856B2B124F0F00533B10 /* Optional+isNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+isNil.swift"; sourceTree = "<group>"; };
 		EDA4856D2B128DE300533B10 /* BookCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModel.swift; sourceTree = "<group>"; };
 		EDA4856F2B128EAB00533B10 /* BookCellViewModel+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookCellViewModel+Dependencies.swift"; sourceTree = "<group>"; };
+		EDA485732B129E3100533B10 /* TopBannerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBannerCollectionView.swift; sourceTree = "<group>"; };
+		EDA485742B129E3100533B10 /* TopBannerCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBannerCellViewModel.swift; sourceTree = "<group>"; };
+		EDA485752B129E3100533B10 /* TopBannerCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBannerCollectionCell.swift; sourceTree = "<group>"; };
+		EDA485762B129E3100533B10 /* TopBannerCellViewModel+Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TopBannerCellViewModel+Dependencies.swift"; sourceTree = "<group>"; };
+		EDA4857D2B129E7B00533B10 /* LibraryViewController+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LibraryViewController+Layout.swift"; sourceTree = "<group>"; };
+		EDA4857E2B129E7B00533B10 /* LibraryViewController+Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LibraryViewController+Dependencies.swift"; sourceTree = "<group>"; };
+		EDA4857F2B129E7B00533B10 /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		EDA485802B129E7B00533B10 /* CollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
+		EDA485812B129E7B00533B10 /* LibraryViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewControllerFactory.swift; sourceTree = "<group>"; };
+		EDA485882B129EC900533B10 /* LibraryViewModel+Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LibraryViewModel+Dependencies.swift"; sourceTree = "<group>"; };
+		EDA485892B129EC900533B10 /* LibraryViewModel+Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LibraryViewModel+Analytics.swift"; sourceTree = "<group>"; };
+		EDA4858A2B129EC900533B10 /* LibraryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
+		EDA4858B2B129EC900533B10 /* LibraryViewModel+Outputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LibraryViewModel+Outputs.swift"; sourceTree = "<group>"; };
+		EDA4858C2B129EC900533B10 /* LibraryViewModelInputs+Inputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LibraryViewModelInputs+Inputs.swift"; sourceTree = "<group>"; };
+		EDA485932B129EFC00533B10 /* UIColor+image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+image.swift"; sourceTree = "<group>"; };
+		EDA485952B12AC6A00533B10 /* TopBooksCollectionTableViewCell+AutoScrollLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopBooksCollectionTableViewCell+AutoScrollLayout.swift"; sourceTree = "<group>"; };
+		EDA485972B12D07400533B10 /* SnapCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionViewModel.swift; sourceTree = "<group>"; };
+		EDA485992B12D0E600533B10 /* SnapCollectionViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionViewModelBuilder.swift; sourceTree = "<group>"; };
+		EDA4859B2B12D5D000533B10 /* SnapCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDB786622B0D405200D1354D /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		EDB786672B0D41DD00D1354D /* FirebaseRemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigService.swift; sourceTree = "<group>"; };
 		EDB786692B0D439900D1354D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		EDB7866C2B0D4C9000D1354D /* AppDependenciesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependenciesAssembly.swift; sourceTree = "<group>"; };
-		EDB786702B0D55F000D1354D /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
-		EDB786722B0D562B00D1354D /* LibraryViewModel+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryViewModel+Dependencies.swift"; sourceTree = "<group>"; };
-		EDB786742B0D56A200D1354D /* LibraryViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewControllerFactory.swift; sourceTree = "<group>"; };
 		EDB786772B0D592200D1354D /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
 		EDB7867B2B0D69EF00D1354D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDB786852B0D77C500D1354D /* FirebaseCrashAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCrashAnalytics.swift; sourceTree = "<group>"; };
@@ -162,7 +179,6 @@
 		EDC4F7512B0BFA0800AEE26F /* HolyWater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HolyWater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC4F7542B0BFA0800AEE26F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC4F7562B0BFA0800AEE26F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDC4F7582B0BFA0800AEE26F /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		EDC4F75D2B0BFA0A00AEE26F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDC4F7602B0BFA0A00AEE26F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDC4F76A2B0BFC7400AEE26F /* SplashAnimatior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashAnimatior.swift; sourceTree = "<group>"; };
@@ -181,8 +197,6 @@
 		EDC4F7992B0C0A6200AEE26F /* Bool+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+State.swift"; sourceTree = "<group>"; };
 		EDC4F79B2B0C0A7A00AEE26F /* Task+Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Sleep.swift"; sourceTree = "<group>"; };
 		EDC4F79D2B0C17D700AEE26F /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
-		EDF95C962B0E564700C652E2 /* BottomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomCollectionViewCell.swift; sourceTree = "<group>"; };
-		EDF95C9F2B0E63A400C652E2 /* TopBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCell.swift; sourceTree = "<group>"; };
 		EDF95CA12B0E64EB00C652E2 /* ImageCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		EDF95CA32B0E651000C652E2 /* ImageLoadingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoadingManager.swift; sourceTree = "<group>"; };
 		EDF95CA82B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+StatusBarHeight.swift"; sourceTree = "<group>"; };
@@ -216,17 +230,7 @@
 		EDF95CE92B0EC1E500C652E2 /* MainStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStackViewModel.swift; sourceTree = "<group>"; };
 		EDF95CEB2B0EC23400C652E2 /* MainStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStackView.swift; sourceTree = "<group>"; };
 		EDF95D012B0F3DDF00C652E2 /* AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayable.swift; sourceTree = "<group>"; };
-		EDF95D072B0FD24900C652E2 /* TopBannerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCellViewModel.swift; sourceTree = "<group>"; };
-		EDF95D0A2B0FD4F400C652E2 /* TopBannerCellViewModel+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopBannerCellViewModel+Dependencies.swift"; sourceTree = "<group>"; };
-		EDF95D0C2B0FD6A300C652E2 /* LibraryViewModelInputs+Inputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryViewModelInputs+Inputs.swift"; sourceTree = "<group>"; };
-		EDF95D0E2B0FD6C900C652E2 /* LibraryViewModel+Outputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryViewModel+Outputs.swift"; sourceTree = "<group>"; };
-		EDF95D102B0FD82600C652E2 /* LibraryViewModel+Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryViewModel+Configurator.swift"; sourceTree = "<group>"; };
-		EDF95D122B0FD8A700C652E2 /* LibraryViewModel+Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryViewModel+Analytics.swift"; sourceTree = "<group>"; };
 		EDF95D152B0FE2DC00C652E2 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
-		EDF95D1E2B0FEE9A00C652E2 /* TopBooksCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBooksCollectionTableViewCell.swift; sourceTree = "<group>"; };
-		EDF95D222B108BC500C652E2 /* BooksCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionTableViewCell.swift; sourceTree = "<group>"; };
-		EDF95D242B108D0500C652E2 /* BooksCollectionTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		EDF95D262B1097D900C652E2 /* LibraryViewController+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryViewController+Dependencies.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,22 +273,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EDA485662B10CB6500533B10 /* Books */ = {
+		EDA485722B129E3100533B10 /* TopBanner */ = {
 			isa = PBXGroup;
 			children = (
-				EDF95D242B108D0500C652E2 /* BooksCollectionTableViewCellViewModel.swift */,
-				EDF95D222B108BC500C652E2 /* BooksCollectionTableViewCell.swift */,
+				EDA485732B129E3100533B10 /* TopBannerCollectionView.swift */,
+				EDA485742B129E3100533B10 /* TopBannerCellViewModel.swift */,
+				EDA485752B129E3100533B10 /* TopBannerCollectionCell.swift */,
+				EDA485762B129E3100533B10 /* TopBannerCellViewModel+Dependencies.swift */,
+				EDA485952B12AC6A00533B10 /* TopBooksCollectionTableViewCell+AutoScrollLayout.swift */,
 			);
-			path = Books;
+			path = TopBanner;
+			sourceTree = "<group>";
+		};
+		EDA4857B2B129E6500533B10 /* LibraryViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EDA4858A2B129EC900533B10 /* LibraryViewModel.swift */,
+				EDA485892B129EC900533B10 /* LibraryViewModel+Analytics.swift */,
+				EDA485882B129EC900533B10 /* LibraryViewModel+Dependencies.swift */,
+				EDA4858B2B129EC900533B10 /* LibraryViewModel+Outputs.swift */,
+				EDA4858C2B129EC900533B10 /* LibraryViewModelInputs+Inputs.swift */,
+			);
+			path = LibraryViewModel;
+			sourceTree = "<group>";
+		};
+		EDA4857C2B129E7B00533B10 /* LibraryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EDA4857D2B129E7B00533B10 /* LibraryViewController+Layout.swift */,
+				EDA4857E2B129E7B00533B10 /* LibraryViewController+Dependencies.swift */,
+				EDA4857F2B129E7B00533B10 /* LibraryViewController.swift */,
+				EDA485802B129E7B00533B10 /* CollectionViewHeader.swift */,
+				EDA485812B129E7B00533B10 /* LibraryViewControllerFactory.swift */,
+			);
+			path = LibraryViewController;
 			sourceTree = "<group>";
 		};
 		EDB7865F2B0D3D1D00D1354D /* MainLibraryScene */ = {
 			isa = PBXGroup;
 			children = (
-				EDF95D192B0FE6D700C652E2 /* CollectionViewsTableViewCell */,
-				EDF95D182B0FE52A00C652E2 /* LibraryViewController */,
-				EDF95D172B0FE50B00C652E2 /* LibraryViewModel */,
-				EDF95C962B0E564700C652E2 /* BottomCollectionViewCell.swift */,
+				EDA485722B129E3100533B10 /* TopBanner */,
+				EDA4857C2B129E7B00533B10 /* LibraryViewController */,
+				EDA4857B2B129E6500533B10 /* LibraryViewModel */,
 			);
 			path = MainLibraryScene;
 			sourceTree = "<group>";
@@ -325,13 +355,6 @@
 				EDC4F7562B0BFA0800AEE26F /* SceneDelegate.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		EDB786662B0D40BB00D1354D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		EDB7866B2B0D4C7000D1354D /* DependenciesAssembly */ = {
@@ -413,7 +436,6 @@
 				EDB7866B2B0D4C7000D1354D /* DependenciesAssembly */,
 				EDB786762B0D591200D1354D /* Scenes */,
 				EDC4F7682B0BFC7400AEE26F /* SplashViewScreen */,
-				EDB786662B0D40BB00D1354D /* Resources */,
 				EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */,
 				EDC4F75D2B0BFA0A00AEE26F /* Assets.xcassets */,
 				EDB7867B2B0D69EF00D1354D /* Info.plist */,
@@ -475,6 +497,7 @@
 				EDF95CA82B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift */,
 				EDF95CB82B0EAD8A00C652E2 /* IdentifiableCell.swift */,
 				EDA4856B2B124F0F00533B10 /* Optional+isNil.swift */,
+				EDA485932B129EFC00533B10 /* UIColor+image.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -512,8 +535,11 @@
 				EDF95CB22B0EA87300C652E2 /* SnapLayout.swift */,
 				EDF95CB42B0EAA9F00C652E2 /* SnapLayout+Style.swift */,
 				EDF95CB62B0EABFF00C652E2 /* SnapCollectionViewCell.swift */,
+				EDA4859B2B12D5D000533B10 /* SnapCollectionViewCellViewModel.swift */,
 				EDF95CBA2B0EADF200C652E2 /* SnapCollectionView.swift */,
 				EDF95CBD2B0EB01500C652E2 /* SnapCollectionView+Style.swift */,
+				EDA485972B12D07400533B10 /* SnapCollectionViewModel.swift */,
+				EDA485992B12D0E600533B10 /* SnapCollectionViewModelBuilder.swift */,
 			);
 			path = SnapCollectionView;
 			sourceTree = "<group>";
@@ -597,56 +623,12 @@
 			path = AlertService;
 			sourceTree = "<group>";
 		};
-		EDF95D092B0FD24E00C652E2 /* TopBanner */ = {
-			isa = PBXGroup;
-			children = (
-				EDF95D1E2B0FEE9A00C652E2 /* TopBooksCollectionTableViewCell.swift */,
-				EDA485672B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift */,
-				EDF95D0A2B0FD4F400C652E2 /* TopBannerCellViewModel+Dependencies.swift */,
-				EDF95C9F2B0E63A400C652E2 /* TopBannerCell.swift */,
-				EDF95D072B0FD24900C652E2 /* TopBannerCellViewModel.swift */,
-			);
-			path = TopBanner;
-			sourceTree = "<group>";
-		};
 		EDF95D142B0FDB6600C652E2 /* LoadingIndicator */ = {
 			isa = PBXGroup;
 			children = (
 				EDF95D152B0FE2DC00C652E2 /* LoadingIndicator.swift */,
 			);
 			path = LoadingIndicator;
-			sourceTree = "<group>";
-		};
-		EDF95D172B0FE50B00C652E2 /* LibraryViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				EDB786702B0D55F000D1354D /* LibraryViewModel.swift */,
-				EDF95D122B0FD8A700C652E2 /* LibraryViewModel+Analytics.swift */,
-				EDF95D102B0FD82600C652E2 /* LibraryViewModel+Configurator.swift */,
-				EDB786722B0D562B00D1354D /* LibraryViewModel+Dependencies.swift */,
-				EDF95D0C2B0FD6A300C652E2 /* LibraryViewModelInputs+Inputs.swift */,
-				EDF95D0E2B0FD6C900C652E2 /* LibraryViewModel+Outputs.swift */,
-			);
-			path = LibraryViewModel;
-			sourceTree = "<group>";
-		};
-		EDF95D182B0FE52A00C652E2 /* LibraryViewController */ = {
-			isa = PBXGroup;
-			children = (
-				EDC4F7582B0BFA0800AEE26F /* LibraryViewController.swift */,
-				EDB786742B0D56A200D1354D /* LibraryViewControllerFactory.swift */,
-				EDF95D262B1097D900C652E2 /* LibraryViewController+Dependencies.swift */,
-			);
-			path = LibraryViewController;
-			sourceTree = "<group>";
-		};
-		EDF95D192B0FE6D700C652E2 /* CollectionViewsTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				EDA485662B10CB6500533B10 /* Books */,
-				EDF95D092B0FD24E00C652E2 /* TopBanner */,
-			);
-			path = CollectionViewsTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -862,32 +844,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA485842B129E7B00533B10 /* LibraryViewController.swift in Sources */,
 				EDF95CC42B0EB4F600C652E2 /* HeaderViewModelBuilder.swift in Sources */,
 				EDF95CAE2B0EA74900C652E2 /* DetailsViewControllerFactory.swift in Sources */,
-				EDC4F7592B0BFA0800AEE26F /* LibraryViewController.swift in Sources */,
 				EDF95CB32B0EA87300C652E2 /* SnapLayout.swift in Sources */,
 				EDF95CE82B0EC1B900C652E2 /* MainStackViewModelBuilder.swift in Sources */,
-				EDF95D0D2B0FD6A300C652E2 /* LibraryViewModelInputs+Inputs.swift in Sources */,
 				EDF95CD62B0EBAF000C652E2 /* SummarySectionView.swift in Sources */,
 				EDC4F7712B0BFC7400AEE26F /* SplashViewController+Style.swift in Sources */,
-				EDF95D232B108BC500C652E2 /* BooksCollectionTableViewCell.swift in Sources */,
 				EDC4F7552B0BFA0800AEE26F /* AppDelegate.swift in Sources */,
-				EDF95D0F2B0FD6C900C652E2 /* LibraryViewModel+Outputs.swift in Sources */,
 				EDC4F7722B0BFC7400AEE26F /* SplashPresenter.swift in Sources */,
 				EDF95CD12B0EBA1100C652E2 /* HeaderSectionViewModelBuilder.swift in Sources */,
 				EDF95CEA2B0EC1E500C652E2 /* MainStackViewModel.swift in Sources */,
+				EDA485852B129E7B00533B10 /* CollectionViewHeader.swift in Sources */,
+				EDA485922B129EC900533B10 /* LibraryViewModelInputs+Inputs.swift in Sources */,
+				EDA4858E2B129EC900533B10 /* LibraryViewModel+Dependencies.swift in Sources */,
+				EDA4858F2B129EC900533B10 /* LibraryViewModel+Analytics.swift in Sources */,
+				EDA4859A2B12D0E600533B10 /* SnapCollectionViewModelBuilder.swift in Sources */,
+				EDA485912B129EC900533B10 /* LibraryViewModel+Outputs.swift in Sources */,
 				EDF95CCB2B0EB79400C652E2 /* HeaderSectionView.swift in Sources */,
-				EDF95D0B2B0FD4F400C652E2 /* TopBannerCellViewModel+Dependencies.swift in Sources */,
-				EDA485682B11763400533B10 /* TopBooksCollectionTableViewCell+LAutoScrollLayout.swift in Sources */,
 				EDF95CB02B0EA75500C652E2 /* DetailsViewModel.swift in Sources */,
-				EDF95C972B0E564700C652E2 /* BottomCollectionViewCell.swift in Sources */,
+				EDA485902B129EC900533B10 /* LibraryViewModel.swift in Sources */,
 				EDF95CE62B0EC16800C652E2 /* SeparatorView.swift in Sources */,
-				EDF95D252B108D0500C652E2 /* BooksCollectionTableViewCellViewModel.swift in Sources */,
 				EDF95CCD2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift in Sources */,
 				EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */,
 				EDF95CE32B0EC0F700C652E2 /* YouwWillAlsoLikeSectionViewModelBuilder.swift in Sources */,
 				EDF95CDF2B0EBF8900C652E2 /* YouWillAlsoLikeSectionViewModel.swift in Sources */,
-				EDF95CA02B0E63A400C652E2 /* TopBannerCell.swift in Sources */,
 				EDF95CBB2B0EADF200C652E2 /* SnapCollectionView.swift in Sources */,
 				EDF95CD82B0EBDAF00C652E2 /* SummarySectionViewModel.swift in Sources */,
 				EDC4F76F2B0BFC7400AEE26F /* SplashAnimatior.swift in Sources */,
@@ -895,26 +876,28 @@
 				EDC4F7702B0BFC7400AEE26F /* SplashViewController.swift in Sources */,
 				EDF95CAC2B0EA73F00C652E2 /* DetailsViewController.swift in Sources */,
 				EDF95CC82B0EB65C00C652E2 /* PrimaryButton.swift in Sources */,
-				EDF95D132B0FD8A700C652E2 /* LibraryViewModel+Analytics.swift in Sources */,
+				EDA485792B129E3100533B10 /* TopBannerCollectionCell.swift in Sources */,
+				EDA485982B12D07400533B10 /* SnapCollectionViewModel.swift in Sources */,
+				EDA485962B12AC6A00533B10 /* TopBooksCollectionTableViewCell+AutoScrollLayout.swift in Sources */,
 				EDC4F7572B0BFA0800AEE26F /* SceneDelegate.swift in Sources */,
 				EDA4856E2B128DE300533B10 /* BookCellViewModel.swift in Sources */,
+				EDA485832B129E7B00533B10 /* LibraryViewController+Dependencies.swift in Sources */,
 				EDF95CDA2B0EBDC900C652E2 /* SummarySectionViewModelBuilder.swift in Sources */,
-				EDF95D082B0FD24900C652E2 /* TopBannerCellViewModel.swift in Sources */,
-				EDB786732B0D562B00D1354D /* LibraryViewModel+Dependencies.swift in Sources */,
 				EDA485702B128EAB00533B10 /* BookCellViewModel+Dependencies.swift in Sources */,
-				EDF95D272B1097D900C652E2 /* LibraryViewController+Dependencies.swift in Sources */,
 				EDF95CD32B0EBA3500C652E2 /* HeaderSectionViewModel.swift in Sources */,
 				EDB786782B0D592200D1354D /* HomeFlow.swift in Sources */,
 				EDF95CE12B0EBFDE00C652E2 /* BookCell.swift in Sources */,
 				EDF95CB72B0EABFF00C652E2 /* SnapCollectionViewCell.swift in Sources */,
-				EDF95D112B0FD82600C652E2 /* LibraryViewModel+Configurator.swift in Sources */,
-				EDB786752B0D56A200D1354D /* LibraryViewControllerFactory.swift in Sources */,
-				EDB786712B0D55F000D1354D /* LibraryViewModel.swift in Sources */,
+				EDA485772B129E3100533B10 /* TopBannerCollectionView.swift in Sources */,
+				EDA4857A2B129E3100533B10 /* TopBannerCellViewModel+Dependencies.swift in Sources */,
 				EDF95CDD2B0EBF5C00C652E2 /* YouWillAlsoLikeSectionView.swift in Sources */,
 				EDF95CC22B0EB4B400C652E2 /* HeaderViewModel.swift in Sources */,
+				EDA485822B129E7B00533B10 /* LibraryViewController+Layout.swift in Sources */,
 				EDF95CEC2B0EC23400C652E2 /* MainStackView.swift in Sources */,
+				EDA485782B129E3100533B10 /* TopBannerCellViewModel.swift in Sources */,
 				EDF95CB52B0EAA9F00C652E2 /* SnapLayout+Style.swift in Sources */,
-				EDF95D1F2B0FEE9A00C652E2 /* TopBooksCollectionTableViewCell.swift in Sources */,
+				EDA4859C2B12D5D000533B10 /* SnapCollectionViewCellViewModel.swift in Sources */,
+				EDA485862B129E7B00533B10 /* LibraryViewControllerFactory.swift in Sources */,
 				EDF95CCF2B0EB7F100C652E2 /* HeaderSectionSubview.swift in Sources */,
 				EDF95CC02B0EB3D500C652E2 /* HeaderView.swift in Sources */,
 			);
@@ -927,6 +910,7 @@
 				EDC4F78C2B0C002F00AEE26F /* ThemeColor.swift in Sources */,
 				EDF95CBC2B0EADF700C652E2 /* IdentifiableCell.swift in Sources */,
 				EDC4F78F2B0C00D400AEE26F /* UIColor+Hex.swift in Sources */,
+				EDA485942B129EFC00533B10 /* UIColor+image.swift in Sources */,
 				EDB786882B0D7D6000D1354D /* UIView+Subviews.swift in Sources */,
 				EDF95CA92B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift in Sources */,
 				EDF95D162B0FE2DC00C652E2 /* LoadingIndicator.swift in Sources */,

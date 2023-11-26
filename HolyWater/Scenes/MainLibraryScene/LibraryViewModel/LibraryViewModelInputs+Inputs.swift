@@ -9,7 +9,7 @@ import HolyWaterServices
 
 protocol LibraryViewModelInputs {
     func fetch()
-    func selected(item: BookResponse.Book)
+    func selected(data: [BookResponse.Book])
     func sendCrashReport(
         event: CrashAnalytics.CrashEvent,
         source: String?)

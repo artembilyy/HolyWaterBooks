@@ -1,5 +1,5 @@
 //
-//  TopBooksCollectionTableViewCell.swift
+//  TopBannerCollectionView.swift
 //  HolyWater
 //
 //  Created by Артем Билый on 23.11.2023.
@@ -9,7 +9,7 @@ import HolyWaterServices
 import HolyWaterUI
 import RxSwift
 
-extension TopBooksCollectionTableViewCell {
+extension TopBannerCollectionView {
 
     func configAutoScroll() {
         guard let viewModel else { return }
@@ -48,20 +48,20 @@ extension TopBooksCollectionTableViewCell {
     func addPageControl() {
         guard let viewModel else { return }
         pageControl = UIPageControl(frame: CGRect(
-            x: frame.width / 2,
-            y: frame.height / 2,
-            width: frame.size.width / 2,
-            height: 40.0))
+            x: self.frame.origin.x,
+            y: self.collectionView.frame.origin.y + self.frame.height - 30,
+            width: self.frame.size.width,
+            height: 30))
         pageControl.numberOfPages = viewModel.topBooks.count - 2
-        pageControl.currentPageIndicatorTintColor = .purple
-        pageControl.pageIndicatorTintColor = .black
+        pageControl.currentPageIndicatorTintColor = ThemeColor.raspberryPink.asUIColor()
+        pageControl.pageIndicatorTintColor = ThemeColor.lightGray.asUIColor()
         pageControl.isUserInteractionEnabled = false
         pageControl.allowsContinuousInteraction = false
         addSubview(pageControl)
     }
 }
 
-final class TopBooksCollectionTableViewCell: UITableViewCell, IdentifiableCell, UICollectionViewDelegate {
+final class TopBannerCollectionView: UICollectionViewCell, IdentifiableCell, UICollectionViewDelegate {
 
     var pageControl: UIPageControl!
     var autoScrollTimer: Timer!
@@ -71,10 +71,6 @@ final class TopBooksCollectionTableViewCell: UITableViewCell, IdentifiableCell, 
         frame: .zero,
         collectionViewLayout: createCompositionalLayout())
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-
     var viewModel: TopBannerCellViewModel?
 
     private let disposeBag = DisposeBag()
@@ -83,20 +79,14 @@ final class TopBooksCollectionTableViewCell: UITableViewCell, IdentifiableCell, 
         super.layoutSubviews()
         setupUI()
     }
-
-    @available(*, unavailable)
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
 }
 
 // MARK: - UI Setup
 
-extension TopBooksCollectionTableViewCell {
+extension TopBannerCollectionView {
 
     private func setupUI() {
-        backgroundColor = .white
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isScrollEnabled = true
 
@@ -130,7 +120,7 @@ extension TopBooksCollectionTableViewCell {
 
 }
 
-extension TopBooksCollectionTableViewCell: InfiniteAutoScrollViewCellDelegate {
+extension TopBannerCollectionView: InfiniteAutoScrollViewCellDelegate {
 
     func invalidateTimer() {
         if autoScrollTimer.isNil.not {
@@ -140,7 +130,7 @@ extension TopBooksCollectionTableViewCell: InfiniteAutoScrollViewCellDelegate {
     }
 }
 
-extension TopBooksCollectionTableViewCell: UICollectionViewDataSource {
+extension TopBannerCollectionView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel?.topBooks.count ?? 0

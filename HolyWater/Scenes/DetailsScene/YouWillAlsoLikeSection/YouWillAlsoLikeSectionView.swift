@@ -48,6 +48,10 @@ final class YouWillAlsoLikeSectionView: UIView {
     private func setupUI() {
         addSubview(headerView)
         addSubview(collectionView)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.collectionView.reloadData()
+        }
     }
 
     private func configureUI() {
@@ -73,6 +77,7 @@ extension YouWillAlsoLikeSectionView: UICollectionViewDataSource {
         else {
             return UICollectionViewCell()
         }
+        cell.viewModel = .init(books: viewModel.books, dependencies: viewModel.dependencies)
         cell.configureCell(indexPath: indexPath)
         return cell
     }

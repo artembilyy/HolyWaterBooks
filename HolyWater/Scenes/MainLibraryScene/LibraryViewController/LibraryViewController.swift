@@ -9,68 +9,13 @@ import HolyWaterServices
 import HolyWaterUI
 import RxSwift
 
-extension LibraryViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-        let section = MainSection(rawValue: indexPath.section)
-
-        if case .topBooks = section {
-            let width = tableView.frame.width - 32
-            return width * 0.47 + 40
-        } else {
-            return 200
-        }
-    }
+private enum Constants: String {
+    case leftHeadItem = "Library"
 }
 
-extension LibraryViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let topBookCell = tableView.dequeueReusableCell(withIdentifier: TopBooksCollectionTableViewCell.identifier) as? TopBooksCollectionTableViewCell,
-              let bookCell = tableView.dequeueReusableCell(withIdentifier: BooksCollectionTableViewCell.identifier) as? BooksCollectionTableViewCell
-        else {
-            return UITableViewCell()
-        }
+final class LibraryViewController: UIViewController, AlertDisplayable {
 
-        if indexPath.section == 0 {
-            if !viewModel.outputs.topBannerBooks.isEmpty {
-                topBookCell.viewModel = .init(topBooks: viewModel.outputs.topBannerBooks, dependencies: dependencies)
-                return topBookCell
-            }
-        } else {
-            let sectionIndex = indexPath.section - 1
-            if sectionIndex < viewModel.outputs.books.keys.count {
-                let sortedGenre = Array(viewModel.outputs.books.keys.sorted())[sectionIndex]
-                let genreString = String(sortedGenre)
-
-                if let booksForGenre = viewModel.outputs.books[genreString] {
-                    bookCell.viewModel = .init(books: booksForGenre, dependencies: dependencies)
-                    bookCell.delegate = self
-                    return bookCell
-                }
-            }
-        }
-        return UITableViewCell()
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1 + viewModel.outputs.books.keys.count
-    }
-}
-
-final class LibraryViewController: UIViewController, AlertDisplayable, BookCellDelegate {
-
-    func bookSelected(_ item: BookResponse.Book) {
-        viewModel.inputs.selected(item: item)
-    }
-
-    enum MainSection: Int, CaseIterable {
-        case topBooks
-        case books
-    }
+    lazy var collectionView = configureCollectionView()
 
     // swiftlint:disable implicitly_unwrapped_optional
     private var viewModel: LibraryViewModelInteractive!
@@ -86,28 +31,16 @@ final class LibraryViewController: UIViewController, AlertDisplayable, BookCellD
         self.dependencies = dependencies
     }
 
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.frame = view.bounds
-
-        tableView.register(
-            TopBooksCollectionTableViewCell.self,
-            forCellReuseIdentifier: TopBooksCollectionTableViewCell.identifier)
-        tableView.register(
-            BooksCollectionTableViewCell.self,
-            forCellReuseIdentifier: BooksCollectionTableViewCell.identifier)
-        tableView.delegate = self
-        tableView.dataSource = self
-        return tableView
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
         viewModel.inputs.fetch()
-
         bindViewModel()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,8 +53,25 @@ final class LibraryViewController: UIViewController, AlertDisplayable, BookCellD
     }
 
     private func setupUI() {
-        view.backgroundColor = .purple
-        view.addSubview(tableView)
+        navigationItem.leftBarButtonItem = .init(customView: leftItem())
+        view.backgroundColor = ThemeColor.chaosBlack.asUIColor()
+        view.addSubview(collectionView)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        registerCells()
+    }
+
+    private func registerCells() {
+        collectionView.register(
+            BookCell.self,
+            forCellWithReuseIdentifier: BookCell.identifier)
+        collectionView.register(
+            TopBannerCollectionView.self,
+            forCellWithReuseIdentifier: TopBannerCollectionView.identifier)
+        collectionView.register(
+            CollectionViewHeader.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: CollectionViewHeader.identifier)
     }
 
     private func bindViewModel() {
@@ -130,8 +80,7 @@ final class LibraryViewController: UIViewController, AlertDisplayable, BookCellD
             .reloadData
             .drive(onNext: { [weak self] _ in
                 guard let self else { return }
-                self.tableView.reloadData()
-
+                self.collectionView.reloadData()
             })
             .disposed(by: disposeBag)
 
@@ -143,5 +92,114 @@ final class LibraryViewController: UIViewController, AlertDisplayable, BookCellD
                 self.displayAlert(error: error)
             })
             .disposed(by: disposeBag)
+    }
+
+    private func configureNavigationBar() {
+        navigationController?
+            .navigationBar
+            .setBackgroundImage(ThemeColor.chaosBlack.asUIColor().image(), for: .default)
+        navigationController?
+            .navigationBar
+            .shadowImage = ThemeColor.chaosBlack.asUIColor().image()
+        navigationController?
+            .navigationBar
+            .barTintColor = UIColor.white
+        navigationController?
+            .navigationBar
+            .tintColor = .white
+    }
+
+    private func leftItem() -> UILabel {
+        let label = UILabel()
+        label.text = Constants.leftHeadItem.rawValue
+        label.textColor = ThemeColor.raspberryPink.asUIColor()
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.textAlignment = .left
+        return label
+    }
+}
+
+extension LibraryViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath) -> UICollectionReusableView {
+
+        guard kind == UICollectionView.elementKindSectionHeader else {
+            return UICollectionReusableView()
+        }
+
+        if let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: CollectionViewHeader.identifier,
+            for: indexPath) as? CollectionViewHeader {
+            if viewModel.outputs.books.isEmpty.not {
+                let selectedGenre = viewModel.outputs.genres[indexPath.section - 1]
+                header.title = selectedGenre
+            }
+            return header
+        }
+
+        return UICollectionReusableView()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        guard
+            let topBookCell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: TopBannerCollectionView.identifier,
+                for: indexPath) as? TopBannerCollectionView,
+            let bookCell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: BookCell.identifier,
+                for: indexPath) as? BookCell
+        else {
+            return UICollectionViewCell()
+        }
+
+        if indexPath.section == 0 {
+            topBookCell.viewModel = .init(topBooks: viewModel.outputs.topBannerBooks, dependencies: dependencies)
+            return topBookCell
+        } else {
+            let genre = viewModel.outputs.genres[indexPath.section - 1]
+
+            if let booksForGenre = viewModel.outputs.books[genre] {
+                bookCell.viewModel = .init(
+                    books: booksForGenre,
+                    dependencies: dependencies)
+                bookCell.viewModel?.textStyle.accept(.home)
+                bookCell.configureCell(indexPath: indexPath)
+                return bookCell
+            }
+        }
+        return UICollectionViewCell()
+    }
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        let topBannerSection = viewModel.outputs.topBannerBooks.isEmpty.not ? 1 : 0
+        return topBannerSection + viewModel.outputs.genres.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return viewModel.outputs.topBannerBooks.isEmpty.not ? 1 : 0
+        } else {
+            let genre = viewModel.outputs.genres[section - 1]
+            let data = viewModel.outputs.books[genre]
+            return data?.count ?? 0
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        let genre = viewModel.outputs.genres[indexPath.section - 1]
+        let selectedData = viewModel.outputs.books[genre]
+        let selectedBook = selectedData?[indexPath.item]
+
+        if let selectedBook, var selectedData {
+            selectedData.remove(at: indexPath.item)
+            selectedData.insert(selectedBook, at: 0)
+            viewModel.inputs.selected(data: selectedData)
+        }
     }
 }

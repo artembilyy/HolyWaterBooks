@@ -6,12 +6,28 @@
 //
 
 import HolyWaterServices
+import HolyWaterUI
+import RxRelay
 
 final class BookCellViewModel {
 
-    private(set) var books: [BookResponse.Book]
+    enum TextStyle {
+        case home
+        case details
 
+        var color: UIColor {
+            switch self {
+            case .home:
+                return ThemeColor.white.asUIColor(alpha: 0.7)
+            case .details:
+                return ThemeColor.jetBlack.asUIColor()
+            }
+        }
+    }
+
+    private(set) var books: [BookResponse.Book]
     private(set) var dependencies: Dependencies
+    let textStyle: BehaviorRelay<TextStyle> = BehaviorRelay(value: .home)
 
     init(
         books: [BookResponse.Book],

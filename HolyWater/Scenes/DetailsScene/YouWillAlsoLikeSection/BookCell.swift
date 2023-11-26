@@ -7,14 +7,22 @@
 
 import HolyWaterServices
 import HolyWaterUI
+import RxSwift
 
 final class BookCell: UICollectionViewCell, IdentifiableCell {
 
-    private let label: UILabel = .init()
-    private let imageView: UIImageView = .init()
+    var viewModel: BookCellViewModel? {
+        didSet {
+            bind()
+        }
+    }
+
     private var loadingIndicator: LoadingIndicator? = .init()
 
-    var viewModel: BookCellViewModel!
+    private let label: UILabel = .init()
+    private let imageView: UIImageView = .init()
+
+    private let disposeBag: DisposeBag = .init()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,14 +39,21 @@ final class BookCell: UICollectionViewCell, IdentifiableCell {
         setupConstraints()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+        label.text = ""
+        loadingIndicator = nil
+    }
+
     func configureCell(indexPath: IndexPath) {
-        let book = viewModel.books[indexPath.item]
+        let book = viewModel?.books[indexPath.item]
         loadingIndicator?.install(on: imageView, with: .large)
-        guard let url = book.coverURL?.absoluteString else { return }
+        guard let url = book?.coverURL?.absoluteString else { return }
         Task {
             loadingIndicator?.startAnimating()
             do {
-                let image = try await viewModel
+                let image = try await viewModel?
                     .dependencies
                     .imageLoadingManagerWorker
                     .getImage(from: url)
@@ -50,7 +65,7 @@ final class BookCell: UICollectionViewCell, IdentifiableCell {
             }
         }
 
-        label.text = book.name
+        label.text = book?.name
     }
 
     private func configureUI() {
@@ -64,7 +79,6 @@ final class BookCell: UICollectionViewCell, IdentifiableCell {
     private func configureLabel() {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        label.textColor = ThemeColor.jetBlack.asUIColor()
         label.numberOfLines = 0
     }
 
@@ -72,6 +86,16 @@ final class BookCell: UICollectionViewCell, IdentifiableCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = ThemeColor.silver.asUIColor()
         imageView.layer.cornerRadius = 16
+        imageView.clipsToBounds = true
+    }
+
+    private func bind() {
+        viewModel?
+            .textStyle
+            .subscribe(onNext: { [weak self] textStyle in
+                self?.label.textColor = textStyle.color
+            })
+            .disposed(by: disposeBag)
     }
 }
 

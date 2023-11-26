@@ -80,13 +80,13 @@ final class SplashViewController: UIViewController {
 
                 progressBarView.topAnchor.constraint(
                     equalTo: subtitleImageView.bottomAnchor,
-                    constant: 19),
+                    constant: style.progressBarViewTopPadding),
                 progressBarView.centerXAnchor.constraint(
                     equalTo: view.centerXAnchor),
                 progressBarView.widthAnchor.constraint(
-                    equalToConstant: 274),
+                    equalToConstant: style.progressBarViewWidth),
                 progressBarView.heightAnchor.constraint(
-                    equalToConstant: 6)
+                    equalToConstant: style.progressBarViewHeight)
             ]
         )
     }

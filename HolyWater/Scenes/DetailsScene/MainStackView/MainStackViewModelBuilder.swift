@@ -9,6 +9,9 @@ import HolyWaterServices
 
 final class MainStackViewModelBuilder {
 
+    typealias Dependencies =
+        ImageLoadingWorkerContrainer
+
     private var readersCount: String = ""
     private var likesCount: String = ""
     private var quotesCount: String = ""
@@ -16,6 +19,7 @@ final class MainStackViewModelBuilder {
 
     private var description: String = ""
     private var books: [BookResponse.Book] = []
+    private var dependencies: Dependencies!
 
     func set(readersCount: String) -> Self {
         self.readersCount = readersCount
@@ -47,6 +51,11 @@ final class MainStackViewModelBuilder {
         return self
     }
 
+    func set(dependencies: Dependencies) -> Self {
+        self.dependencies = dependencies
+        return self
+    }
+
     func build() -> MainStackViewModel {
         let summarySectionViewModel = SummarySectionViewModelBuilder()
             .set(headerText: "Summary")
@@ -56,6 +65,7 @@ final class MainStackViewModelBuilder {
         let youWillAlsoLikeSectionView = YouWillAlsoLikeSectionViewModelBuilder()
             .set(headerText: "You will also like")
             .set(books: books)
+            .set(dependencies: dependencies)
             .build()
 
         let headerSectionViewModel = HeaderSectionViewModelBuilder()

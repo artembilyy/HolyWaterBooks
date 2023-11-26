@@ -14,11 +14,9 @@ import UIKit
 protocol LibraryViewModelInteractive {
     var inputs: LibraryViewModelInputs { get }
     var outputs: LibraryViewModelOutputs { get }
-    var configurator: LibraryViewModelConfigurator { get }
 }
 
 typealias LibraryViewModelInterface =
-    LibraryViewModelConfigurator &
     LibraryViewModelInputs &
     LibraryViewModelInteractive &
     LibraryViewModelOutputs
@@ -30,25 +28,32 @@ final class LibraryViewModel: LibraryViewModelInterface {
 
     var dependencies: Dependencies!
 
+    struct DetailsData {
+        let topSection: [BookResponse.Book]
+        let bottomSection: [BookResponse.Book]
+    }
+
     private(set) var topBannerBooks: [BookResponse.TopBannerSlideBook] = [] {
         didSet {
-            if topBannerBooks.count > 1, let firstBook = topBannerBooks.first, let lastBook = topBannerBooks.last {
+            if topBannerBooks.count > 1,
+               let firstBook = topBannerBooks.first,
+               let lastBook = topBannerBooks.last {
                 topBannerBooks.append(firstBook)
                 topBannerBooks.insert(lastBook, at: 0)
             }
         }
     }
     private(set) var books: GroupedBooks = [:]
-    private(set) var youWillLikeSection: [Int] = []
+    private(set) var genres: [BookGenre] = []
+    private var youWillLikeSection: [BookResponse.Book] = []
 
-    private let subjectOpenDetails = PublishSubject<BookResponse.Book>()
+    private let subjectOpenDetails = PublishSubject<DetailsData>()
     private let subjectDataFetched = PublishSubject<Void>()
     private let subjectErrorCatched = PublishSubject<NetworkError>()
 
-    var outOpenDetails: Driver<BookResponse.Book?> {
+    var outOpenDetails: Driver<DetailsData> {
         subjectOpenDetails
-            .compactMap { $0 }
-            .asDriver(onErrorJustReturn: nil)
+            .asDriver(onErrorDriveWith: .empty())
     }
 
     var reloadData: Driver<Void> {
@@ -74,10 +79,6 @@ final class LibraryViewModel: LibraryViewModelInterface {
         return self
     }
 
-    var configurator: LibraryViewModelConfigurator {
-        return self
-    }
-
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
@@ -94,14 +95,18 @@ final class LibraryViewModel: LibraryViewModelInterface {
                         self.topBannerBooks = topBannerSlides
                     }
 
-                    if let books = result.books {
-                        self.books = Dictionary(grouping: books) { $0.genre ?? "" }
-                    }
+                    guard let books = result.books else { return }
+                    self.books = Dictionary(grouping: books) { $0.genre ?? "" }
+                    self.genres = Array(self.books.keys).sorted()
 
-                    if let youWillLikeSection = result.youWillLikeSection {
-                        self.youWillLikeSection = youWillLikeSection
+                    if let youWillLikeIDs = result.youWillLikeSection {
+                        self.youWillLikeSection = books.filter {
+                            if let bookID = $0.id {
+                                return youWillLikeIDs.contains(bookID)
+                            }
+                            return false
+                        }
                     }
-
                     subjectDataFetched.onNext(())
                 case .failure(let failure):
                     subjectErrorCatched.onNext(failure)
@@ -109,7 +114,11 @@ final class LibraryViewModel: LibraryViewModelInterface {
             }
     }
 
-    func selected(item: BookResponse.Book) {
-        subjectOpenDetails.onNext(item)
+    func selected(data: [BookResponse.Book]) {
+        subjectOpenDetails.onNext(
+            .init(
+                topSection: data,
+                bottomSection: youWillLikeSection)
+        )
     }
 }

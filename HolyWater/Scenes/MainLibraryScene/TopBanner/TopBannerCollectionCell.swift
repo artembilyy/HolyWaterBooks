@@ -1,5 +1,5 @@
 //
-//  TopBannerCell.swift
+//  TopBannerCollectionCell.swift
 //  HolyWater
 //
 //  Created by Артем Билый on 22.11.2023.

@@ -16,9 +16,7 @@ public protocol ImageLoadingWorkerContrainer {
 }
 
 public final class ImageManagerService: ImageLoadingWorker {
-    /// Prevent reusable
-    private var image: UIImage?
-    private var imageUrlString: String = ""
+
     private var cache: ImageCacheManager
     // MARK: - Init
     public init() {
@@ -26,15 +24,13 @@ public final class ImageManagerService: ImageLoadingWorker {
     }
 
     public func getImage(from source: String) async throws -> UIImage {
-        imageUrlString = source
-        guard let url = URL(string: imageUrlString) else {
+        guard let url = URL(string: source) else {
             throw NetworkError.invalidURL
         }
 
         let request = URLRequest(url: url)
 
-        if let cachedImage = cache[imageUrlString] {
-            self.image = cachedImage
+        if let cachedImage = cache[source] {
             return cachedImage
         }
 
@@ -43,7 +39,7 @@ public final class ImageManagerService: ImageLoadingWorker {
             guard let image = UIImage(data: data) else {
                 throw NetworkError.noImage
             }
-            setImage(image, forKey: imageUrlString)
+            setImage(image, forKey: source)
             return image
         } catch {
             throw error

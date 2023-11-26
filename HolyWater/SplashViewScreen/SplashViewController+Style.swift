@@ -17,6 +17,9 @@ extension SplashViewController {
         let subtitleImage: UIImage?
         let titleImageViewTopPadding: CGFloat
         let subtitleImageViewTopPadding: CGFloat
+        let progressBarViewTopPadding: CGFloat
+        let progressBarViewWidth: CGFloat
+        let progressBarViewHeight: CGFloat
 
         static func defaultStyle() -> Self {
             .init(
@@ -25,7 +28,10 @@ extension SplashViewController {
                 titleImage: .init(named: "title"),
                 subtitleImage: .init(named: "subtitle"),
                 titleImageViewTopPadding: 221,
-                subtitleImageViewTopPadding: 12)
+                subtitleImageViewTopPadding: 12,
+                progressBarViewTopPadding: 19,
+                progressBarViewWidth: 274,
+                progressBarViewHeight: 6)
         }
     }
 }

@@ -39,6 +39,12 @@ final class SnapCollectionView: UIView {
     private let secondaryLabel: UILabel = .init()
     private let gradient: CAGradientLayer = .init()
 
+    var viewModel: SnapCollectionViewModel!
+
+    func inject(viewModel: SnapCollectionViewModel) {
+        self.viewModel = viewModel
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
@@ -62,6 +68,10 @@ final class SnapCollectionView: UIView {
         configureGradient()
 
         addSubviews([collectionView, titleLabel, secondaryLabel])
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.collectionView.reloadData()
+        }
     }
 
     private func setupBackgroundView() {
@@ -120,7 +130,7 @@ final class SnapCollectionView: UIView {
 
 extension SnapCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return viewModel.books.count
     }
 
     func collectionView(
@@ -133,6 +143,9 @@ extension SnapCollectionView: UICollectionViewDataSource {
         else {
             return UICollectionViewCell()
         }
+        let book = viewModel.books[indexPath.item]
+        cell.viewModel = .init(book: book, dependencies: viewModel.dependencies)
+        cell.configureCell()
         return cell
     }
 }

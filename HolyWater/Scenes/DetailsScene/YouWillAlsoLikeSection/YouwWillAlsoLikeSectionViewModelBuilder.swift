@@ -9,8 +9,12 @@ import HolyWaterServices
 
 final class YouWillAlsoLikeSectionViewModelBuilder {
 
+    typealias Dependencies =
+        ImageLoadingWorkerContrainer
+
     private var headerText: String = ""
     private var books: [BookResponse.Book] = []
+    private var dependencies: Dependencies!
 
     func set(headerText: String) -> Self {
         self.headerText = headerText
@@ -22,6 +26,11 @@ final class YouWillAlsoLikeSectionViewModelBuilder {
         return self
     }
 
+    func set(dependencies: Dependencies) -> Self {
+        self.dependencies = dependencies
+        return self
+    }
+
     func build() -> YouWillAlsoLikeSectionViewModel {
         let headerViewModel = HeaderViewModelBuilder()
             .set(title: headerText)
@@ -30,6 +39,7 @@ final class YouWillAlsoLikeSectionViewModelBuilder {
 
         return .init(
             headerViewModel: headerViewModel,
-            books: books)
+            books: books,
+            dependencies: dependencies)
     }
 }

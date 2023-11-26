@@ -13,6 +13,7 @@ final class DetailsViewController: UIViewController {
     private var viewModel: DetailsViewModel! {
         didSet {
             mainStackView.viewModel = viewModel.mainStackViewModel
+            snapCollectionView.viewModel = viewModel.snapCollectionViewModel
         }
     }
 
@@ -29,6 +30,11 @@ final class DetailsViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         configureNavigationItem()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar()
     }
 
     override func viewWillLayoutSubviews() {
@@ -54,17 +60,15 @@ final class DetailsViewController: UIViewController {
         scrollView.delegate = self
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        configureNavigationBar()
-    }
-
     private func configureNavigationBar() {
-        // TODO: back changes when willdissapear
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = UIColor.clear
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?
+            .navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?
+            .navigationBar.shadowImage = UIImage()
+        navigationController?
+            .navigationBar.barTintColor = UIColor.clear
+        navigationController?
+            .navigationBar.tintColor = .white
     }
 
     private func configureNavigationItem() {
@@ -78,7 +82,8 @@ final class DetailsViewController: UIViewController {
 
     }
 
-    @objc private func backButtonTapped() {
+    @objc
+    private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }
 }

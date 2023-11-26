@@ -17,6 +17,7 @@ final class MainStackViewModel {
         summarySectionViewModel: SummarySectionViewModel,
         youWillAlsoLikeSectionView: YouWillAlsoLikeSectionViewModel,
         headerSectionViewModel: HeaderSectionViewModel) {
+
         self.summarySectionViewModel = summarySectionViewModel
         self.youWillAlsoLikeSectionView = youWillAlsoLikeSectionView
         self.headerSectionViewModel = headerSectionViewModel
