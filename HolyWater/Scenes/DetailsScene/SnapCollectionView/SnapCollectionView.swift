@@ -142,9 +142,8 @@ final class SnapCollectionView: UIView {
     }
 }
 
-extension SnapCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+extension SnapCollectionView: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let centerPoint = CGPoint(
             x: scrollView.contentOffset.x + scrollView.frame.width / 2,
             y: scrollView.frame.height / 2)
@@ -153,6 +152,9 @@ extension SnapCollectionView: UICollectionViewDataSource, UICollectionViewDelega
             centeredCellIndex = indexPath.item
         }
     }
+}
+
+extension SnapCollectionView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.books.count

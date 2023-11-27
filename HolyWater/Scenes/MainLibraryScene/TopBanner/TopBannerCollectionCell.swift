@@ -30,12 +30,13 @@ final class TopBannerCell: UICollectionViewCell, IdentifiableCell {
         mainImageContainer.contentMode = .scaleAspectFill
 
         addSubview(mainImageContainer)
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         panGesture.delegate = self
         self.addGestureRecognizer(panGesture)
     }
 
-    @objc private func handlePan(_ pan: UIPanGestureRecognizer) {
+    @objc
+    private func handlePan() {
         delegate?.invalidateTimer()
     }
 

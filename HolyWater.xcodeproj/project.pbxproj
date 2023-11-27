@@ -310,10 +310,10 @@
 		EDA4857C2B129E7B00533B10 /* LibraryViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EDA485802B129E7B00533B10 /* CollectionViewHeader.swift */,
 				EDA4857D2B129E7B00533B10 /* LibraryViewController+Layout.swift */,
 				EDA4857E2B129E7B00533B10 /* LibraryViewController+Dependencies.swift */,
 				EDA4857F2B129E7B00533B10 /* LibraryViewController.swift */,
-				EDA485802B129E7B00533B10 /* CollectionViewHeader.swift */,
 				EDA485812B129E7B00533B10 /* LibraryViewControllerFactory.swift */,
 			);
 			path = LibraryViewController;

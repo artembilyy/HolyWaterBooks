@@ -15,7 +15,7 @@ extension TopBannerCollectionView {
         }
     }
 
-    func createTopBannerLayout() -> NSCollectionLayoutSection? {
+    private func createTopBannerLayout() -> NSCollectionLayoutSection? {
         let sectionMargin = 8.0
 
         let itemSize = NSCollectionLayoutSize(

@@ -52,9 +52,10 @@ final class YouWillAlsoLikeSectionView: UIView {
 
     private func configureUI() {
         guard let viewModel else { return }
-        headerView.viewModel = viewModel.headerViewModel
-
-        collectionView.reloadData()
+        if let title = headerView.viewModel?.title.isEmpty.not {
+            headerView.viewModel = viewModel.headerViewModel
+            collectionView.reloadData()
+        }
     }
 }
 

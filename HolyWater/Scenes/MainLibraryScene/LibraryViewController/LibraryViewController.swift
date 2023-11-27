@@ -136,10 +136,8 @@ extension LibraryViewController: UICollectionViewDataSource, UICollectionViewDel
             ofKind: kind,
             withReuseIdentifier: CollectionViewHeader.identifier,
             for: indexPath) as? CollectionViewHeader {
-            if viewModel.outputs.books.isEmpty.not {
-                let selectedGenre = viewModel.outputs.genres[indexPath.section - 1]
-                header.title = selectedGenre
-            }
+            let selectedGenre = viewModel.outputs.genres[indexPath.section - 1]
+            header.title = selectedGenre
             return header
         }
 
@@ -194,13 +192,14 @@ extension LibraryViewController: UICollectionViewDataSource, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        let genre = viewModel.outputs.genres[indexPath.section - 1]
-        let selectedData = viewModel.outputs.books[genre]
-        let selectedBook = selectedData?[indexPath.item]
+        let selectedGenre = viewModel.outputs.genres[indexPath.section - 1]
 
-        if let selectedBook, var selectedData {
+        if var selectedData = viewModel.outputs.books[selectedGenre] {
+            let selectedBook = selectedData[indexPath.item]
+
             selectedData.remove(at: indexPath.item)
             selectedData.insert(selectedBook, at: 0)
+
             viewModel.inputs.selected(data: selectedData)
         }
     }

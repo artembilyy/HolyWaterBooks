@@ -131,10 +131,8 @@ final class SnapLayout: UICollectionViewFlowLayout {
             return nil
         }
 
-        for attributes in visibleAttributes {
-            if attributes.frame.contains(center) {
-                return attributes.indexPath
-            }
+        for attributes in visibleAttributes where attributes.frame.contains(center) {
+            return attributes.indexPath
         }
 
         return nil

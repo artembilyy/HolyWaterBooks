@@ -9,6 +9,10 @@ import UIKit
 
 extension LibraryViewController {
 
+    enum Section {
+        case banners, books
+    }
+
     func configureCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(
             frame: .zero,
@@ -20,11 +24,7 @@ extension LibraryViewController {
         return collectionView
     }
 
-    enum Section {
-        case banners, books
-    }
-
-    func createLayout() -> UICollectionViewCompositionalLayout {
+    private func createLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { [weak self] sectionNumber, _ -> NSCollectionLayoutSection? in
             if sectionNumber == 0 {
                 return self?.sectionLayout(for: .banners)
@@ -34,7 +34,7 @@ extension LibraryViewController {
         }
     }
 
-    func sectionLayout(for sectionType: Section) -> NSCollectionLayoutSection {
+    private func sectionLayout(for sectionType: Section) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0))

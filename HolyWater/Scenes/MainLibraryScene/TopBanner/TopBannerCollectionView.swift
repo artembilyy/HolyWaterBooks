@@ -65,7 +65,7 @@ extension TopBannerCollectionView {
             .disposed(by: disposeBag)
     }
 
-    func addPageControl() {
+    private func addPageControl() {
         guard let viewModel else { return }
         pageControl = UIPageControl(frame: CGRect(
             x: frame.origin.x,
@@ -78,17 +78,6 @@ extension TopBannerCollectionView {
         pageControl.isUserInteractionEnabled = false
         pageControl.allowsContinuousInteraction = false
         addSubview(pageControl)
-    }
-
-}
-
-extension TopBannerCollectionView: InfiniteAutoScrollViewCellDelegate {
-
-    func invalidateTimer() {
-        if autoScrollTimer.isNil.not {
-            autoScrollTimer?.invalidate()
-            autoScrollTimer = nil
-        }
     }
 }
 
@@ -107,6 +96,16 @@ extension TopBannerCollectionView: UICollectionViewDataSource {
     }
 }
 
+extension TopBannerCollectionView: InfiniteAutoScrollViewCellDelegate {
+
+    func invalidateTimer() {
+        if autoScrollTimer.isNil.not {
+            autoScrollTimer?.invalidate()
+            autoScrollTimer = nil
+        }
+    }
+}
+
 extension TopBannerCollectionView {
 
     func configAutoScroll() {
@@ -117,20 +116,20 @@ extension TopBannerCollectionView {
         }
     }
 
-    func resetAutoScrollTimer() {
+    private func resetAutoScrollTimer() {
         if autoScrollTimer.isNil.not {
             autoScrollTimer.invalidate()
             autoScrollTimer = nil
         }
     }
 
-    func setupAutoScrollTimer() {
+    private func setupAutoScrollTimer() {
         autoScrollTimer = Timer.scheduledTimer(
             timeInterval: 2,
             target: self,
             selector: #selector(autoScrollAction),
             userInfo: nil, repeats: true)
-        RunLoop.main.add(autoScrollTimer, forMode: RunLoop.Mode.common)
+        RunLoop.main.add(autoScrollTimer, forMode: .common)
     }
 
     @objc
