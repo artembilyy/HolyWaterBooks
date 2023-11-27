@@ -37,6 +37,7 @@
 		EDA485A72B14127200533B10 /* SnapCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485A62B14127100533B10 /* SnapCollectionView.swift */; };
 		EDA485AA2B14147700533B10 /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485A82B14147600533B10 /* HeaderSectionView.swift */; };
 		EDA485AB2B14147700533B10 /* HeaderSectionSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485A92B14147700533B10 /* HeaderSectionSubview.swift */; };
+		EDA485AD2B14199200533B10 /* UIStackView+RemoveAllSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485AC2B14199200533B10 /* UIStackView+RemoveAllSubviews.swift */; };
 		EDB786532B0CFCF300D1354D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */; };
 		EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7866C2B0D4C9000D1354D /* AppDependenciesAssembly.swift */; };
 		EDB786782B0D592200D1354D /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786772B0D592200D1354D /* HomeFlow.swift */; };
@@ -176,6 +177,7 @@
 		EDA485A62B14127100533B10 /* SnapCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapCollectionView.swift; sourceTree = "<group>"; };
 		EDA485A82B14147600533B10 /* HeaderSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
 		EDA485A92B14147700533B10 /* HeaderSectionSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderSectionSubview.swift; sourceTree = "<group>"; };
+		EDA485AC2B14199200533B10 /* UIStackView+RemoveAllSubviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAllSubviews.swift"; sourceTree = "<group>"; };
 		EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDB786622B0D405200D1354D /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		EDB786672B0D41DD00D1354D /* FirebaseRemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigService.swift; sourceTree = "<group>"; };
@@ -386,8 +388,9 @@
 			isa = PBXGroup;
 			children = (
 				EDB786772B0D592200D1354D /* HomeFlow.swift */,
-				EDF95CAA2B0EA70B00C652E2 /* DetailsScene */,
+				EDC4F7682B0BFC7400AEE26F /* SplashViewScreen */,
 				EDB7865F2B0D3D1D00D1354D /* MainLibraryScene */,
+				EDF95CAA2B0EA70B00C652E2 /* DetailsScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -452,7 +455,6 @@
 				EDB786652B0D40A700D1354D /* Application */,
 				EDB7866B2B0D4C7000D1354D /* DependenciesAssembly */,
 				EDB786762B0D591200D1354D /* Scenes */,
-				EDC4F7682B0BFC7400AEE26F /* SplashViewScreen */,
 				EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */,
 				EDC4F75D2B0BFA0A00AEE26F /* Assets.xcassets */,
 				EDB7867B2B0D69EF00D1354D /* Info.plist */,
@@ -509,6 +511,7 @@
 		EDC4F7922B0C038800AEE26F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				EDA485AC2B14199200533B10 /* UIStackView+RemoveAllSubviews.swift */,
 				EDC4F7952B0C074F00AEE26F /* UIView+Subviews.swift */,
 				EDC4F7972B0C0A3900AEE26F /* NSLayoutConstraints+Activated.swift */,
 				EDC4F7992B0C0A6200AEE26F /* Bool+State.swift */,
@@ -944,6 +947,7 @@
 				EDC4F7912B0C00E000AEE26F /* FontConvertible.swift in Sources */,
 				EDC4F78A2B0C002E00AEE26F /* ColorConvertible.swift in Sources */,
 				EDA4859F2B140B0300533B10 /* NunitoSans.swift in Sources */,
+				EDA485AD2B14199200533B10 /* UIStackView+RemoveAllSubviews.swift in Sources */,
 				EDB7868D2B0D7E0D00D1354D /* ProgressBarView.swift in Sources */,
 				EDA4856C2B124F0F00533B10 /* Optional+isNil.swift in Sources */,
 			);

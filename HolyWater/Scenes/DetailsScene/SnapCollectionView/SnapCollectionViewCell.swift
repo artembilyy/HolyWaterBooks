@@ -49,19 +49,15 @@ final class SnapCollectionViewCell: UICollectionViewCell, IdentifiableCell {
 
     func configureCell() {
         loadingIndicator?.install(on: imageContainer, with: .large)
-        guard let url = viewModel?.book.coverURL?.absoluteString else { return }
-        Task {
-            loadingIndicator?.startAnimating()
-            do {
-                let image = try await viewModel?
-                    .dependencies
-                    .imageLoadingManagerWorker
-                    .getImage(from: url)
-                imageContainer.image = image
-                loadingIndicator?.stopAnimating()
-            } catch {
-                imageContainer.image = UIImage(systemName: "trash")
-                loadingIndicator?.stopAnimating()
+        self.loadingIndicator?.startAnimating()
+        viewModel?.loadImage { [weak self] image in
+            guard let self else { return }
+            if let image {
+                self.imageContainer.image = image
+                self.loadingIndicator?.stopAnimating()
+            } else {
+                self.imageContainer.image = UIImage(systemName: "trash")
+                self.loadingIndicator?.stopAnimating()
             }
         }
     }

@@ -38,6 +38,8 @@ final class HeaderSectionView: UIView {
     private func addArrangedSubviews() {
         guard let viewModel else { return }
 
+        stackView.removeAllArrangeSubviews()
+
         HeaderSectionSubview
             .Style
             .allCases

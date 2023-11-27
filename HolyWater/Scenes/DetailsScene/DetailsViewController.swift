@@ -8,16 +8,11 @@
 import HolyWaterServices
 import HolyWaterUI
 
-extension DetailsViewController: SnapCollectionDelegate {
-    func centeredCellIndexChanged(to index: Int) {
-        viewModel.mainBook = viewModel.topSection[index]
-    }
-}
-
 final class DetailsViewController: UIViewController {
 
-    var viewModel: DetailsViewModel! {
+    var viewModel: DetailsViewModel? {
         didSet {
+            guard let viewModel else { return }
             mainStackView.viewModel = viewModel.mainStackViewModel
             snapCollectionView.viewModel = viewModel.snapCollectionViewModel
         }
@@ -102,6 +97,14 @@ extension DetailsViewController: UIScrollViewDelegate {
         if scrollView.contentOffset.y <= -topInset {
             scrollView.contentOffset.y = -topInset
         }
+    }
+}
+
+extension DetailsViewController: SnapCollectionDelegate {
+    func centeredCellIndexChanged(to index: Int) {
+        guard let viewModel else { return }
+        viewModel.mainBook = viewModel.topSection[index]
+        mainStackView.viewModel = viewModel.mainStackViewModel
     }
 }
 

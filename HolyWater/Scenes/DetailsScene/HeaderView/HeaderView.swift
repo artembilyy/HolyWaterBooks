@@ -24,6 +24,7 @@ final class HeaderView: UIView {
 
     private func configureUI() {
         guard let viewModel else { return }
+
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
 

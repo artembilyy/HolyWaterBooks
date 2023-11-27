@@ -46,7 +46,7 @@ final class SnapCollectionView: UIView {
 
     var viewModel: SnapCollectionViewModel! {
         didSet {
-            reloadData()
+            self.collectionView.reloadData()
         }
     }
 
@@ -92,10 +92,6 @@ final class SnapCollectionView: UIView {
         configureGradient()
 
         addSubviews([collectionView, titleLabel, secondaryLabel])
-    }
-
-    private func reloadData() {
-        self.collectionView.reloadData()
     }
 
     private func setupBackgroundView() {

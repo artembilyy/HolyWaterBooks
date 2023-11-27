@@ -2,7 +2,7 @@
 //  CollectionViewHeader.swift
 //  HolyWater
 //
-//  Created by Artem Tkachenko on 25.11.2023.
+//  Created by Артем Билый on 23.11.2023.
 //
 
 import HolyWaterUI

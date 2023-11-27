@@ -34,7 +34,7 @@ final class PrimaryButton: UIButton {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = bounds.height / 2
+        layer.cornerRadius = bounds.height / 2
     }
 
     private func configureUI() {

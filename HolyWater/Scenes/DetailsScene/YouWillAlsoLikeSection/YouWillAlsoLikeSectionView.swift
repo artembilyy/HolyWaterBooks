@@ -48,10 +48,6 @@ final class YouWillAlsoLikeSectionView: UIView {
     private func setupUI() {
         addSubview(headerView)
         addSubview(collectionView)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.collectionView.reloadData()
-        }
     }
 
     private func configureUI() {
@@ -72,12 +68,14 @@ extension YouWillAlsoLikeSectionView: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard
             let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: BookCell.identifier, for: indexPath) as? BookCell,
+                withReuseIdentifier: BookCell.identifier,
+                for: indexPath) as? BookCell,
             let viewModel
         else {
             return UICollectionViewCell()
         }
         cell.viewModel = .init(books: viewModel.books, dependencies: viewModel.dependencies)
+        cell.viewModel?.textStyle.accept(.details)
         cell.configureCell(indexPath: indexPath)
         return cell
     }
@@ -101,7 +99,7 @@ private extension YouWillAlsoLikeSectionView {
                 equalTo: headerView.bottomAnchor,
                 constant: 16),
             collectionView.heightAnchor.constraint(
-                equalToConstant: 190),
+                equalToConstant: 210),
             collectionView.bottomAnchor.constraint(
                 equalTo: bottomAnchor)
         ])

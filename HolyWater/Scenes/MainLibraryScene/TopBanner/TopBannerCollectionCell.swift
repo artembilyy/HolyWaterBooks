@@ -52,19 +52,15 @@ final class TopBannerCell: UICollectionViewCell, IdentifiableCell {
 
     func configure(indexPathItem: Int) {
         loadingIndicator?.install(on: mainImageContainer, with: .large)
-        guard let url = viewModel.topBooks[indexPathItem].cover else { return }
-        Task {
-            loadingIndicator?.startAnimating()
-            do {
-                let image = try await viewModel
-                    .dependencies
-                    .imageLoadingManagerWorker
-                    .getImage(from: url)
-                mainImageContainer.image = image
-                loadingIndicator?.stopAnimating()
-            } catch {
-                mainImageContainer.image = UIImage(systemName: "trash")
-                loadingIndicator?.stopAnimating()
+        loadingIndicator?.startAnimating()
+        viewModel.loadImage(for: indexPathItem) { [weak self] image in
+            guard let self else { return }
+            if let image {
+                self.mainImageContainer.image = image
+                self.loadingIndicator?.stopAnimating()
+            } else {
+                self.mainImageContainer.image = UIImage(systemName: "trash")
+                self.loadingIndicator?.stopAnimating()
             }
         }
     }

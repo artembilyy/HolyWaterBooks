@@ -8,6 +8,7 @@
 import HolyWaterServices
 import RxCocoa
 import RxSwift
+import UIKit
 
 final class TopBannerCellViewModel {
 
@@ -26,12 +27,26 @@ final class TopBannerCellViewModel {
         dependencies: Dependencies) {
         self.topBooks = topBooks
         self.dependencies = dependencies
-        self.reloadData()
     }
 
-    private func reloadData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.subjectReloadData.onNext(())
+    func reloadData() {
+        self.subjectReloadData.onNext(())
+    }
+
+    @MainActor
+    func loadImage(
+        for indexPath: Int,
+        completion: @escaping (UIImage?) -> Void) {
+        guard let url = topBooks[indexPath].cover else { return }
+        Task {
+            do {
+                let image = try await dependencies
+                    .imageLoadingManagerWorker
+                    .getImage(from: url)
+                completion(image)
+            } catch {
+                completion(nil)
+            }
         }
     }
 }

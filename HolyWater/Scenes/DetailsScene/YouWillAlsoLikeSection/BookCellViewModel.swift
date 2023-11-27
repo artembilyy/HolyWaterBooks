@@ -35,4 +35,24 @@ final class BookCellViewModel {
         self.books = books
         self.dependencies = dependencies
     }
+
+    @MainActor
+    func loadImage(
+        for book: BookResponse.Book,
+        completion: @escaping (UIImage?) -> Void) {
+
+        guard let url = book.coverURL?.absoluteString else {
+            completion(nil)
+            return
+        }
+
+        Task {
+            do {
+                let image = try await dependencies.imageLoadingManagerWorker.getImage(from: url)
+                completion(image)
+            } catch {
+                completion(nil)
+            }
+        }
+    }
 }

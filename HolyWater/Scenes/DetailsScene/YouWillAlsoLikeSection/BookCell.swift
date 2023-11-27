@@ -47,25 +47,22 @@ final class BookCell: UICollectionViewCell, IdentifiableCell {
     }
 
     func configureCell(indexPath: IndexPath) {
-        let book = viewModel?.books[indexPath.item]
         loadingIndicator?.install(on: imageView, with: .large)
-        guard let url = book?.coverURL?.absoluteString else { return }
-        Task {
-            loadingIndicator?.startAnimating()
-            do {
-                let image = try await viewModel?
-                    .dependencies
-                    .imageLoadingManagerWorker
-                    .getImage(from: url)
-                imageView.image = image
-                loadingIndicator?.stopAnimating()
-            } catch {
-                imageView.image = UIImage(systemName: "trash")
-                loadingIndicator?.stopAnimating()
-            }
-        }
+        self.loadingIndicator?.startAnimating()
+        guard let book = viewModel?.books[indexPath.item] else { return }
 
-        label.text = book?.name
+        viewModel?.loadImage(for: book, completion: { [weak self] image in
+            guard let self else { return }
+            if let image {
+                self.imageView.image = image
+                self.loadingIndicator?.stopAnimating()
+            } else {
+                self.imageView.image = UIImage(systemName: "trash")
+                self.loadingIndicator?.stopAnimating()
+            }
+            label.text = book.name
+        })
+
     }
 
     private func configureUI() {
