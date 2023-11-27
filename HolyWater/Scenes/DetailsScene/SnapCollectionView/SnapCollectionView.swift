@@ -7,6 +7,10 @@
 
 import HolyWaterUI
 
+protocol SnapCollectionDelegate: AnyObject {
+    func centeredCellIndexChanged(to index: Int)
+}
+
 final class SnapCollectionView: UIView {
 
     private let style = Style.defaultStyle()
@@ -22,6 +26,7 @@ final class SnapCollectionView: UIView {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(
             SnapCollectionViewCell.self,
             forCellWithReuseIdentifier: SnapCollectionViewCell.identifier)
@@ -39,7 +44,25 @@ final class SnapCollectionView: UIView {
     private let secondaryLabel: UILabel = .init()
     private let gradient: CAGradientLayer = .init()
 
-    var viewModel: SnapCollectionViewModel!
+    var viewModel: SnapCollectionViewModel! {
+        didSet {
+            reloadData()
+        }
+    }
+
+    weak var delegate: SnapCollectionDelegate?
+
+    var centeredCellIndex: Int = 0 {
+        didSet {
+            delegate?.centeredCellIndexChanged(to: centeredCellIndex)
+            updateLabelsText()
+        }
+    }
+
+    private func updateLabelsText() {
+        titleLabel.text = viewModel.books[centeredCellIndex].name
+        secondaryLabel.text = viewModel.books[centeredCellIndex].author
+    }
 
     func inject(viewModel: SnapCollectionViewModel) {
         self.viewModel = viewModel
@@ -65,13 +88,14 @@ final class SnapCollectionView: UIView {
         setupBackgroundView()
         configureTitleLabel()
         configureSecondaryLabel()
+        updateLabelsText()
         configureGradient()
 
         addSubviews([collectionView, titleLabel, secondaryLabel])
+    }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.collectionView.reloadData()
-        }
+    private func reloadData() {
+        self.collectionView.reloadData()
     }
 
     private func setupBackgroundView() {
@@ -99,19 +123,13 @@ final class SnapCollectionView: UIView {
 
     private func configureTitleLabel() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "If It’s Only Love"
-        titleLabel.font = UIFont.systemFont(
-            ofSize: style.titleLabelFontSize,
-            weight: .bold)
+        titleLabel.font = NunitoSans.bold(style.titleLabelFontSize).font
         titleLabel.textColor = UIColor.white.withAlphaComponent(1)
     }
 
     private func configureSecondaryLabel() {
         secondaryLabel.translatesAutoresizingMaskIntoConstraints = false
-        secondaryLabel.text = "Zoey Evers"
-        secondaryLabel.font = UIFont.systemFont(
-            ofSize: style.secondaryLabelFontSize,
-            weight: .bold)
+        secondaryLabel.font = NunitoSans.bold(style.secondaryLabelFontSize).font
         secondaryLabel.textColor = UIColor.white.withAlphaComponent(0.8)
     }
 
@@ -128,9 +146,20 @@ final class SnapCollectionView: UIView {
     }
 }
 
-extension SnapCollectionView: UICollectionViewDataSource {
+extension SnapCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let centerPoint = CGPoint(
+            x: scrollView.contentOffset.x + scrollView.frame.width / 2,
+            y: scrollView.frame.height / 2)
+
+        if let indexPath = (collectionView.collectionViewLayout as? SnapLayout)?.indexPathForItem(at: centerPoint) {
+            centeredCellIndex = indexPath.item
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.books.count
+        viewModel.books.count
     }
 
     func collectionView(

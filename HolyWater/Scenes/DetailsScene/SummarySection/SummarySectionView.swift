@@ -42,9 +42,7 @@ final class SummarySectionView: UIView {
     }
 
     private func configureDescriptionLabel() {
-        descriptionLabel.font = UIFont.systemFont(
-            ofSize: 14,
-            weight: .semibold)
+        descriptionLabel.font = NunitoSans.semiBold(14).font
         descriptionLabel.textColor = ThemeColor.jetBlack.asUIColor()
         descriptionLabel.numberOfLines = 0
     }

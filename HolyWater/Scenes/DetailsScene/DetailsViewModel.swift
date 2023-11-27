@@ -17,6 +17,7 @@ final class DetailsViewModel {
     let mainStackViewModel: MainStackViewModel
     let dependencies: Dependencies
     let snapCollectionViewModel: SnapCollectionViewModel
+    var mainBook: BookResponse.Book?
 
     init(
         topSection: [BookResponse.Book],
@@ -26,7 +27,8 @@ final class DetailsViewModel {
         self.bottomSection = bottomSection
         self.dependencies = dependencies
 
-        let mainBook = topSection.first
+        let firstBook = topSection.first
+        self.mainBook = firstBook
 
         self.mainStackViewModel = MainStackViewModelBuilder()
             .set(readersCount: mainBook?.views ?? "")

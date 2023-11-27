@@ -88,7 +88,7 @@ extension TopBannerCollectionView {
     private func setupUI() {
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isScrollEnabled = true
+        collectionView.isScrollEnabled = false
 
         collectionView.register(
             TopBannerCell.self,

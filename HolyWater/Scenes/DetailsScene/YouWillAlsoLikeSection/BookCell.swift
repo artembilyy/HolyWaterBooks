@@ -78,7 +78,7 @@ final class BookCell: UICollectionViewCell, IdentifiableCell {
 
     private func configureLabel() {
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.font = NunitoSans.semiBold(16).font
         label.numberOfLines = 0
     }
 

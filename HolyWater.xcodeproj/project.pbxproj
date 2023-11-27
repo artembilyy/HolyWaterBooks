@@ -24,11 +24,19 @@
 		EDA485902B129EC900533B10 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4858A2B129EC900533B10 /* LibraryViewModel.swift */; };
 		EDA485912B129EC900533B10 /* LibraryViewModel+Outputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4858B2B129EC900533B10 /* LibraryViewModel+Outputs.swift */; };
 		EDA485922B129EC900533B10 /* LibraryViewModelInputs+Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4858C2B129EC900533B10 /* LibraryViewModelInputs+Inputs.swift */; };
-		EDA485942B129EFC00533B10 /* UIColor+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485932B129EFC00533B10 /* UIColor+image.swift */; };
+		EDA485942B129EFC00533B10 /* UIColor+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485932B129EFC00533B10 /* UIColor+Image.swift */; };
 		EDA485962B12AC6A00533B10 /* TopBooksCollectionTableViewCell+AutoScrollLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485952B12AC6A00533B10 /* TopBooksCollectionTableViewCell+AutoScrollLayout.swift */; };
 		EDA485982B12D07400533B10 /* SnapCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485972B12D07400533B10 /* SnapCollectionViewModel.swift */; };
 		EDA4859A2B12D0E600533B10 /* SnapCollectionViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485992B12D0E600533B10 /* SnapCollectionViewModelBuilder.swift */; };
 		EDA4859C2B12D5D000533B10 /* SnapCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4859B2B12D5D000533B10 /* SnapCollectionViewCellViewModel.swift */; };
+		EDA4859F2B140B0300533B10 /* NunitoSans.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4859E2B140B0300533B10 /* NunitoSans.swift */; };
+		EDA485A22B140BA700533B10 /* NunitoSans_10pt-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA485A02B140BA700533B10 /* NunitoSans_10pt-Bold.ttf */; };
+		EDA485A32B140BA700533B10 /* NunitoSans_10pt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA485A12B140BA700533B10 /* NunitoSans_10pt-SemiBold.ttf */; };
+		EDA485A42B140D4500533B10 /* NunitoSans_10pt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA485A12B140BA700533B10 /* NunitoSans_10pt-SemiBold.ttf */; };
+		EDA485A52B140D4700533B10 /* NunitoSans_10pt-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDA485A02B140BA700533B10 /* NunitoSans_10pt-Bold.ttf */; };
+		EDA485A72B14127200533B10 /* SnapCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485A62B14127100533B10 /* SnapCollectionView.swift */; };
+		EDA485AA2B14147700533B10 /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485A82B14147600533B10 /* HeaderSectionView.swift */; };
+		EDA485AB2B14147700533B10 /* HeaderSectionSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485A92B14147700533B10 /* HeaderSectionSubview.swift */; };
 		EDB786532B0CFCF300D1354D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */; };
 		EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7866C2B0D4C9000D1354D /* AppDependenciesAssembly.swift */; };
 		EDB786782B0D592200D1354D /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786772B0D592200D1354D /* HomeFlow.swift */; };
@@ -83,16 +91,13 @@
 		EDF95CB32B0EA87300C652E2 /* SnapLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CB22B0EA87300C652E2 /* SnapLayout.swift */; };
 		EDF95CB52B0EAA9F00C652E2 /* SnapLayout+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CB42B0EAA9F00C652E2 /* SnapLayout+Style.swift */; };
 		EDF95CB72B0EABFF00C652E2 /* SnapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CB62B0EABFF00C652E2 /* SnapCollectionViewCell.swift */; };
-		EDF95CBB2B0EADF200C652E2 /* SnapCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CBA2B0EADF200C652E2 /* SnapCollectionView.swift */; };
 		EDF95CBC2B0EADF700C652E2 /* IdentifiableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CB82B0EAD8A00C652E2 /* IdentifiableCell.swift */; };
 		EDF95CBE2B0EB01500C652E2 /* SnapCollectionView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CBD2B0EB01500C652E2 /* SnapCollectionView+Style.swift */; };
 		EDF95CC02B0EB3D500C652E2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CBF2B0EB3D500C652E2 /* HeaderView.swift */; };
 		EDF95CC22B0EB4B400C652E2 /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CC12B0EB4B400C652E2 /* HeaderViewModel.swift */; };
 		EDF95CC42B0EB4F600C652E2 /* HeaderViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CC32B0EB4F600C652E2 /* HeaderViewModelBuilder.swift */; };
 		EDF95CC82B0EB65C00C652E2 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CC72B0EB65C00C652E2 /* PrimaryButton.swift */; };
-		EDF95CCB2B0EB79400C652E2 /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CCA2B0EB79400C652E2 /* HeaderSectionView.swift */; };
 		EDF95CCD2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CCC2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift */; };
-		EDF95CCF2B0EB7F100C652E2 /* HeaderSectionSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CCE2B0EB7F100C652E2 /* HeaderSectionSubview.swift */; };
 		EDF95CD12B0EBA1100C652E2 /* HeaderSectionViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CD02B0EBA1100C652E2 /* HeaderSectionViewModelBuilder.swift */; };
 		EDF95CD32B0EBA3500C652E2 /* HeaderSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CD22B0EBA3500C652E2 /* HeaderSectionViewModel.swift */; };
 		EDF95CD62B0EBAF000C652E2 /* SummarySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CD52B0EBAF000C652E2 /* SummarySectionView.swift */; };
@@ -160,11 +165,17 @@
 		EDA4858A2B129EC900533B10 /* LibraryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		EDA4858B2B129EC900533B10 /* LibraryViewModel+Outputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LibraryViewModel+Outputs.swift"; sourceTree = "<group>"; };
 		EDA4858C2B129EC900533B10 /* LibraryViewModelInputs+Inputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LibraryViewModelInputs+Inputs.swift"; sourceTree = "<group>"; };
-		EDA485932B129EFC00533B10 /* UIColor+image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+image.swift"; sourceTree = "<group>"; };
+		EDA485932B129EFC00533B10 /* UIColor+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Image.swift"; sourceTree = "<group>"; };
 		EDA485952B12AC6A00533B10 /* TopBooksCollectionTableViewCell+AutoScrollLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopBooksCollectionTableViewCell+AutoScrollLayout.swift"; sourceTree = "<group>"; };
 		EDA485972B12D07400533B10 /* SnapCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionViewModel.swift; sourceTree = "<group>"; };
 		EDA485992B12D0E600533B10 /* SnapCollectionViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionViewModelBuilder.swift; sourceTree = "<group>"; };
 		EDA4859B2B12D5D000533B10 /* SnapCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		EDA4859E2B140B0300533B10 /* NunitoSans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NunitoSans.swift; sourceTree = "<group>"; };
+		EDA485A02B140BA700533B10 /* NunitoSans_10pt-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans_10pt-Bold.ttf"; sourceTree = "<group>"; };
+		EDA485A12B140BA700533B10 /* NunitoSans_10pt-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans_10pt-SemiBold.ttf"; sourceTree = "<group>"; };
+		EDA485A62B14127100533B10 /* SnapCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapCollectionView.swift; sourceTree = "<group>"; };
+		EDA485A82B14147600533B10 /* HeaderSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
+		EDA485A92B14147700533B10 /* HeaderSectionSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderSectionSubview.swift; sourceTree = "<group>"; };
 		EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDB786622B0D405200D1354D /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		EDB786672B0D41DD00D1354D /* FirebaseRemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigService.swift; sourceTree = "<group>"; };
@@ -207,15 +218,12 @@
 		EDF95CB42B0EAA9F00C652E2 /* SnapLayout+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SnapLayout+Style.swift"; sourceTree = "<group>"; };
 		EDF95CB62B0EABFF00C652E2 /* SnapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionViewCell.swift; sourceTree = "<group>"; };
 		EDF95CB82B0EAD8A00C652E2 /* IdentifiableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableCell.swift; sourceTree = "<group>"; };
-		EDF95CBA2B0EADF200C652E2 /* SnapCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionView.swift; sourceTree = "<group>"; };
 		EDF95CBD2B0EB01500C652E2 /* SnapCollectionView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SnapCollectionView+Style.swift"; sourceTree = "<group>"; };
 		EDF95CBF2B0EB3D500C652E2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EDF95CC12B0EB4B400C652E2 /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
 		EDF95CC32B0EB4F600C652E2 /* HeaderViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModelBuilder.swift; sourceTree = "<group>"; };
 		EDF95CC72B0EB65C00C652E2 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
-		EDF95CCA2B0EB79400C652E2 /* HeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
 		EDF95CCC2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeaderSectionSubview+Style.swift"; sourceTree = "<group>"; };
-		EDF95CCE2B0EB7F100C652E2 /* HeaderSectionSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionSubview.swift; sourceTree = "<group>"; };
 		EDF95CD02B0EBA1100C652E2 /* HeaderSectionViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionViewModelBuilder.swift; sourceTree = "<group>"; };
 		EDF95CD22B0EBA3500C652E2 /* HeaderSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionViewModel.swift; sourceTree = "<group>"; };
 		EDF95CD52B0EBAF000C652E2 /* SummarySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySectionView.swift; sourceTree = "<group>"; };
@@ -307,6 +315,15 @@
 				EDA485812B129E7B00533B10 /* LibraryViewControllerFactory.swift */,
 			);
 			path = LibraryViewController;
+			sourceTree = "<group>";
+		};
+		EDA4859D2B140AE300533B10 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EDA485A02B140BA700533B10 /* NunitoSans_10pt-Bold.ttf */,
+				EDA485A12B140BA700533B10 /* NunitoSans_10pt-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		EDB7865F2B0D3D1D00D1354D /* MainLibraryScene */ = {
@@ -482,7 +499,9 @@
 		EDC4F78D2B0C00B100AEE26F /* HolyWaterFonts */ = {
 			isa = PBXGroup;
 			children = (
+				EDA4859D2B140AE300533B10 /* Fonts */,
 				EDC4F7902B0C00E000AEE26F /* FontConvertible.swift */,
+				EDA4859E2B140B0300533B10 /* NunitoSans.swift */,
 			);
 			path = HolyWaterFonts;
 			sourceTree = "<group>";
@@ -497,7 +516,7 @@
 				EDF95CA82B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift */,
 				EDF95CB82B0EAD8A00C652E2 /* IdentifiableCell.swift */,
 				EDA4856B2B124F0F00533B10 /* Optional+isNil.swift */,
-				EDA485932B129EFC00533B10 /* UIColor+image.swift */,
+				EDA485932B129EFC00533B10 /* UIColor+Image.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -536,7 +555,7 @@
 				EDF95CB42B0EAA9F00C652E2 /* SnapLayout+Style.swift */,
 				EDF95CB62B0EABFF00C652E2 /* SnapCollectionViewCell.swift */,
 				EDA4859B2B12D5D000533B10 /* SnapCollectionViewCellViewModel.swift */,
-				EDF95CBA2B0EADF200C652E2 /* SnapCollectionView.swift */,
+				EDA485A62B14127100533B10 /* SnapCollectionView.swift */,
 				EDF95CBD2B0EB01500C652E2 /* SnapCollectionView+Style.swift */,
 				EDA485972B12D07400533B10 /* SnapCollectionViewModel.swift */,
 				EDA485992B12D0E600533B10 /* SnapCollectionViewModelBuilder.swift */,
@@ -565,8 +584,8 @@
 		EDF95CC92B0EB78400C652E2 /* HeaderSection */ = {
 			isa = PBXGroup;
 			children = (
-				EDF95CCA2B0EB79400C652E2 /* HeaderSectionView.swift */,
-				EDF95CCE2B0EB7F100C652E2 /* HeaderSectionSubview.swift */,
+				EDA485A92B14147700533B10 /* HeaderSectionSubview.swift */,
+				EDA485A82B14147600533B10 /* HeaderSectionView.swift */,
 				EDF95CCC2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift */,
 				EDF95CD02B0EBA1100C652E2 /* HeaderSectionViewModelBuilder.swift */,
 				EDF95CD22B0EBA3500C652E2 /* HeaderSectionViewModel.swift */,
@@ -786,6 +805,8 @@
 			files = (
 				EDC4F7612B0BFA0A00AEE26F /* LaunchScreen.storyboard in Resources */,
 				EDC4F75E2B0BFA0A00AEE26F /* Assets.xcassets in Resources */,
+				EDA485A52B140D4700533B10 /* NunitoSans_10pt-Bold.ttf in Resources */,
+				EDA485A42B140D4500533B10 /* NunitoSans_10pt-SemiBold.ttf in Resources */,
 				EDB786532B0CFCF300D1354D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -794,6 +815,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA485A32B140BA700533B10 /* NunitoSans_10pt-SemiBold.ttf in Resources */,
+				EDA485A22B140BA700533B10 /* NunitoSans_10pt-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,15 +884,14 @@
 				EDA4858F2B129EC900533B10 /* LibraryViewModel+Analytics.swift in Sources */,
 				EDA4859A2B12D0E600533B10 /* SnapCollectionViewModelBuilder.swift in Sources */,
 				EDA485912B129EC900533B10 /* LibraryViewModel+Outputs.swift in Sources */,
-				EDF95CCB2B0EB79400C652E2 /* HeaderSectionView.swift in Sources */,
 				EDF95CB02B0EA75500C652E2 /* DetailsViewModel.swift in Sources */,
 				EDA485902B129EC900533B10 /* LibraryViewModel.swift in Sources */,
+				EDA485A72B14127200533B10 /* SnapCollectionView.swift in Sources */,
 				EDF95CE62B0EC16800C652E2 /* SeparatorView.swift in Sources */,
 				EDF95CCD2B0EB7B700C652E2 /* HeaderSectionSubview+Style.swift in Sources */,
 				EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */,
 				EDF95CE32B0EC0F700C652E2 /* YouwWillAlsoLikeSectionViewModelBuilder.swift in Sources */,
 				EDF95CDF2B0EBF8900C652E2 /* YouWillAlsoLikeSectionViewModel.swift in Sources */,
-				EDF95CBB2B0EADF200C652E2 /* SnapCollectionView.swift in Sources */,
 				EDF95CD82B0EBDAF00C652E2 /* SummarySectionViewModel.swift in Sources */,
 				EDC4F76F2B0BFC7400AEE26F /* SplashAnimatior.swift in Sources */,
 				EDF95CBE2B0EB01500C652E2 /* SnapCollectionView+Style.swift in Sources */,
@@ -877,6 +899,7 @@
 				EDF95CAC2B0EA73F00C652E2 /* DetailsViewController.swift in Sources */,
 				EDF95CC82B0EB65C00C652E2 /* PrimaryButton.swift in Sources */,
 				EDA485792B129E3100533B10 /* TopBannerCollectionCell.swift in Sources */,
+				EDA485AB2B14147700533B10 /* HeaderSectionSubview.swift in Sources */,
 				EDA485982B12D07400533B10 /* SnapCollectionViewModel.swift in Sources */,
 				EDA485962B12AC6A00533B10 /* TopBooksCollectionTableViewCell+AutoScrollLayout.swift in Sources */,
 				EDC4F7572B0BFA0800AEE26F /* SceneDelegate.swift in Sources */,
@@ -898,8 +921,8 @@
 				EDF95CB52B0EAA9F00C652E2 /* SnapLayout+Style.swift in Sources */,
 				EDA4859C2B12D5D000533B10 /* SnapCollectionViewCellViewModel.swift in Sources */,
 				EDA485862B129E7B00533B10 /* LibraryViewControllerFactory.swift in Sources */,
-				EDF95CCF2B0EB7F100C652E2 /* HeaderSectionSubview.swift in Sources */,
 				EDF95CC02B0EB3D500C652E2 /* HeaderView.swift in Sources */,
+				EDA485AA2B14147700533B10 /* HeaderSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -910,7 +933,7 @@
 				EDC4F78C2B0C002F00AEE26F /* ThemeColor.swift in Sources */,
 				EDF95CBC2B0EADF700C652E2 /* IdentifiableCell.swift in Sources */,
 				EDC4F78F2B0C00D400AEE26F /* UIColor+Hex.swift in Sources */,
-				EDA485942B129EFC00533B10 /* UIColor+image.swift in Sources */,
+				EDA485942B129EFC00533B10 /* UIColor+Image.swift in Sources */,
 				EDB786882B0D7D6000D1354D /* UIView+Subviews.swift in Sources */,
 				EDF95CA92B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift in Sources */,
 				EDF95D162B0FE2DC00C652E2 /* LoadingIndicator.swift in Sources */,
@@ -920,6 +943,7 @@
 				EDC4F77C2B0BFFD400AEE26F /* HolyWaterUI.docc in Sources */,
 				EDC4F7912B0C00E000AEE26F /* FontConvertible.swift in Sources */,
 				EDC4F78A2B0C002E00AEE26F /* ColorConvertible.swift in Sources */,
+				EDA4859F2B140B0300533B10 /* NunitoSans.swift in Sources */,
 				EDB7868D2B0D7E0D00D1354D /* ProgressBarView.swift in Sources */,
 				EDA4856C2B124F0F00533B10 /* Optional+isNil.swift in Sources */,
 			);

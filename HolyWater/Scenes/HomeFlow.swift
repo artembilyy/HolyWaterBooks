@@ -38,7 +38,10 @@ final class HomeFlow {
             .drive(onNext: { [weak self] books in
                 guard let self else { return }
                 let viewController = DetailsScreenFactory.instantiate(
-                    viewModel: DetailsViewModel(topSection: books.topSection, bottomSection: books.bottomSection, dependencies: dependencies)
+                    viewModel: DetailsViewModel(
+                        topSection: books.topSection,
+                        bottomSection: books.bottomSection,
+                        dependencies: dependencies)
                 )
                 libraryViewController.navigationController?.pushViewController(viewController, animated: true)
             })

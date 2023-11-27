@@ -16,6 +16,7 @@ extension LibraryViewController {
         collectionView.backgroundColor = .clear
         collectionView.contentInsetAdjustmentBehavior = .always
         collectionView.frame = view.bounds
+        collectionView.contentInset.bottom = 96
         return collectionView
     }
 
@@ -52,16 +53,18 @@ extension LibraryViewController {
             section = NSCollectionLayoutSection(group: group)
             section.contentInsets.top = 20
             section.contentInsets.bottom = 40
-            section.orthogonalScrollingBehavior = .none
+            section.orthogonalScrollingBehavior = .groupPagingCentered
         case .books:
             item.contentInsets.trailing = 8
             groupSize = NSCollectionLayoutSize(
                 widthDimension: .absolute(120),
-                heightDimension: .absolute(190))
+                heightDimension: .estimated(190))
             group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
             let headerSize = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
-                heightDimension: .estimated(26))
+                heightDimension: .absolute(26))
+
             section = NSCollectionLayoutSection(group: group)
             section.contentInsets.leading = 16
             section.contentInsets.top = 14

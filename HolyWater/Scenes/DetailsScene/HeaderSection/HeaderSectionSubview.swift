@@ -43,15 +43,16 @@ final class HeaderSectionSubview: UIView {
     }
 
     private func configureTitleLabel() {
-        titleLabel.text = "22.2k"
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         titleLabel.textColor = .black
+        titleLabel.textAlignment = .center
     }
 
     private func configureSecondaryLabel() {
         secondaryLabel.text = "Readers"
         secondaryLabel.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         secondaryLabel.textColor = ThemeColor.lightGray.asUIColor()
+        secondaryLabel.textAlignment = .center
     }
 
     private func configureStackView() {

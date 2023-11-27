@@ -8,9 +8,15 @@
 import HolyWaterServices
 import HolyWaterUI
 
+extension DetailsViewController: SnapCollectionDelegate {
+    func centeredCellIndexChanged(to index: Int) {
+        viewModel.mainBook = viewModel.topSection[index]
+    }
+}
+
 final class DetailsViewController: UIViewController {
 
-    private var viewModel: DetailsViewModel! {
+    var viewModel: DetailsViewModel! {
         didSet {
             mainStackView.viewModel = viewModel.mainStackViewModel
             snapCollectionView.viewModel = viewModel.snapCollectionViewModel
@@ -44,6 +50,7 @@ final class DetailsViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = .white
+        snapCollectionView.delegate = self
 
         contentView.translatesAutoresizingMaskIntoConstraints = false
 

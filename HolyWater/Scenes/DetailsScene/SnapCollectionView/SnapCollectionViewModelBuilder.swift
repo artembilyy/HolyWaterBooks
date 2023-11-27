@@ -26,6 +26,6 @@ final class SnapCollectionViewModelBuilder {
     }
 
     func build() -> SnapCollectionViewModel {
-        return .init(books: books, dependencies: dependencies)
+        .init(books: books, dependencies: dependencies)
     }
 }

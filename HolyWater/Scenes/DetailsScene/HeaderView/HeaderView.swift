@@ -29,7 +29,7 @@ final class HeaderView: UIView {
 
         label.text = viewModel.title
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = NunitoSans.bold(20).font
     }
 }
 

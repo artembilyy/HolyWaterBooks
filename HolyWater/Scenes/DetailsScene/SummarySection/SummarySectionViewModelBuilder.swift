@@ -23,7 +23,7 @@ final class SummarySectionViewModelBuilder {
     }
 
     func build() -> SummarySectionViewModel {
-        return SummarySectionViewModel(
+        .init(
             headerText: headerText,
             descriptionText: descriptionText)
     }

@@ -56,8 +56,10 @@ final class LibraryViewController: UIViewController, AlertDisplayable {
         navigationItem.leftBarButtonItem = .init(customView: leftItem())
         view.backgroundColor = ThemeColor.chaosBlack.asUIColor()
         view.addSubview(collectionView)
+
         collectionView.dataSource = self
         collectionView.delegate = self
+
         registerCells()
     }
 
@@ -103,17 +105,17 @@ final class LibraryViewController: UIViewController, AlertDisplayable {
             .shadowImage = ThemeColor.chaosBlack.asUIColor().image()
         navigationController?
             .navigationBar
-            .barTintColor = UIColor.white
+            .barTintColor = .clear
         navigationController?
             .navigationBar
-            .tintColor = .white
+            .tintColor = .clear
     }
 
     private func leftItem() -> UILabel {
         let label = UILabel()
         label.text = Constants.leftHeadItem.rawValue
         label.textColor = ThemeColor.raspberryPink.asUIColor()
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = NunitoSans.bold(20).font
         label.textAlignment = .left
         return label
     }

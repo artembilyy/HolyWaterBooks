@@ -5,7 +5,7 @@
 //  Created by Артем Билый on 22.11.2023.
 //
 
-import UIKit
+import HolyWaterUI
 
 final class HeaderSectionView: UIView {
 
@@ -20,7 +20,7 @@ final class HeaderSectionView: UIView {
         $0.axis = .horizontal
         $0.spacing = 40
         $0.alignment = .center
-        $0.distribution = .fillProportionally
+        $0.distribution = .fill
         return $0
     }(UIStackView())
 

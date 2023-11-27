@@ -1,5 +1,5 @@
 //
-//  UIColor+image.swift
+//  UIColor+Image.swift
 //  HolyWaterUI
 //
 //  Created by Artem Tkachenko on 25.11.2023.

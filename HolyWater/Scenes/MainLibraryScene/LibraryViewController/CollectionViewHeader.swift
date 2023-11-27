@@ -35,7 +35,7 @@ final class CollectionViewHeader: UICollectionReusableView, IdentifiableCell {
     private func configureUI() {
         addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = NunitoSans.bold(20).font
         label.textColor = .white
     }
 

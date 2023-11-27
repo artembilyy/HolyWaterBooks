@@ -119,4 +119,24 @@ final class SnapLayout: UICollectionViewFlowLayout {
         context.invalidateFlowLayoutDelegateMetrics = newBounds.size != collectionView?.bounds.size
         return context
     }
+
+    func indexPathForItem(at center: CGPoint) -> IndexPath? {
+        guard let collectionView else { return nil }
+
+        let visibleRect = CGRect(
+            origin: collectionView.contentOffset,
+            size: collectionView.frame.size)
+
+        guard let visibleAttributes = super.layoutAttributesForElements(in: visibleRect) else {
+            return nil
+        }
+
+        for attributes in visibleAttributes {
+            if attributes.frame.contains(center) {
+                return attributes.indexPath
+            }
+        }
+
+        return nil
+    }
 }
