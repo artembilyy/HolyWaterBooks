@@ -458,11 +458,11 @@
 		EDC4F7482B0BFA0800AEE26F = {
 			isa = PBXGroup;
 			children = (
+				EDB786A32B0D807F00D1354D /* Frameworks */,
 				EDC4F7532B0BFA0800AEE26F /* HolyWater */,
 				EDB786942B0D7FD100D1354D /* HolyWaterServices */,
 				EDC4F7792B0BFFD400AEE26F /* HolyWaterUI */,
 				EDC4F7522B0BFA0800AEE26F /* Products */,
-				EDB786A32B0D807F00D1354D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
