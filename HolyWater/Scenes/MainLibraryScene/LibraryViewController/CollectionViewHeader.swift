@@ -9,7 +9,7 @@ import HolyWaterUI
 
 final class CollectionViewHeader: UICollectionReusableView, IdentifiableCell {
 
-    private let label: UILabel = .init()
+    private let label = UILabel()
 
     var title: String = "" {
         didSet {

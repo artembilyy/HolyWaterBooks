@@ -8,9 +8,7 @@
 import HolyWaterServices
 
 extension LibraryViewModel {
-    func sendCrashReport(
-        event: CrashAnalytics.CrashEvent,
-        source: String?) {
+    func sendCrashReport(event: CrashAnalytics.CrashEvent, source: String?) {
         dependencies
             .crashAnalyticReporter
             .sendCrashReport(

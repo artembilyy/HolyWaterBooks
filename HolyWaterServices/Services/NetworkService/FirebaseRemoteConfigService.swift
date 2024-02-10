@@ -43,17 +43,10 @@ public final class FirebaseRemoteConfigService: FirebaseRemoteConfigWorker {
                 return
             }
 
-            self.remoteConfig.activate { _, _ in
-//                guard
+            self.remoteConfig.activate { [unowned self] _, _ in
                 let data = self.remoteConfig["json_data"].dataValue
-//                else {
-//                    completion(.failure(NetworkError.jsonNil))
-//                    return
-//                }
-
                 do {
                     let decodedData = try JSONDecoder().decode(BookResponse.self, from: data)
-
                     completion(.success(decodedData))
                 } catch {
                     print("Error decoding JSON: \(error)")

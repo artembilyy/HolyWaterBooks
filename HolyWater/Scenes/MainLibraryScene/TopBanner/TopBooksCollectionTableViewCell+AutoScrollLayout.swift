@@ -45,24 +45,24 @@ extension TopBannerCollectionView {
                 return
             }
 
-            self.currentAutoScrollIndex = page
+            currentAutoScrollIndex = page
             if page == maxIndex {
                 page = 1
-                self.currentAutoScrollIndex = page
+                currentAutoScrollIndex = page
             } else if page == 0 {
                 page = maxIndex - 1
-                self.currentAutoScrollIndex = page
+                currentAutoScrollIndex = page
             }
 
             let realPage = page - 1
 
-            if self.pageControl.currentPage != realPage {
-                self.pageControl.currentPage = realPage
-                let indexPath: IndexPath = .init(item: page, section: 0)
-                self.collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
+            if pageControl.currentPage != realPage {
+                pageControl.currentPage = realPage
+                let indexPath = IndexPath(item: page, section: 0)
+                collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
             }
 
-            self.configAutoScroll()
+            configAutoScroll()
         }
 
         layoutSection.orthogonalScrollingBehavior = .groupPagingCentered

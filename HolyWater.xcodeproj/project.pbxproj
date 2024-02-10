@@ -40,7 +40,6 @@
 		EDA485AD2B14199200533B10 /* UIStackView+RemoveAllSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA485AC2B14199200533B10 /* UIStackView+RemoveAllSubviews.swift */; };
 		EDB786532B0CFCF300D1354D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */; };
 		EDB7866D2B0D4C9000D1354D /* AppDependenciesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7866C2B0D4C9000D1354D /* AppDependenciesAssembly.swift */; };
-		EDB786782B0D592200D1354D /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB786772B0D592200D1354D /* HomeFlow.swift */; };
 		EDB786832B0D6B2D00D1354D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDB786822B0D6B2D00D1354D /* RxSwift */; };
 		EDB786882B0D7D6000D1354D /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7952B0C074F00AEE26F /* UIView+Subviews.swift */; };
 		EDB786892B0D7D6300D1354D /* NSLayoutConstraints+Activated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC4F7972B0C0A3900AEE26F /* NSLayoutConstraints+Activated.swift */; };
@@ -114,6 +113,18 @@
 		EDF95CEC2B0EC23400C652E2 /* MainStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95CEB2B0EC23400C652E2 /* MainStackView.swift */; };
 		EDF95D042B0F470000C652E2 /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D012B0F3DDF00C652E2 /* AlertDisplayable.swift */; };
 		EDF95D162B0FE2DC00C652E2 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF95D152B0FE2DC00C652E2 /* LoadingIndicator.swift */; };
+		EDFE9A932B759F760087B8B1 /* UICollectionView+IdentifiableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE9A922B759F760087B8B1 /* UICollectionView+IdentifiableCell.swift */; };
+		EDFE9A952B761EA80087B8B1 /* PerformAsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE9A942B761EA80087B8B1 /* PerformAsyncOperation.swift */; };
+		EDFE9A982B76B4560087B8B1 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE9A972B76B4560087B8B1 /* RealmService.swift */; };
+		EDFE9A9C2B76B5DF0087B8B1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDFE9A9B2B76B5DF0087B8B1 /* RealmSwift */; };
+		EDFE9A9E2B76B5E80087B8B1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EDFE9A9D2B76B5E80087B8B1 /* Realm */; };
+		EDFE9AA72B76CA350087B8B1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EDFE9AA62B76CA350087B8B1 /* Realm */; };
+		EDFE9AA92B76CA400087B8B1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EDFE9AA82B76CA400087B8B1 /* RealmSwift */; };
+		EDFE9AAA2B76CB730087B8B1 /* RealmBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE9AA02B76C3BD0087B8B1 /* RealmBookEntity.swift */; };
+		EDFE9AAC2B76CDAD0087B8B1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE9AAB2B76CDAD0087B8B1 /* Coordinator.swift */; };
+		EDFE9AAE2B76CE110087B8B1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE9AAD2B76CE110087B8B1 /* AppCoordinator.swift */; };
+		EDFE9AB02B76D0630087B8B1 /* LibrarySceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE9AAF2B76D0630087B8B1 /* LibrarySceneCoordinator.swift */; };
+		EDFE9AB22B76D5410087B8B1 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE9AB12B76D5410087B8B1 /* NotificationNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,7 +194,6 @@
 		EDB786672B0D41DD00D1354D /* FirebaseRemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigService.swift; sourceTree = "<group>"; };
 		EDB786692B0D439900D1354D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		EDB7866C2B0D4C9000D1354D /* AppDependenciesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependenciesAssembly.swift; sourceTree = "<group>"; };
-		EDB786772B0D592200D1354D /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
 		EDB7867B2B0D69EF00D1354D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDB786852B0D77C500D1354D /* FirebaseCrashAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCrashAnalytics.swift; sourceTree = "<group>"; };
 		EDB786932B0D7FD100D1354D /* HolyWaterServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HolyWaterServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +251,14 @@
 		EDF95CEB2B0EC23400C652E2 /* MainStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStackView.swift; sourceTree = "<group>"; };
 		EDF95D012B0F3DDF00C652E2 /* AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayable.swift; sourceTree = "<group>"; };
 		EDF95D152B0FE2DC00C652E2 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		EDFE9A922B759F760087B8B1 /* UICollectionView+IdentifiableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+IdentifiableCell.swift"; sourceTree = "<group>"; };
+		EDFE9A942B761EA80087B8B1 /* PerformAsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformAsyncOperation.swift; sourceTree = "<group>"; };
+		EDFE9A972B76B4560087B8B1 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		EDFE9AA02B76C3BD0087B8B1 /* RealmBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBookEntity.swift; sourceTree = "<group>"; };
+		EDFE9AAB2B76CDAD0087B8B1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EDFE9AAD2B76CE110087B8B1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		EDFE9AAF2B76D0630087B8B1 /* LibrarySceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySceneCoordinator.swift; sourceTree = "<group>"; };
+		EDFE9AB12B76D5410087B8B1 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +266,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFE9A9E2B76B5E80087B8B1 /* Realm in Frameworks */,
+				EDFE9A9C2B76B5DF0087B8B1 /* RealmSwift in Frameworks */,
 				EDB786C82B0D87CB00D1354D /* FirebaseCrashlytics in Frameworks */,
 				EDB786C62B0D87CB00D1354D /* FirebaseAnalyticsSwift in Frameworks */,
 				EDB786CC2B0D87CB00D1354D /* FirebaseRemoteConfigSwift in Frameworks */,
@@ -260,6 +280,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFE9AA92B76CA400087B8B1 /* RealmSwift in Frameworks */,
+				EDFE9AA72B76CA350087B8B1 /* Realm in Frameworks */,
 				EDB786C02B0D87A400D1354D /* FirebaseRemoteConfig in Frameworks */,
 				EDB786832B0D6B2D00D1354D /* RxSwift in Frameworks */,
 				EDC4F7802B0BFFD400AEE26F /* HolyWaterUI.framework in Frameworks */,
@@ -298,6 +320,7 @@
 		EDA4857B2B129E6500533B10 /* LibraryViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				EDFE9AA02B76C3BD0087B8B1 /* RealmBookEntity.swift */,
 				EDA4858A2B129EC900533B10 /* LibraryViewModel.swift */,
 				EDA485892B129EC900533B10 /* LibraryViewModel+Analytics.swift */,
 				EDA485882B129EC900533B10 /* LibraryViewModel+Dependencies.swift */,
@@ -331,6 +354,7 @@
 		EDB7865F2B0D3D1D00D1354D /* MainLibraryScene */ = {
 			isa = PBXGroup;
 			children = (
+				EDFE9AAF2B76D0630087B8B1 /* LibrarySceneCoordinator.swift */,
 				EDA485722B129E3100533B10 /* TopBanner */,
 				EDA4857C2B129E7B00533B10 /* LibraryViewController */,
 				EDA4857B2B129E6500533B10 /* LibraryViewModel */,
@@ -341,6 +365,7 @@
 		EDB786602B0D402100D1354D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EDFE9A962B76B42F0087B8B1 /* DataService */,
 				EDF95D002B0F3DCE00C652E2 /* AlertService */,
 				EDB786872B0D77CE00D1354D /* CrashAnalyticsService */,
 				EDF95CA52B0E732A00C652E2 /* ImageService */,
@@ -372,6 +397,7 @@
 			children = (
 				EDC4F7542B0BFA0800AEE26F /* AppDelegate.swift */,
 				EDC4F7562B0BFA0800AEE26F /* SceneDelegate.swift */,
+				EDFE9AB12B76D5410087B8B1 /* NotificationNames.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -387,7 +413,8 @@
 		EDB786762B0D591200D1354D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				EDB786772B0D592200D1354D /* HomeFlow.swift */,
+				EDFE9AAB2B76CDAD0087B8B1 /* Coordinator.swift */,
+				EDFE9AAD2B76CE110087B8B1 /* AppCoordinator.swift */,
 				EDC4F7682B0BFC7400AEE26F /* SplashViewScreen */,
 				EDB7865F2B0D3D1D00D1354D /* MainLibraryScene */,
 				EDF95CAA2B0EA70B00C652E2 /* DetailsScene */,
@@ -520,6 +547,8 @@
 				EDF95CB82B0EAD8A00C652E2 /* IdentifiableCell.swift */,
 				EDA4856B2B124F0F00533B10 /* Optional+isNil.swift */,
 				EDA485932B129EFC00533B10 /* UIColor+Image.swift */,
+				EDFE9A922B759F760087B8B1 /* UICollectionView+IdentifiableCell.swift */,
+				EDFE9A942B761EA80087B8B1 /* PerformAsyncOperation.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -653,6 +682,14 @@
 			path = LoadingIndicator;
 			sourceTree = "<group>";
 		};
+		EDFE9A962B76B42F0087B8B1 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				EDFE9A972B76B4560087B8B1 /* RealmService.swift */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -695,6 +732,8 @@
 				EDB786C72B0D87CB00D1354D /* FirebaseCrashlytics */,
 				EDB786C92B0D87CB00D1354D /* FirebaseRemoteConfig */,
 				EDB786CB2B0D87CB00D1354D /* FirebaseRemoteConfigSwift */,
+				EDFE9A9B2B76B5DF0087B8B1 /* RealmSwift */,
+				EDFE9A9D2B76B5E80087B8B1 /* Realm */,
 			);
 			productName = HolyWaterServices;
 			productReference = EDB786932B0D7FD100D1354D /* HolyWaterServices.framework */;
@@ -726,6 +765,8 @@
 				EDB786BD2B0D87A400D1354D /* FirebaseCrashlytics */,
 				EDB786BF2B0D87A400D1354D /* FirebaseRemoteConfig */,
 				EDB786C12B0D87A400D1354D /* FirebaseRemoteConfigSwift */,
+				EDFE9AA62B76CA350087B8B1 /* Realm */,
+				EDFE9AA82B76CA400087B8B1 /* RealmSwift */,
 			);
 			productName = HolyWater;
 			productReference = EDC4F7512B0BFA0800AEE26F /* HolyWater.app */;
@@ -745,6 +786,8 @@
 			dependencies = (
 			);
 			name = HolyWaterUI;
+			packageProductDependencies = (
+			);
 			productName = HolyWaterUI;
 			productReference = EDC4F7782B0BFFD400AEE26F /* HolyWaterUI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -782,6 +825,7 @@
 			packageReferences = (
 				EDB7867D2B0D6B2D00D1354D /* XCRemoteSwiftPackageReference "RxSwift" */,
 				EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				EDFE9A992B76B5250087B8B1 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = EDC4F7522B0BFA0800AEE26F /* Products */;
 			projectDirPath = "";
@@ -859,6 +903,7 @@
 				EDB786972B0D7FD100D1354D /* HolyWaterServices.docc in Sources */,
 				EDF95CA72B0E733A00C652E2 /* ImageLoadingManager.swift in Sources */,
 				EDF95D042B0F470000C652E2 /* AlertDisplayable.swift in Sources */,
+				EDFE9A982B76B4560087B8B1 /* RealmService.swift in Sources */,
 				EDF95CA62B0E733700C652E2 /* ImageCacheManager.swift in Sources */,
 				EDB786A22B0D7FEA00D1354D /* NetworkError.swift in Sources */,
 				EDB786A12B0D7FE600D1354D /* FirebaseRemoteConfigService.swift in Sources */,
@@ -880,6 +925,7 @@
 				EDC4F7552B0BFA0800AEE26F /* AppDelegate.swift in Sources */,
 				EDC4F7722B0BFC7400AEE26F /* SplashPresenter.swift in Sources */,
 				EDF95CD12B0EBA1100C652E2 /* HeaderSectionViewModelBuilder.swift in Sources */,
+				EDFE9AAE2B76CE110087B8B1 /* AppCoordinator.swift in Sources */,
 				EDF95CEA2B0EC1E500C652E2 /* MainStackViewModel.swift in Sources */,
 				EDA485852B129E7B00533B10 /* CollectionViewHeader.swift in Sources */,
 				EDA485922B129EC900533B10 /* LibraryViewModelInputs+Inputs.swift in Sources */,
@@ -888,6 +934,7 @@
 				EDA4859A2B12D0E600533B10 /* SnapCollectionViewModelBuilder.swift in Sources */,
 				EDA485912B129EC900533B10 /* LibraryViewModel+Outputs.swift in Sources */,
 				EDF95CB02B0EA75500C652E2 /* DetailsViewModel.swift in Sources */,
+				EDFE9AAC2B76CDAD0087B8B1 /* Coordinator.swift in Sources */,
 				EDA485902B129EC900533B10 /* LibraryViewModel.swift in Sources */,
 				EDA485A72B14127200533B10 /* SnapCollectionView.swift in Sources */,
 				EDF95CE62B0EC16800C652E2 /* SeparatorView.swift in Sources */,
@@ -911,20 +958,22 @@
 				EDF95CDA2B0EBDC900C652E2 /* SummarySectionViewModelBuilder.swift in Sources */,
 				EDA485702B128EAB00533B10 /* BookCellViewModel+Dependencies.swift in Sources */,
 				EDF95CD32B0EBA3500C652E2 /* HeaderSectionViewModel.swift in Sources */,
-				EDB786782B0D592200D1354D /* HomeFlow.swift in Sources */,
 				EDF95CE12B0EBFDE00C652E2 /* BookCell.swift in Sources */,
 				EDF95CB72B0EABFF00C652E2 /* SnapCollectionViewCell.swift in Sources */,
 				EDA485772B129E3100533B10 /* TopBannerCollectionView.swift in Sources */,
 				EDA4857A2B129E3100533B10 /* TopBannerCellViewModel+Dependencies.swift in Sources */,
+				EDFE9AB02B76D0630087B8B1 /* LibrarySceneCoordinator.swift in Sources */,
 				EDF95CDD2B0EBF5C00C652E2 /* YouWillAlsoLikeSectionView.swift in Sources */,
 				EDF95CC22B0EB4B400C652E2 /* HeaderViewModel.swift in Sources */,
 				EDA485822B129E7B00533B10 /* LibraryViewController+Layout.swift in Sources */,
+				EDFE9AB22B76D5410087B8B1 /* NotificationNames.swift in Sources */,
 				EDF95CEC2B0EC23400C652E2 /* MainStackView.swift in Sources */,
 				EDA485782B129E3100533B10 /* TopBannerCellViewModel.swift in Sources */,
 				EDF95CB52B0EAA9F00C652E2 /* SnapLayout+Style.swift in Sources */,
 				EDA4859C2B12D5D000533B10 /* SnapCollectionViewCellViewModel.swift in Sources */,
 				EDA485862B129E7B00533B10 /* LibraryViewControllerFactory.swift in Sources */,
 				EDF95CC02B0EB3D500C652E2 /* HeaderView.swift in Sources */,
+				EDFE9AAA2B76CB730087B8B1 /* RealmBookEntity.swift in Sources */,
 				EDA485AA2B14147700533B10 /* HeaderSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -937,11 +986,13 @@
 				EDF95CBC2B0EADF700C652E2 /* IdentifiableCell.swift in Sources */,
 				EDC4F78F2B0C00D400AEE26F /* UIColor+Hex.swift in Sources */,
 				EDA485942B129EFC00533B10 /* UIColor+Image.swift in Sources */,
+				EDFE9A932B759F760087B8B1 /* UICollectionView+IdentifiableCell.swift in Sources */,
 				EDB786882B0D7D6000D1354D /* UIView+Subviews.swift in Sources */,
 				EDF95CA92B0EA66000C652E2 /* UIApplication+StatusBarHeight.swift in Sources */,
 				EDF95D162B0FE2DC00C652E2 /* LoadingIndicator.swift in Sources */,
 				EDB7868A2B0D7D6600D1354D /* Bool+State.swift in Sources */,
 				EDB786892B0D7D6300D1354D /* NSLayoutConstraints+Activated.swift in Sources */,
+				EDFE9A952B761EA80087B8B1 /* PerformAsyncOperation.swift in Sources */,
 				EDB7868B2B0D7D6900D1354D /* Task+Sleep.swift in Sources */,
 				EDC4F77C2B0BFFD400AEE26F /* HolyWaterUI.docc in Sources */,
 				EDC4F7912B0C00E000AEE26F /* FontConvertible.swift in Sources */,
@@ -1349,6 +1400,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		EDFE9A992B76B5250087B8B1 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1416,6 +1475,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EDB786B82B0D87A400D1354D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfigSwift;
+		};
+		EDFE9A9B2B76B5DF0087B8B1 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDFE9A992B76B5250087B8B1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		EDFE9A9D2B76B5E80087B8B1 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDFE9A992B76B5250087B8B1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		EDFE9AA62B76CA350087B8B1 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDFE9A992B76B5250087B8B1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		EDFE9AA82B76CA400087B8B1 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDFE9A992B76B5250087B8B1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -33,9 +33,7 @@ final class YouWillAlsoLikeSectionView: UIView {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
-        collectionView.register(
-            BookCell.self,
-            forCellWithReuseIdentifier: BookCell.identifier)
+        collectionView.register(cellType: BookCell.self)
         return collectionView
     }()
 
@@ -52,7 +50,7 @@ final class YouWillAlsoLikeSectionView: UIView {
 
     private func configureUI() {
         guard let viewModel else { return }
-        if let title = headerView.viewModel?.title.isEmpty.not {
+        if let title = headerView.viewModel?.title, title.isEmpty.not {
             headerView.viewModel = viewModel.headerViewModel
             collectionView.reloadData()
         }
@@ -67,14 +65,10 @@ extension YouWillAlsoLikeSectionView: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: BookCell.identifier,
-                for: indexPath) as? BookCell,
-            let viewModel
-        else {
+        guard let viewModel else {
             return UICollectionViewCell()
         }
+        let cell: BookCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.viewModel = .init(books: viewModel.books, dependencies: viewModel.dependencies)
         cell.viewModel?.textStyle.accept(.details)
         cell.configureCell(indexPath: indexPath)

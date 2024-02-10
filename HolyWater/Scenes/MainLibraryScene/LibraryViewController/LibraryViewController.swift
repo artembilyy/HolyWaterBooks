@@ -34,7 +34,9 @@ final class LibraryViewController: UIViewController, AlertDisplayable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        viewModel.inputs.fetch()
+        Task {
+            await viewModel.inputs.fetch()
+        }
         bindViewModel()
     }
 
@@ -64,16 +66,9 @@ final class LibraryViewController: UIViewController, AlertDisplayable {
     }
 
     private func registerCells() {
-        collectionView.register(
-            BookCell.self,
-            forCellWithReuseIdentifier: BookCell.identifier)
-        collectionView.register(
-            TopBannerCollectionView.self,
-            forCellWithReuseIdentifier: TopBannerCollectionView.identifier)
-        collectionView.register(
-            CollectionViewHeader.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: CollectionViewHeader.identifier)
+        collectionView.register(cellType: BookCell.self)
+        collectionView.register(cellType: TopBannerCollectionView.self)
+        collectionView.registerHeader(type: CollectionViewHeader.self)
     }
 
     private func bindViewModel() {
@@ -132,30 +127,19 @@ extension LibraryViewController: UICollectionViewDataSource, UICollectionViewDel
             return UICollectionReusableView()
         }
 
-        if let header = collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind,
-            withReuseIdentifier: CollectionViewHeader.identifier,
-            for: indexPath) as? CollectionViewHeader {
-            let selectedGenre = viewModel.outputs.genres[indexPath.section - 1]
-            header.title = selectedGenre
-            return header
-        }
-
-        return UICollectionReusableView()
+        let header: CollectionViewHeader = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind, for: indexPath)
+        let selectedGenre = viewModel.outputs.genres[indexPath.section - 1]
+        header.title = selectedGenre
+        return header
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        guard
-            let topBookCell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: TopBannerCollectionView.identifier,
-                for: indexPath) as? TopBannerCollectionView,
-            let bookCell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: BookCell.identifier,
-                for: indexPath) as? BookCell
-        else {
-            return UICollectionViewCell()
-        }
+        let topBookCell: TopBannerCollectionView = collectionView.dequeueReusableCell(for: indexPath)
+        let bookCell: BookCell = collectionView.dequeueReusableCell(for: indexPath)
 
         if indexPath.section == 0 {
             topBookCell.viewModel = .init(topBooks: viewModel.outputs.topBannerBooks, dependencies: dependencies)

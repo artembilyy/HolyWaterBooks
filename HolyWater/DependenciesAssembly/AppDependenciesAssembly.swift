@@ -12,18 +12,22 @@ final class AppDependenciesAssembly {
     typealias AppDependencies =
         CrashAnalyticReporterContainer &
         FirebaseRemoteConfigWorkerContainer &
-        ImageLoadingWorkerContrainer
+        ImageLoadingWorkerContrainer &
+        RealmServiceWorkerContainer
 
     struct DependenciesContainer: AppDependencies {
         let crashAnalyticReporter: CrashAnalyticReporter
         let firebaseRemoteConfigWorker: FirebaseRemoteConfigWorker
         let imageLoadingManagerWorker: ImageLoadingWorker
+        let realmServiceWorker: RealmService
     }
 
-    func assembleDependencies() -> DependenciesContainer {
-        .init(
+    func assembleDependencies() async -> DependenciesContainer {
+        await .init(
             crashAnalyticReporter: CrashAnalytics(),
             firebaseRemoteConfigWorker: FirebaseRemoteConfigService(),
-            imageLoadingManagerWorker: ImageManagerService())
+            imageLoadingManagerWorker: ImageManagerService(),
+            // swiftlint:disable force_try
+            realmServiceWorker: try! ConcreteRealmActor())
     }
 }

@@ -90,27 +90,15 @@ final class LibraryViewModel: LibraryViewModelInterface {
                 guard let self else { return }
                 switch result {
                 case .success(let result):
-
-                    if let topBannerSlides = result.topBannerSlides {
-                        self.topBannerBooks = topBannerSlides
+                    Task {
+                        await self.save(bookResponse: result)
+                        await self.load()
+                        self.subjectDataFetched.onNext(())
                     }
-
-                    guard let books = result.books else { return }
-                    self.books = Dictionary(grouping: books) { $0.genre ?? "" }
-                    self.genres = Array(self.books.keys).sorted()
-
-                    if let youWillLikeIDs = result.youWillLikeSection {
-                        self.youWillLikeSection = books.filter {
-                            if let bookID = $0.id {
-                                return youWillLikeIDs.contains(bookID)
-                            }
-                            return false
-                        }
-                    }
-                    subjectDataFetched.onNext(())
                 case .failure(let failure):
                     subjectErrorCatched.onNext(failure)
                 }
+                NotificationCenter.default.post(name: .hideSplashScreen, object: nil)
             }
     }
 
@@ -120,5 +108,52 @@ final class LibraryViewModel: LibraryViewModelInterface {
                 topSection: data,
                 bottomSection: youWillLikeSection)
         )
+    }
+
+    private func save(bookResponse: BookResponse) async {
+        let bookEntity = BooksEntity(booksResponse: bookResponse)
+        await dependencies.realmServiceWorker.saveObject(object: bookEntity)
+    }
+
+    private func load() async {
+        await dependencies.realmServiceWorker.loadObject { (books: BooksEntity?) in
+            guard let realmBooks = books?.books,
+                  let topBannerSlides = books?.topBannerSlides,
+                  let youWillLikeSection = books?.youWillLikeSection
+            else {
+                return
+            }
+            var books = [BookResponse.Book]()
+            realmBooks.forEach { book in
+                let realmBook = BookResponse.Book(
+                    id: book.id,
+                    name: book.name,
+                    author: book.author,
+                    summary: book.summary,
+                    genre: book.genre,
+                    coverURL: URL(string: book.coverURL),
+                    views: book.views,
+                    likes: book.likes,
+                    quotes: book.quotes)
+                books.append(realmBook)
+                self.genres = Array(self.books.keys).sorted()
+                self.books = Dictionary(grouping: books) { $0.genre ?? "" }
+            }
+
+            topBannerSlides.forEach { slide in
+                let realmTopBannerSlide = BookResponse.TopBannerSlideBook(
+                    id: slide.id,
+                    bookID: slide.bookID,
+                    cover: slide.cover)
+                self.topBannerBooks.append(realmTopBannerSlide)
+            }
+
+            self.youWillLikeSection = books.filter {
+                if let bookID = $0.id {
+                    return youWillLikeSection.contains(bookID)
+                }
+                return false
+            }
+        }
     }
 }

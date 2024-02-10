@@ -8,9 +8,7 @@
 import HolyWaterServices
 
 protocol LibraryViewModelInputs {
-    func fetch()
+    func fetch() async
     func selected(data: [BookResponse.Book])
-    func sendCrashReport(
-        event: CrashAnalytics.CrashEvent,
-        source: String?)
+    func sendCrashReport(event: CrashAnalytics.CrashEvent, source: String?)
 }

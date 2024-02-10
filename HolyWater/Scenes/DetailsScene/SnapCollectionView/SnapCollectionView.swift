@@ -27,9 +27,7 @@ final class SnapCollectionView: UIView {
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(
-            SnapCollectionViewCell.self,
-            forCellWithReuseIdentifier: SnapCollectionViewCell.identifier)
+        collectionView.register(cellType: SnapCollectionViewCell.self)
         return collectionView
     }()
 
@@ -40,9 +38,9 @@ final class SnapCollectionView: UIView {
         return $0
     }(UIImageView())
 
-    private let titleLabel: UILabel = .init()
-    private let secondaryLabel: UILabel = .init()
-    private let gradient: CAGradientLayer = .init()
+    private let titleLabel = UILabel()
+    private let secondaryLabel = UILabel()
+    private let gradient = CAGradientLayer()
 
     var viewModel: SnapCollectionViewModel! {
         didSet {
@@ -163,13 +161,7 @@ extension SnapCollectionView: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: SnapCollectionViewCell.identifier,
-                for: indexPath) as? SnapCollectionViewCell
-        else {
-            return UICollectionViewCell()
-        }
+        let cell: SnapCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
         let book = viewModel.books[indexPath.item]
         cell.viewModel = .init(book: book, dependencies: viewModel.dependencies)
         cell.configureCell()

@@ -32,7 +32,7 @@ final class SplashPresenter: SplashPresenterDescription {
 
     private lazy var splashWindow: UIWindow = {
         let splashViewController = SplashViewController()
-        let splashWindow = self.splashWindow(windowLevel: .normal + 1, rootViewController: splashViewController)
+        let splashWindow = splashWindow(windowLevel: .normal + 1, rootViewController: splashViewController)
 
         return splashWindow
     }()

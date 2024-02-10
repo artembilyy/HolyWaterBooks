@@ -9,7 +9,7 @@ import HolyWaterServices
 import HolyWaterUI
 import RxRelay
 
-final class BookCellViewModel {
+final class BookCellViewModel: AsyncOperation {
 
     enum TextStyle {
         case home
@@ -46,12 +46,13 @@ final class BookCellViewModel {
             return
         }
 
-        Task {
-            do {
-                let image = try await dependencies.imageLoadingManagerWorker.getImage(from: url)
+        performAsyncOperation { [weak self] in
+            try await self?.dependencies
+                .imageLoadingManagerWorker
+                .getImage(from: url)
+        } completion: { image in
+            if let image {
                 completion(image)
-            } catch {
-                completion(nil)
             }
         }
     }

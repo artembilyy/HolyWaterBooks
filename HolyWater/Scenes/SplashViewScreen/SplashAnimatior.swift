@@ -19,7 +19,7 @@ final class SplashAnimator: SplashAnimatorDescription {
     private unowned let splashWindow: UIWindow
     private unowned let mainWindow: UIWindow
 
-    private unowned let splashViewController: SplashViewController
+    private let splashViewController: SplashViewController
 
     private var timer: Timer?
 

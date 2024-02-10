@@ -9,9 +9,9 @@ import HolyWaterUI
 
 final class HeaderSectionSubview: UIView {
 
-    private let titleLabel: UILabel = .init()
-    private let secondaryLabel: UILabel = .init()
-    private let stackView: UIStackView = .init()
+    private let titleLabel = UILabel()
+    private let secondaryLabel = UILabel()
+    private let stackView = UIStackView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

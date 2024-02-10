@@ -11,15 +11,16 @@ import RxSwift
 
 final class TopBannerCollectionView: UICollectionViewCell, IdentifiableCell {
 
-    var pageControl: UIPageControl!
-    var autoScrollTimer: Timer!
-    var currentAutoScrollIndex = 1
-
     lazy var collectionView: UICollectionView = .init(
         frame: .zero,
         collectionViewLayout: createCompositionalLayout())
 
     var viewModel: TopBannerCellViewModel?
+
+    var pageControl: UIPageControl!
+    var currentAutoScrollIndex = 1
+
+    private var autoScrollTimer: Timer!
 
     private let disposeBag = DisposeBag()
 
@@ -39,9 +40,7 @@ extension TopBannerCollectionView {
         collectionView.isScrollEnabled = false
         collectionView.frame = bounds
 
-        collectionView.register(
-            TopBannerCell.self,
-            forCellWithReuseIdentifier: TopBannerCell.identifier)
+        collectionView.register(cellType: TopBannerCell.self)
 
         collectionView.dataSource = self
 
@@ -55,23 +54,23 @@ extension TopBannerCollectionView {
     private func bindings() {
         viewModel?
             .outReloadData
-            .drive(onNext: { [weak self] _ in
-                guard let self else { return }
-                self.collectionView.reloadData()
-                let indexPath: IndexPath = .init(item: self.currentAutoScrollIndex, section: 0)
-                self.collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
-                self.configAutoScroll()
+            .drive(onNext: { [unowned self] _ in
+                collectionView.reloadData()
+                let indexPath = IndexPath(item: currentAutoScrollIndex, section: 0)
+                collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
+                configAutoScroll()
             })
             .disposed(by: disposeBag)
     }
 
     private func addPageControl() {
         guard let viewModel else { return }
-        pageControl = UIPageControl(frame: CGRect(
+        let pageControlerFrame = CGRect(
             x: frame.origin.x,
             y: collectionView.frame.origin.y + frame.height - 30,
             width: frame.size.width,
-            height: 30))
+            height: 30)
+        pageControl = UIPageControl(frame: pageControlerFrame)
         pageControl.numberOfPages = viewModel.topBooks.count - 2
         pageControl.currentPageIndicatorTintColor = ThemeColor.raspberryPink.asUIColor()
         pageControl.pageIndicatorTintColor = ThemeColor.lightGray.asUIColor()
@@ -87,8 +86,10 @@ extension TopBannerCollectionView: UICollectionViewDataSource {
         viewModel?.topBooks.count ?? 0
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopBannerCell.identifier, for: indexPath) as? TopBannerCell else { return UICollectionViewCell() }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: TopBannerCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.viewModel = viewModel
         cell.delegate = self
         cell.configure(indexPathItem: indexPath.item)
@@ -139,7 +140,7 @@ extension TopBannerCollectionView {
         if currentAutoScrollIndex >= viewModel.topBooks.count {
             currentAutoScrollIndex = currentAutoScrollIndex % viewModel.topBooks.count
         }
-        let indexPath: IndexPath = .init(item: currentAutoScrollIndex, section: 0)
+        let indexPath = IndexPath(item: currentAutoScrollIndex, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
     }
 }

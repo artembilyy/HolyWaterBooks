@@ -6,11 +6,11 @@
 //
 
 import HolyWaterServices
+import HolyWaterUI
 import RxCocoa
 import RxSwift
-import UIKit
 
-final class TopBannerCellViewModel {
+final class TopBannerCellViewModel: AsyncOperation {
 
     private(set) var topBooks: [BookResponse.TopBannerSlideBook] = []
 
@@ -38,14 +38,14 @@ final class TopBannerCellViewModel {
         for indexPath: Int,
         completion: @escaping (UIImage?) -> Void) {
         guard let url = topBooks[indexPath].cover else { return }
-        Task {
-            do {
-                let image = try await dependencies
-                    .imageLoadingManagerWorker
-                    .getImage(from: url)
+
+        performAsyncOperation { [weak self] in
+            try await self?.dependencies
+                .imageLoadingManagerWorker
+                .getImage(from: url)
+        } completion: { image in
+            if let image {
                 completion(image)
-            } catch {
-                completion(nil)
             }
         }
     }

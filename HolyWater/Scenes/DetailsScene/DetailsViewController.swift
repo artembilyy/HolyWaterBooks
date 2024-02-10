@@ -18,10 +18,10 @@ final class DetailsViewController: UIViewController {
         }
     }
 
-    private let snapCollectionView: SnapCollectionView = .init()
-    private let mainStackView: MainStackView = .init()
-    private let contentView: UIView = .init()
-    private let scrollView: UIScrollView = .init()
+    private let snapCollectionView = SnapCollectionView()
+    private let mainStackView = MainStackView()
+    private let contentView = UIView()
+    private let scrollView = UIScrollView()
 
     func inject(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
@@ -31,16 +31,12 @@ final class DetailsViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         configureNavigationItem()
+        setupConstraints()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationBar()
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        setupConstraints()
     }
 
     private func setupUI() {

@@ -14,7 +14,7 @@ protocol InfiniteAutoScrollViewCellDelegate: AnyObject {
 
 final class TopBannerCell: UICollectionViewCell, IdentifiableCell {
 
-    private let mainImageContainer: UIImageView = .init()
+    private let mainImageContainer = UIImageView()
     private var loadingIndicator: LoadingIndicator? = .init()
     var viewModel: TopBannerCellViewModel!
 
@@ -57,11 +57,11 @@ final class TopBannerCell: UICollectionViewCell, IdentifiableCell {
         viewModel.loadImage(for: indexPathItem) { [weak self] image in
             guard let self else { return }
             if let image {
-                self.mainImageContainer.image = image
-                self.loadingIndicator?.stopAnimating()
+                mainImageContainer.image = image
+                loadingIndicator?.stopAnimating()
             } else {
-                self.mainImageContainer.image = UIImage(systemName: "trash")
-                self.loadingIndicator?.stopAnimating()
+                mainImageContainer.image = UIImage(systemName: "trash")
+                loadingIndicator?.stopAnimating()
             }
         }
     }
@@ -69,7 +69,9 @@ final class TopBannerCell: UICollectionViewCell, IdentifiableCell {
 
 extension TopBannerCell: UIGestureRecognizerDelegate {
 
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(
+        _ gestureRecognizer: UIGestureRecognizer,
+        shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }

@@ -6,9 +6,9 @@
 //
 
 import HolyWaterServices
-import UIKit
+import HolyWaterUI
 
-final class SnapCollectionViewCellViewModel {
+final class SnapCollectionViewCellViewModel: AsyncOperation {
 
     typealias Dependencies =
         ImageLoadingWorkerContrainer
@@ -22,19 +22,20 @@ final class SnapCollectionViewCellViewModel {
     }
 
     @MainActor
-    func loadImage(completion: @escaping (UIImage?) -> Void) {
-
+    func loadImage(
+        completion: @escaping (UIImage?) -> Void
+    ) {
         guard let url = book.coverURL?.absoluteString else {
             completion(nil)
             return
         }
-
-        Task {
-            do {
-                let image = try await dependencies.imageLoadingManagerWorker.getImage(from: url)
+        performAsyncOperation { [weak self] in
+            try await self?.dependencies
+                .imageLoadingManagerWorker
+                .getImage(from: url)
+        } completion: { image in
+            if let image {
                 completion(image)
-            } catch {
-                completion(nil)
             }
         }
     }

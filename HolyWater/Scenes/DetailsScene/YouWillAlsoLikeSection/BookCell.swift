@@ -89,8 +89,8 @@ final class BookCell: UICollectionViewCell, IdentifiableCell {
     private func bind() {
         viewModel?
             .textStyle
-            .subscribe(onNext: { [weak self] textStyle in
-                self?.label.textColor = textStyle.color
+            .subscribe(onNext: { [unowned self] textStyle in
+                label.textColor = textStyle.color
             })
             .disposed(by: disposeBag)
     }

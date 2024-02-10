@@ -12,5 +12,6 @@ extension LibraryViewModel {
     typealias Dependencies =
         CrashAnalyticReporterContainer &
         FirebaseRemoteConfigWorkerContainer &
-        ImageLoadingWorkerContrainer
+        ImageLoadingWorkerContrainer &
+        RealmServiceWorkerContainer
 }
