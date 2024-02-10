@@ -448,17 +448,9 @@
 			path = HolyWaterServices;
 			sourceTree = "<group>";
 		};
-		EDB786A32B0D807F00D1354D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		EDC4F7482B0BFA0800AEE26F = {
 			isa = PBXGroup;
 			children = (
-				EDB786A32B0D807F00D1354D /* Frameworks */,
 				EDC4F7532B0BFA0800AEE26F /* HolyWater */,
 				EDB786942B0D7FD100D1354D /* HolyWaterServices */,
 				EDC4F7792B0BFFD400AEE26F /* HolyWaterUI */,
@@ -479,9 +471,9 @@
 		EDC4F7532B0BFA0800AEE26F /* HolyWater */ = {
 			isa = PBXGroup;
 			children = (
+				EDB786762B0D591200D1354D /* Scenes */,
 				EDB786652B0D40A700D1354D /* Application */,
 				EDB7866B2B0D4C7000D1354D /* DependenciesAssembly */,
-				EDB786762B0D591200D1354D /* Scenes */,
 				EDB786522B0CFCF300D1354D /* GoogleService-Info.plist */,
 				EDC4F75D2B0BFA0A00AEE26F /* Assets.xcassets */,
 				EDB7867B2B0D69EF00D1354D /* Info.plist */,
